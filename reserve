@@ -1,0 +1,116 @@
+- **Avantages** : permet de modéliser n'importe quelle forme de solide, et ne nécéssite pas de remaillage.
+
+\begin{gathered}
+\Big[ {\color{red}{(1-C_1-C_2)\rho_{\text{air}} + C_1 \rho_{\text{eau}} + C_2 \rho_{\text{solide}}}} \Big]
+\left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right)
+= -\nabla p \\
+
++ \nabla \cdot \Bigg[\Big[
+{\color{red}{(1-C_1-C_2)\mu_{\text{air}} + C_1 \mu_{\text{eau}} + C_2 \mu_{\text{solide}}}}
+\Big] (\nabla \mathbf{u} + (\nabla \mathbf{u})^T) \Bigg]\\
+
++ \Big[ {\color{red}{(1-C_1-C_2)\rho_{\text{air}} + C_1 \rho_{\text{eau}} + C_2 \rho_{\text{solide}}}} \Big]\mathbf{g}
+\end{gathered}
+
+## Paramètres physiques du problème
+
+| Paramètre | Dimension |
+|-----------|-----------|
+| $\rho_{\text{eau}}$ (masse volumique eau) | $M \cdot L^{-3}$ |
+| $\rho_{\text{solide}}$ (masse volumique solide) | $M \cdot L^{-3}$ |
+| $\nu_{\text{eau}}$ (viscosité cinématique eau) | $L^2 \cdot T^{-1}$ |
+| $g$ (accélération de la gravité) | $L \cdot T^{-2}$ |
+| $U$ (vitesse d’ascension de la sphère) | $L \cdot T^{-1}$ |
+| $D$ (diamètre de la sphère) | $L$ |
+| $h$ (hauteur d’eau) | $L$ |
+| $a$ (amplitude de la vague) | $L$ |
+| $\lambda$ (longueur d’onde de la vague) | $L$ |
+| $c$ (vitesse de la vague) | $L \cdot T^{-1}$ |
+
+- Dans la suite : analyse dimensionnelle avec théorème $\Pi$ pour identifier les nombres adimensionnels pertinents
+
+
+## Résultats préliminaires
+
+```{=html}
+<div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline width="55%">
+      <source src="interface_100.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.9em;">μ<sub>solide</sub> = 100</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline width="55%">
+      <source src="interface_solide.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.9em;">μ<sub>solide</sub> = 1000</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline width="55%">
+      <source src="vague_solide.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes</p>
+  </div>
+</div>
+```
+
+```{=html}
+<div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
+      <source src="interface_100.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.85em;">μ<sub>solide</sub> = 100</p>
+  </div>
+
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
+      <source src="interface_200.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.85em;">μ<sub>solide</sub> = 200</p>
+  </div>
+
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
+      <source src="interface_300.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.85em;">μ<sub>solide</sub> = 300</p>
+  </div>
+
+  <div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
+      <source src="interface_solide_slow.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.85em;">μ<sub>solide</sub> = 1000</p>
+  </div>
+
+</div>
+```
+
+
+- On parcourt **chaque maille** du domaine de calcul, et on calcule $F$ au **sommets** de la maille. 
+- Si $F$ est **négatif** à tous les sommets, alors la maille est entièrement dans **l'eau** et on met $C_1=1$.
+- Si $F$ est **positif** à tous les sommets, alors la maille est entièrement dans **l'air** et on met $C_1=0$.
+- Si $F$ **change de signe** entre les sommets, alors la maille est traversée par la surface libre, on utilise un **algorithme Quadtree** pour calculer l'aire de la maille qui est dans l'eau $\alpha$.
+
+
+- On veut imposer:
+$$
+\mathbf{u}(M) = \mathbf{U} + \boldsymbol{\omega} \times \mathbf{OM} \quad \forall M \in \Omega 
+$$
+
+- C'est équivalent à imposer :
+$$
+\nabla \mathbf{u} + (\nabla \mathbf{u})^T = \mathbf{0} \quad \forall \mathbf{x} \in \Omega
+$$
+
+- Qui est équivalent à imposer :
+$$
+\nabla\cdot\left(\nabla \mathbf{u} + (\nabla \mathbf{u})^T\right) = \mathbf{0} \quad \forall \mathbf{x}\in \Omega \\
+    (\nabla \mathbf{u} + (\nabla \mathbf{u})^T) \cdot \mathbf{n} = \mathbf{0} \quad \forall \mathbf{x}\in \partial \Omega   
+$$
+
+- Cette contrainte de mouvement de corps rigide est équivalente à imposer :
+$$\nabla \cdot [{\color{red}{\mu_{\text{eff}}}} (\nabla \mathbf{u} + \left(\nabla \mathbf{u}\right)^T)]=0 \quad \forall \mathbf{x}\in \Omega_p$$
