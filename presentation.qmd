@@ -34,9 +34,9 @@ execute:
 - Danger pour la faune et les écosystèmes marins
 
 ::: {layout-ncol=2}
-![](ocean.jpg)
+![](figures/ocean.jpg)
 
-![](ocean_2.jpg)
+![](figures/ocean_2.jpg)
 :::
 ```{=html}
 <div style="text-align: center; font-size: 0.7em;">
@@ -56,7 +56,7 @@ Source : The Ocean Cleanup
 - Visualisation de la dérive de Stokes pour des particules sans masse (suivent les lignes de courant) :
 
 
-![](Deep_water_wave.gif){fig-align="center" width="800px" height="450px" style="object-fit: cover; border-radius: 10px;"}
+![](videos/Deep_water_wave.gif){fig-align="center" width="800px" height="450px" style="object-fit: cover; border-radius: 10px;"}
 
 <div style="text-align: center; font-size: 0.7em;">
 By <a href="//commons.wikimedia.org/wiki/User:Kraaiennest" title="User:Kraaiennest">Kraaiennest</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=3374567">Link</a>
@@ -70,19 +70,19 @@ By <a href="//commons.wikimedia.org/wiki/User:Kraaiennest" title="User:Kraaienne
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="50%">
-      <source src="solide.mp4" type="video/mp4">
+      <source src="videos/solide.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Solide seul</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="50%">
-      <source src="interface_solide.mp4" type="video/mp4">
+      <source src="videos/interface_solide.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une interface plane</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="50%">
-      <source src="vague_2.mp4" type="video/mp4">
+      <source src="videos/vague_2.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une vague de Stokes</p>
   </div>
@@ -140,17 +140,17 @@ $${\color{red}{\mu_{\text{eff}}}} = (1-C_1-C_2)\mu_{\text{air}} + C_1 \mu_{\text
 :::: {.columns}
 
 ::: {.column width="33%"}
-![](C11.png){height=250px fig-align="center"}
+![](figures/C11.png){height=250px fig-align="center"}
 
 :::
 
 ::: {.column width="33%"}
-![](C20.png){height=250px fig-align="center"}
+![](figures/C20.png){height=250px fig-align="center"}
 
 :::
 
 ::: {.column width="33%"}
-![](C1_064.png){height=250px fig-align="center"}
+![](figures/C1_064.png){height=250px fig-align="center"}
 
 :::
 
@@ -200,15 +200,15 @@ $$
 
 :::: {.columns}
 ::: {.column width="33%"} 
-![](image.png){fig-align="center" height="600px"}
+![](figures/image.png){fig-align="center" height="600px"}
 :::
 
 ::: {.column width="33%"}
-![](domaine.png){fig-align="center" height="600px"}
+![](figures/domaine.png){fig-align="center" height="600px"}
 :::
 
 ::: {.column width="33%"}
-![](domaine_vague.png){fig-align="center" height="600px"}
+![](figures/domaine_vague.png){fig-align="center" height="600px"}
 :::
 ::::
 
@@ -228,14 +228,14 @@ $$
 
 :::: {.columns}
 ::: {.column width="33%"}
-![](image.png){fig-align="center" height="500px"}
+![](figures/image.png){fig-align="center" height="500px"}
 :::
 
 ::: {.column width="33%"}
 ```{=html}
 <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline style="width: 100%; max-width: 225px;">
-      <source src="solide.mp4" type="video/mp4">
+      <source src="videos/solide.mp4" type="video/mp4">
     </video>
 </div>
 ```
@@ -272,8 +272,8 @@ $$
 
 ```{=html}
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="Evolution_vitesse_verticale_comp_4.png" style="height: 600px; width: auto;" />
-  <img src="convergence_maillage_test.png" style="height: 600px; width: auto;" />
+  <img src="figures/Evolution_vitesse_verticale_comp_4.png" style="height: 600px; width: auto;" />
+  <img src="figures/convergence_maillage_test.png" style="height: 600px; width: auto;" />
 </div>
 ```
 
@@ -292,7 +292,7 @@ $$
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](domaine.png){fig-align="center" height="600px"}
+![](figures/domaine.png){fig-align="center" height="600px"}
 :::
 ::: {.column width="50%"}
 $$\color{red}{
@@ -316,19 +316,19 @@ $$
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="interface_100.mp4" type="video/mp4">
+      <source src="videos/interface_100.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 100</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="interface_200.mp4" type="video/mp4">
+      <source src="videos/interface_200.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 200</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="interface_300.mp4" type="video/mp4">
+      <source src="videos/interface_300.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 300</p>
   </div>
@@ -350,7 +350,7 @@ $$
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](domaine_vague.png){fig-align="center" height="600px"}
+![](figures/domaine_vague.png){fig-align="center" height="600px"}
 :::
 ::: {.column width="50%"}
 $$\color{red}{
@@ -372,14 +372,14 @@ $$\color{green}{
 
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
-      <source src="vague_100.mp4" type="video/mp4">
+      <source src="videos/vague_100.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 100</p>
   </div>
 
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline style="width: 100%; max-width: 325px;">
-      <source src="vague_solide.mp4" type="video/mp4">
+      <source src="videos/vague_solide.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 1000</p>
   </div>
@@ -423,7 +423,7 @@ $$
 $$
 :::
 ::: {.column width="50%"}
-![](vague_schema.png){fig-align="center" width="100%"style="object-fit: cover; border-radius: 10px;"}
+![](figures/vague_schema.png){fig-align="center" width="100%"style="object-fit: cover; border-radius: 10px;"}
 :::
 ::::
 
@@ -454,7 +454,7 @@ F(x,z)=\begin{cases}
 $$
 :::
 ::: {.column width="50%"}
-![](coordonnees_vague_2.png){fig-align="center" width="700px" height="300px" style="object-fit: cover; border-radius: 10px;"}
+![](figures/coordonnees_vague_2.png){fig-align="center" width="700px" height="300px" style="object-fit: cover; border-radius: 10px;"}
 :::
 ::::
 
@@ -463,22 +463,22 @@ $$
 :::: {.columns}
 
 ::: {.column width="25%"} 
-![](image_3.png){fig-align="center" height="400px"}
+![](figures/image_3.png){fig-align="center" height="400px"}
 **Espace de départ**
 :::
 
 ::: {.column width="25%"}
-![](image_2.png){fig-align="center" height="400px"}
+![](figures/image_2.png){fig-align="center" height="400px"}
 **Première subdivision**
 :::
 
 ::: {.column width="25%"}
-![](dessin_4.png){fig-align="center" height="400px"}
+![](figures/dessin_4.png){fig-align="center" height="400px"}
 **Deuxième subdivision**
 :::
 
 ::: {.column width="25%"}
-![](dessin_5.png){fig-align="center" height="400px"}
+![](figures/dessin_5.png){fig-align="center" height="400px"}
 **Troisième subdivision**
 :::
 
@@ -494,7 +494,7 @@ $$C_1 = \frac{\text{aire de la maille dans l'eau}}{\text{aire totale de la maill
 
 - Initialisation de la vague pour $h$=10m, $a$=0.25m, $\lambda$=3.14 m
 
-![](vague_paraview.png){fig-align="center" style="object-fit: cover; border-radius: 10px;"}
+![](figures/vague_paraview.png){fig-align="center" style="object-fit: cover; border-radius: 10px;"}
 
 ## Initialisation de la vague de Stokes (fin)
 
@@ -506,7 +506,7 @@ $$u = \frac{\partial\Phi}{\partial x} \qquad v = \frac{\partial\Phi}{\partial z}
 ```{=html}
 <div style="display: flex; justify-content: center;">
   <video autoplay loop muted playsinline width="1000">
-    <source src="vague1.mp4" type="video/mp4">
+    <source src="videos/vague1.mp4" type="video/mp4">
   </video>
 </div>
 ``` 
@@ -518,19 +518,19 @@ $$u = \frac{\partial\Phi}{\partial x} \qquad v = \frac{\partial\Phi}{\partial z}
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="interface_100.mp4" type="video/mp4">
+      <source src="videos/interface_100.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 100</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="interface_solide.mp4" type="video/mp4">
+      <source src="videos/interface_solide.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">μ<sub>solide</sub> = 1000</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="55%">
-      <source src="vague_solide.mp4" type="video/mp4">
+      <source src="videos/vague_solide.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une vague de Stokes</p>
   </div>
