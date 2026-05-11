@@ -3,3 +3,6 @@
 *.aux
 *.log
 *.toc
+
+/.quarto/
+**/*.quarto_ipynb
