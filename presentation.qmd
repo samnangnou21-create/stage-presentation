@@ -76,13 +76,13 @@ By <a href="//commons.wikimedia.org/wiki/User:Kraaiennest" title="User:Kraaienne
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="50%">
-      <source src="videos/interface_solide.mp4" type="video/mp4">
+      <source src="videos/cylindre_2.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une interface plane</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay loop muted playsinline width="50%">
-      <source src="videos/vague_2.mp4" type="video/mp4">
+      <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une vague de Stokes</p>
   </div>
@@ -281,7 +281,7 @@ $$
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Cas 2** : Ascension d'un cylindre initialement immergé dans de l'eau, en présence d'une **interface libre plane**.
+**Cas 2** : Laché d'un cylindre ayant initialement une partie immergée   dans de l'eau, en présence d'une **interface libre plane**.
 :::
 ::: {.column width="50%"}
 <div style="text-align: center;">
@@ -292,7 +292,8 @@ $$
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/domaine.png){fig-align="center" height="600px"}
+![](figures/domaine_interface.png){fig-align="center"}
+![](figures/domaine_interface_2.png){fig-align="center"}
 :::
 ::: {.column width="50%"}
 $$\color{red}{
@@ -307,8 +308,80 @@ $$
 $$\color{blue}{
 \Pi_4=\frac{D}{h}}
 $$
+
+$$
+m=0.5 \qquad h=1.22 \text{ m }
+$$
+
+$$
+\text{variable d'intérêt : } \frac{z-d}{h1}
+$$
+
 :::
 ::::
+
+## Etude paramétrique du problème
+
+Etude de l'influence de différents paramètres (longueur du domaine de calcul, résidu imposé à atteindre pour chaque itération, viscosité pénalisante $\mu_{\text{solide}}$, maillage, pas de temps) sur la trajectoire du cylindre.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](figures/trajectoire_longueur.png){fig-align="center" height="400px"}
+:::
+::: {.column width="50%"}
+![](figures/trajectoire_iter.png){fig-align="center" height="400px"}
+:::
+::::
+
+:::: {.columns}
+::: {.column width="50%"}
+![](figures/trajectoire_mu_2.png){fig-align="center" height="400px"}
+:::
+::: {.column width="50%"}
+![](figures/trajectoire_N_30.png){fig-align="center" height="400px"}
+:::
+::::
+
+## Etude paramétrique du problème
+
+Etude effectuée pour  $\mu_{\text{solide}}=1000 kg.m^{-1}.s^{-1}$, un résidu à atteindre = 10$^{-3}$, une longueur du domaine de calcul de 5m. 
+
+:::: {.columns}
+::: {.column width="50%"}
+![](figures/trajectoire_maillage.png){fig-align="center" height="400px"}
+:::
+::: {.column width="50%"}
+![](figures/trajectoire_dt.png){fig-align="center" height="400px"}
+:::
+:::: 
+
+![](figures/Evolution_vitesse_verticale.png){fig-align="center" height="400px"}
+
+
+
+
+## Etude de convergence de maillage (suite)
+
+Etude effectuée avec comme solution de référence un résultat analytique simplifié (@Maskell_Ursell_1970). 
+
+On définit notre erreur comme : $$\alpha = \vert\frac{y_{\text{ref}}-y_{\text{num}}}{y_{\text{ref}}}\vert$$
+
+Et la norme $L_p$ de l'erreur $\alpha$ : $$\Vert \alpha \Vert_p = \left( \int_0^1 \alpha (t)^p\,dt \right)^{\frac{1}{p}}$$
+
+
+
+:::: {.columns}
+::: {.column width="33%"}
+![](figures/convergence_maillage_L1.png){fig-align="center" width="100%"}
+:::
+::: {.column width="33%"}
+![](figures/convergence_maillage_L2.png){fig-align="center" width="100%"}
+:::
+::: {.column width="33%"}
+![](figures/dephasage_maillage.png){fig-align="center" width="100%"}
+:::
+::::
+
 
 ## Influence de la viscosité pénalisante $\mu_{\text{solide}}$
 
@@ -506,7 +579,7 @@ $$u = \frac{\partial\Phi}{\partial x} \qquad v = \frac{\partial\Phi}{\partial z}
 ```{=html}
 <div style="display: flex; justify-content: center;">
   <video autoplay loop muted playsinline width="1000">
-    <source src="videos/vague1.mp4" type="video/mp4">
+    <source src="videos/vague_3eme_grand.mp4" type="video/mp4">
   </video>
 </div>
 ``` 
