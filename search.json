@@ -67,7 +67,28 @@
     "href": "presentation.html#etude-du-cas-2-ajout-dune-interface-libre-plane",
     "title": "Stage de Master 2",
     "section": "Etude du cas 2 : ajout d’une interface libre plane",
-    "text": "Etude du cas 2 : ajout d’une interface libre plane\n\n\nCas 2 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une interface libre plane.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n\n\n\n\n\n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m}\n\\] \\[\\color{red}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{red}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\] \\[\\color{blue}{\n\\Pi_4=\\frac{D}{h}}\n\\]"
+    "text": "Etude du cas 2 : ajout d’une interface libre plane\n\n\nCas 2 : Laché d’un cylindre ayant initialement une partie immergée dans de l’eau, en présence d’une interface libre plane.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n \n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m}\n\\] \\[\\color{red}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{red}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\] \\[\\color{blue}{\n\\Pi_4=\\frac{D}{h}}\n\\]\n\\[\nm=0.5 \\qquad h=1.22 \\text{ m }\n\\]\n\\[\n\\text{variable d'intérêt : } \\frac{z-d}{h1}\n\\]"
+  },
+  {
+    "objectID": "presentation.html#etude-paramétrique-du-problème",
+    "href": "presentation.html#etude-paramétrique-du-problème",
+    "title": "Stage de Master 2",
+    "section": "Etude paramétrique du problème",
+    "text": "Etude paramétrique du problème\nEtude de l’influence de différents paramètres (longueur du domaine de calcul, résidu imposé à atteindre pour chaque itération, viscosité pénalisante \\(\\mu_{\\text{solide}}\\), maillage, pas de temps) sur la trajectoire du cylindre."
+  },
+  {
+    "objectID": "presentation.html#etude-paramétrique-du-problème-1",
+    "href": "presentation.html#etude-paramétrique-du-problème-1",
+    "title": "Stage de Master 2",
+    "section": "Etude paramétrique du problème",
+    "text": "Etude paramétrique du problème\nEtude effectuée pour \\(\\mu_{\\text{solide}}=1000 kg.m^{-1}.s^{-1}\\), un résidu à atteindre = 10\\(^{-3}\\), une longueur du domaine de calcul de 5m."
+  },
+  {
+    "objectID": "presentation.html#etude-de-convergence-de-maillage-suite",
+    "href": "presentation.html#etude-de-convergence-de-maillage-suite",
+    "title": "Stage de Master 2",
+    "section": "Etude de convergence de maillage (suite)",
+    "text": "Etude de convergence de maillage (suite)\nEtude effectuée avec comme solution de référence un résultat analytique simplifié (Maskell and Ursell (1970)).\nOn définit notre erreur comme : \\[\\alpha = \\vert\\frac{y_{\\text{ref}}-y_{\\text{num}}}{y_{\\text{ref}}}\\vert\\]\nEt la norme \\(L_p\\) de l’erreur \\(\\alpha\\) : \\[\\Vert \\alpha \\Vert_p = \\left( \\int_0^1 \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}}\\]"
   },
   {
     "objectID": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
@@ -144,6 +165,6 @@
     "href": "presentation.html#références",
     "title": "Stage de Master 2",
     "section": "Références",
-    "text": "Références\n\n\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nDingemans, M. W. 1997. Water Wave Propagation over Uneven Bottoms. Vol. 13. Advanced Series on Ocean Engineering. World Scientific.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nRahmani, Mona, and Anthony Wachs. 2014. “Free Falling and Rising of Spherical and Angular Particles.” Physics of Fluids 26 (August): 083301. https://doi.org/10.1063/1.4892840.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nVincent, S. 2007. “Local Penalty Methods for Flows Interacting with Moving Solids at High Reynolds Numbers.” Computers & Fluids, ahead of print. https://doi.org/10.1016/j.compfluid.2006.04.006."
+    "text": "Références\n\n\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nDingemans, M. W. 1997. Water Wave Propagation over Uneven Bottoms. Vol. 13. Advanced Series on Ocean Engineering. World Scientific.\n\n\nMaskell, S. J., and F. Ursell. 1970. “The Transient Motion of a Floating Body.” Journal of Fluid Mechanics 44 (2): 303–13. https://doi.org/10.1017/S0022112070001842.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nRahmani, Mona, and Anthony Wachs. 2014. “Free Falling and Rising of Spherical and Angular Particles.” Physics of Fluids 26 (August): 083301. https://doi.org/10.1063/1.4892840.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nVincent, S. 2007. “Local Penalty Methods for Flows Interacting with Moving Solids at High Reynolds Numbers.” Computers & Fluids, ahead of print. https://doi.org/10.1016/j.compfluid.2006.04.006."
   }
 ]

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Samnang Nou – Can Selçuk">
-  <meta name="dcterms.date" content="2026-05-11">
+  <meta name="dcterms.date" content="2026-06-03">
   <title>Présentation Stage – Stage de Master 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -166,7 +166,7 @@ Samnang Nou – Can Selçuk
     </div>
 </div>
 
-  <p class="date">2026-05-11</p>
+  <p class="date">2026-06-03</p>
 </section>
 <section id="contexte" class="slide level2">
 <h2>Contexte</h2>
@@ -222,13 +222,13 @@ Source : The Ocean Cleanup
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay="" loop="" muted="" playsinline="" width="50%">
-      <source src="videos/interface_solide.mp4" type="video/mp4">
+      <source src="videos/cylindre_2.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une interface plane</p>
   </div>
   <div style="flex: 1; text-align: center;">
     <video autoplay="" loop="" muted="" playsinline="" width="50%">
-      <source src="videos/vague_2.mp4" type="video/mp4">
+      <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une vague de Stokes</p>
   </div>
@@ -450,7 +450,7 @@ Table&nbsp;1: Caractéristiques des différents maillages testés
 <h2>Etude du cas 2 : ajout d’une interface libre plane</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Cas 2</strong> : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une <strong>interface libre plane</strong>.</p>
+<p><strong>Cas 2</strong> : Laché d’un cylindre ayant initialement une partie immergée dans de l’eau, en présence d’une <strong>interface libre plane</strong>.</p>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center;">
 <p><strong>Nombres adimensionnels du problème</strong> :</p>
@@ -458,11 +458,7 @@ Table&nbsp;1: Caractéristiques des différents maillages testés
 </div></div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/domaine.png" class="quarto-figure quarto-figure-center" height="600"></p>
-</figure>
-</div>
+<p><img data-src="figures/domaine_interface.png" class="quarto-figure quarto-figure-center"> <img data-src="figures/domaine_interface_2.png" class="quarto-figure quarto-figure-center"></p>
 </div><div class="column" style="width:50%;">
 <p><span class="math display">\[\color{red}{
 \Pi_1 = \frac{\rho_{\text{solide}}}{\rho_{\text{eau}}}=m}
@@ -473,6 +469,93 @@ Table&nbsp;1: Caractéristiques des différents maillages testés
 \]</span> <span class="math display">\[\color{blue}{
 \Pi_4=\frac{D}{h}}
 \]</span></p>
+<p><span class="math display">\[
+m=0.5 \qquad h=1.22 \text{ m }
+\]</span></p>
+<p><span class="math display">\[
+\text{variable d'intérêt : } \frac{z-d}{h1}
+\]</span></p>
+</div></div>
+</section>
+<section id="etude-paramétrique-du-problème" class="slide level2">
+<h2>Etude paramétrique du problème</h2>
+<p>Etude de l’influence de différents paramètres (longueur du domaine de calcul, résidu imposé à atteindre pour chaque itération, viscosité pénalisante <span class="math inline">\(\mu_{\text{solide}}\)</span>, maillage, pas de temps) sur la trajectoire du cylindre.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_longueur.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_iter.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_mu_2.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_N_30.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="etude-paramétrique-du-problème-1" class="slide level2">
+<h2>Etude paramétrique du problème</h2>
+<p>Etude effectuée pour <span class="math inline">\(\mu_{\text{solide}}=1000 kg.m^{-1}.s^{-1}\)</span>, un résidu à atteindre = 10<span class="math inline">\(^{-3}\)</span>, une longueur du domaine de calcul de 5m.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_maillage.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/trajectoire_dt.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/Evolution_vitesse_verticale.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</section>
+<section id="etude-de-convergence-de-maillage-suite" class="slide level2">
+<h2>Etude de convergence de maillage (suite)</h2>
+<p>Etude effectuée avec comme solution de référence un résultat analytique simplifié (<span class="citation" data-cites="Maskell_Ursell_1970">Maskell and Ursell (<a href="#/références" role="doc-biblioref" onclick="">1970</a>)</span>).</p>
+<p>On définit notre erreur comme : <span class="math display">\[\alpha = \vert\frac{y_{\text{ref}}-y_{\text{num}}}{y_{\text{ref}}}\vert\]</span></p>
+<p>Et la norme <span class="math inline">\(L_p\)</span> de l’erreur <span class="math inline">\(\alpha\)</span> : <span class="math display">\[\Vert \alpha \Vert_p = \left( \int_0^1 \alpha (t)^p\,dt \right)^{\frac{1}{p}}\]</span></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/convergence_maillage_L1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/convergence_maillage_L2.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/dephasage_maillage.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="influence-de-la-viscosité-pénalisante-mu_textsolide" class="slide level2">
@@ -646,7 +729,7 @@ F(x,z)=\begin{cases}
 </ul>
 <div style="display: flex; justify-content: center;">
   <video autoplay="" loop="" muted="" playsinline="" width="1000">
-    <source src="videos/vague1.mp4" type="video/mp4">
+    <source src="videos/vague_3eme_grand.mp4" type="video/mp4">
   </video>
 </div>
 </section>
@@ -683,6 +766,9 @@ Caltagirone, Jean-Paul, and Stéphane Vincent. 2001. <span>“Sur Une Méthode d
 </div>
 <div id="ref-dingemans1997" class="csl-entry" role="listitem">
 Dingemans, M. W. 1997. <em>Water Wave Propagation over Uneven Bottoms</em>. Vol. 13. Advanced Series on Ocean Engineering. World Scientific.
+</div>
+<div id="ref-Maskell_Ursell_1970" class="csl-entry" role="listitem">
+Maskell, S. J., and F. Ursell. 1970. <span>“The Transient Motion of a Floating Body.”</span> <em>Journal of Fluid Mechanics</em> 44 (2): 303–13. <a href="https://doi.org/10.1017/S0022112070001842">https://doi.org/10.1017/S0022112070001842</a>.
 </div>
 <div id="ref-patankar2000" class="csl-entry" role="listitem">
 Patankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. <span>“A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.”</span> <em>International Journal of Multiphase Flow</em> 26 (9): 1509–24.
