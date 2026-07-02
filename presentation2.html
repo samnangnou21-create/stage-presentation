@@ -211,39 +211,30 @@ Source : The Ocean Cleanup
 <h2>Découpage du problème en 4 sous problèmes</h2>
 <p><br></p>
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/solide.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Solide seul (eau / solide)</p>
+    <p style="font-size: 0.9em;">Solide seul (Diphasique eau / solide)</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/cylindre_2.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une interface plane air / eau / solide</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes (eau / air)</p>
+    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes ( Diphasique eau / air )</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
-      <source src="videos/out3.mp4" type="video/mp4">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
+      <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une particule sur la vague</p>
+    <p style="font-size: 0.9em;">Ajout d'une particule sur la vague (Triphasique)</p>
   </div>
-  
 </div>
 </section>
 <section id="equations-régissant-la-dynamique-du-problème-en-présence-de-particule" class="slide level2">
@@ -415,8 +406,6 @@ C_2 =
 </section>
 <section id="etude-de-convergence-en-maillage" class="slide level2">
 <h2>Etude de convergence en maillage</h2>
-<p>Variable d’étude : <strong>vitesse verticale finale</strong> du barycentre du cylindre. Extrapolation de Richardson pour obtenir la valeur de référence.</p>
-<div style="font-size: 80%;">
 <div id="tbl-mesh_properties" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mesh_properties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -466,7 +455,6 @@ Table&nbsp;1: Caractéristiques des différents maillages testés
 </table>
 </div>
 </figure>
-</div>
 </div>
 <div style="display: flex; justify-content: center; gap: 20px;">
   <img src="figures/convergence_vitesse.png" style="height: 600px; width: auto;">
@@ -1003,20 +991,6 @@ k\sin(\theta)
 
 </section>
 
-<section id="première-simulation" class="slide level2">
-<h2>Première simulation</h2>
-<div style="display: flex; justify-content: center;">
-  <video autoplay="" loop="" muted="" playsinline="" width="1800">
-    <source src="videos/out2.mp4" type="video/mp4">
-  </video>
-</div>
-<p><strong>Perspectives d’étude</strong></p>
-<ul>
-<li><p>Comparaison des trajectoires à des résultats avec des particules sans masse.</p></li>
-<li><p>Comparaison de la dérive de position horizontale à la littérature.</p></li>
-<li><p>Evaluation des forces exercées sur la particule par la vague.</p></li>
-</ul>
-</section>
 <section id="références" class="slide level2 smaller scrollable">
 <h2>Références</h2>
 
@@ -1341,7 +1315,7 @@ Vincent, S. 2007. <span>“Local Penalty Methods for Flows Interacting with Movi
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/samnangnou21-create\.github\.io\/stage-presentation\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

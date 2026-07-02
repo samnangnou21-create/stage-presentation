@@ -11,119 +11,140 @@
     "href": "presentation.html#objectifs",
     "title": "Stage de Master 2",
     "section": "Objectifs",
-    "text": "Objectifs\n\n\nPrédire le mouvement et la dispersion des plastiques dans les océans \nModéliser la dynamique des plastiques à l’aide de simulations numériques\nComprendre la dynamique des plastiques en interaction avec les vagues (Dérive de Stokes)\nVisualisation de la dérive de Stokes pour des particules sans masse (suivent les lignes de courant) :\n\n\n\n\n\n\n\nBy Kraaiennest - Own work, CC BY-SA 4.0, Link"
+    "text": "Objectifs\n\n\nPrédire le mouvement et la dispersion des plastiques dans les océans \nModéliser la dynamique des plastiques à l’aide de simulations numériques\nComprendre la dynamique des plastiques en interaction avec les vagues (Dérive de Stokes)\n\n\n\n\n\n\n\nBy Kraaiennest - CC BY-SA 4.0, Link"
   },
   {
-    "objectID": "presentation.html#découpage-du-problème",
-    "href": "presentation.html#découpage-du-problème",
+    "objectID": "presentation.html#découpage-du-problème-en-4-sous-problèmes",
+    "href": "presentation.html#découpage-du-problème-en-4-sous-problèmes",
     "title": "Stage de Master 2",
-    "section": "Découpage du problème",
-    "text": "Découpage du problème\n\nOn découpe le problème en trois étapes :\n\n\n  \n    \n      \n    \n    Solide seul\n  \n  \n    \n      \n    \n    Ajout d'une interface plane\n  \n  \n    \n      \n    \n    Ajout d'une vague de Stokes"
+    "section": "Découpage du problème en 4 sous problèmes",
+    "text": "Découpage du problème en 4 sous problèmes\n\n\n  \n  \n    Diphasique\n    \n      \n    \n    Solide seul (eau / solide)\n  \n  \n  \n    Triphasique\n    \n      \n    \n    Ajout d'une interface plane air / eau / solide\n  \n  \n  \n    Diphasique\n    \n      \n    \n    Ajout d'une vague de Stokes (eau / air)\n  \n  \n  \n    Triphasique\n    \n      \n    \n    Ajout d'une particule sur la vague"
   },
   {
-    "objectID": "presentation.html#equations-régissant-la-dynamique-du-problème",
-    "href": "presentation.html#equations-régissant-la-dynamique-du-problème",
+    "objectID": "presentation.html#equations-régissant-la-dynamique-du-problème-en-présence-de-particule",
+    "href": "presentation.html#equations-régissant-la-dynamique-du-problème-en-présence-de-particule",
     "title": "Stage de Master 2",
-    "section": "Equations régissant la dynamique du problème",
-    "text": "Equations régissant la dynamique du problème\n\nDans le domaine \\(\\Omega_{\\text{tot}}= \\Omega_f \\cup \\Omega_p\\), on résout les équations de Navier-Stokes incompressible, tout en imposant un mouvement de corps rigide dans la région occupée par le solide \\(\\Omega_p\\). \\[\n\\nabla\\cdot \\mathbf{u} =0 \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\\] \\[\n{\\color{red}{\\rho_{\\text{eff}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{red}{\\mu_{\\text{eff}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T) \\right] + {\\color{red}{\\rho_{\\text{eff}}}} \\mathbf{g} \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\n\\] \\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM} \\quad \\forall \\mathbf{x} \\in \\Omega_p\n\\]\nOn advecte une fonction de couleur \\(C_1\\) pour suivre la surface libre air/eau, et une fonction de couleur \\(C_2\\) pour suivre la position du solide.\n\n\\[ \\frac{\\partial C_1}{\\partial t} + \\nabla \\cdot (C_1 \\mathbf{u}) = 0 \\qquad \\frac{\\partial C_2}{\\partial t} + \\nabla \\cdot (C_2 \\mathbf{u}) = 0\n\\]"
+    "section": "Equations régissant la dynamique du problème en présence de particule",
+    "text": "Equations régissant la dynamique du problème en présence de particule\n\nDans le domaine \\(\\Omega_{\\text{tot}}= \\Omega_f \\cup \\Omega_p\\), on résout les équations de Navier-Stokes incompressible, tout en imposant un mouvement de corps rigide dans la région occupée par le solide \\(\\Omega_p\\). \\[\n\\nabla\\cdot \\mathbf{u} =0 \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\\] \\[\n{\\color{red}{\\rho_{\\text{eff}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{red}{\\mu_{\\text{eff}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T) \\right] + {\\color{red}{\\rho_{\\text{eff}}}} \\mathbf{g} \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\n\\] \\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM} \\quad \\forall \\mathbf{x} \\in \\Omega_p\n\\]\nOn transporte deux champs de fraction volumique : \\(C_1\\) pour l’eau, et \\(C_2\\) pour le solide.\n\n\\[ \\frac{\\partial C_1}{\\partial t} + \\nabla \\cdot (C_1 \\mathbf{u}) = 0 \\qquad \\frac{\\partial C_2}{\\partial t} + \\nabla \\cdot (C_2 \\mathbf{u}) = 0\n\\]"
   },
   {
     "objectID": "presentation.html#modélisation-des-phases",
     "href": "presentation.html#modélisation-des-phases",
     "title": "Stage de Master 2",
     "section": "Modélisation des phases",
-    "text": "Modélisation des phases\n\nOn utilise une formulation dite 1 fluide pour modéliser les différentes phases.\nOn introduit deux fonctions de couleur \\(C_1\\) et \\(C_2\\) :\n\n\n\\[\nC_1 =\n  \\begin{cases}\n1 & \\text{dans l'eau} \\\\\n0 & \\text{ailleurs}\n  \\end{cases}\n\\qquad \\text{et}\\qquad\nC_2 =\n  \\begin{cases}\n1 & \\text{dans le solide} \\\\\n0 & \\text{ailleurs}\n\\end{cases}\n\\]\n\n\nLes propriétés physiques sont alors définies comme des fonctions de ces variables de phase :\n\n\n\\[{\\color{red}{\\rho_{\\text{eff}}}} = (1-C_1-C_2)\\rho_{\\text{air}} + C_1 \\rho_{\\text{eau}} + C_2 \\rho_{\\text{solide}}\\] \\[{\\color{red}{\\mu_{\\text{eff}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\\]"
+    "text": "Modélisation des phases\n\nOn utilise une formulation dite 1 fluide pour modéliser les différentes phases.\nOn introduit deux fonctions de couleur \\(C_1\\) et \\(C_2\\) :\n\n\n\\[\nC_1 =\n  \\begin{cases}\n1 & \\text{dans l'eau} \\\\\n0 & \\text{ailleurs}\n  \\end{cases}\n\\qquad \\text{et}\\qquad\nC_2 =\n  \\begin{cases}\n1 & \\text{dans le solide} \\\\\n0 & \\text{ailleurs}\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "presentation.html#lois-de-mélange-des-propriétés-physiques",
+    "href": "presentation.html#lois-de-mélange-des-propriétés-physiques",
+    "title": "Stage de Master 2",
+    "section": "Lois de mélange des propriétés physiques",
+    "text": "Lois de mélange des propriétés physiques\nLoi arithmétique pour la densité effective : \\[\n{\\color{red}{\\rho_{\\text{eff}}}} = (1-C_1-C_2)\\rho_{\\text{air}} + C_1 \\rho_{\\text{eau}} + C_2 \\rho_{\\text{solide}}\n\\]\nPlusieurs lois de mélange testés pour la viscosité effective : \n\nLoi arithmétique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\n\\]\nLoi harmonique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = \\frac{\\mu_{\\text{air}} \\mu_{\\text{eau}} \\mu_{solide}}{(1-C_1-C_2)\\mu_{\\text{eau}} \\mu_{\\text{solide}} + C_1 \\mu_{\\text{air}}\\mu_{\\text{solide}} + C_2 \\mu_{\\text{air}} \\mu_{\\text{eau}}}\n\\] Loi géométrique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = \\mu_{\\text{air}}^{(1-C_1-C_2)} + \\mu_{\\text{eau}}^{C_1} + \\mu_{\\text{solide}}^{C_2}\n\\]"
   },
   {
     "objectID": "presentation.html#mouvement-de-corps-rigide-pénalisation-tensorielle",
     "href": "presentation.html#mouvement-de-corps-rigide-pénalisation-tensorielle",
     "title": "Stage de Master 2",
     "section": "Mouvement de corps rigide : pénalisation tensorielle",
-    "text": "Mouvement de corps rigide : pénalisation tensorielle\n\nIdée : imposer un mouvement de corps rigide dans la région occupée par le solide où \\(C_2=1\\) et \\(C_1=0\\).\n\n\\[\n{\\color{red}{\\rho_{\\text{solide}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{red}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\right] + {\\color{red}{\\rho_{\\text{solide}}}} \\mathbf{g}\n\\]\n\nSi on fait tendre la viscosité du solide vers l’infini (\\(\\mu_{\\text{solide}} \\to \\infty\\)), cela revient à résoudre dans le solide :\n\n\\[\\nabla \\cdot [{\\color{red}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T)]=0\\]\n\nOn peut montrer que c’est équivalent à imposer ( Patankar et al. (2000), Sharma and Patankar (2005)) :\n\n\\[\n{\\color{red}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) = \\mathbf{0}\n\\]\n\nCe qui est équivalent à imposer un mouvement de corps rigide (Caltagirone and Vincent (2001), Vincent (2007)) :\n\n\\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM}\n\\]"
+    "text": "Mouvement de corps rigide : pénalisation tensorielle\n\nIdée : imposer un mouvement de corps rigide dans la région occupée par le solide où \\({\\color{blue}{C_2=1}}\\) et \\({\\color{blue}{C_1=0}}\\).\n(Dans la région solide, \\({\\color{red}{\\rho_{\\text{eff}}}} = {\\color{blue}{\\rho_{\\text{solide}}}}\\) et \\({\\color{red}{\\mu_{\\text{eff}}}}={\\color{blue}{\\mu_{\\text{solide}}}}\\))\n\n\\[\n{\\color{blue}{\\rho_{\\text{solide}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\right] + {\\color{blue}{\\rho_{\\text{solide}}}} \\mathbf{g}\n\\]\n\nSi on fait tendre la viscosité du solide vers l’infini (\\(\\mu_{\\text{solide}} \\to \\infty\\)), cela revient à résoudre dans le solide :\n\n\\[\\nabla \\cdot [{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T)]=0\\]\n\nOn peut montrer que c’est équivalent à imposer ( Patankar et al. (2000), Sharma and Patankar (2005)) :\n\n\\[\n{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) = \\mathbf{0} \\quad \\text{lorsque} \\quad {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\cdot \\mathbf{n} = \\mathbf{0} \\quad \\forall x\\in \\partial \\Omega_p\n\\]\n\nCe qui est équivalent à imposer un mouvement de corps rigide (Caltagirone and Vincent (2001), Vincent (2007)) :\n\n\\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM}\n\\]"
   },
   {
-    "objectID": "presentation.html#cas-détude",
-    "href": "presentation.html#cas-détude",
+    "objectID": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
+    "href": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
     "title": "Stage de Master 2",
-    "section": "Cas d’étude",
-    "text": "Cas d’étude\n\n\nCas 1 : Ascension d’un cylindre initialement immergé dans de l’eau.\n\nCas 2 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une interface libre plane.\n\nCas 3 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une vague de Stokes à l’interface."
+    "section": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):",
+    "text": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):"
   },
   {
-    "objectID": "presentation.html#etude-du-cas-1-cylindre-seul-dans-un-fluide",
-    "href": "presentation.html#etude-du-cas-1-cylindre-seul-dans-un-fluide",
+    "objectID": "presentation.html#formulation-momentum-conserving-elouafa2026",
+    "href": "presentation.html#formulation-momentum-conserving-elouafa2026",
     "title": "Stage de Master 2",
-    "section": "Etude du cas 1 : cylindre seul dans un fluide",
-    "text": "Etude du cas 1 : cylindre seul dans un fluide\n\n\nCas 1 : Ascension d’un cylindre (Objet STL) initialement immergé.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n\n\n\n\n\n\n\n    \n      \n    \n\n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m}\n\\] \\[\\color{red}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{red}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\]\n\n\nSimulation pour \\(m=0.8, G_a=16\\)\n\nRahmani and Wachs (2014)"
+    "section": "Formulation Momentum Conserving (El Ouafa et al. (2026))",
+    "text": "Formulation Momentum Conserving (El Ouafa et al. (2026))\n\nInterpolation : La densité \\(\\rho_{\\text{eff}}\\) (obtenue par la VOF) est interpolée vers les faces des cellules. On obtient la densité exacte sur la grille décalée, notée \\(\\rho_{\\text{eff}}^n\\).\nSynchronisation initiale : Calcul de la quantité de mouvement aux faces \\((\\rho_{\\text{eff}} \\mathbf{u})^n\\).\nTransport prédictif : Transport de la masse et de la quantité de mouvement pour obtenir les champs prédictifs \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) (via un intégrateur temporel très stable de type SSP-RK3) : \\[\n\\frac{\\partial \\rho_{\\text{eff}} ^\\star}{\\partial t} + \\nabla \\cdot (\\rho_{\\text{eff}} ^\\star \\mathbf{u}) =0 \\qquad (\\text{On résout pour} \\; \\mathbf{\\rho_{\\text{eff}} ^\\star})\n\\] \\[\n\\frac{\\partial (\\rho_{\\text{eff}} \\mathbf{u})^\\star}{\\partial t} + \\nabla \\cdot ((\\rho_{\\text{eff}} \\mathbf{u})^\\star \\otimes \\mathbf{u}) = \\mathbf{0} \\qquad (\\text{On résout pour} \\; \\mathbf{(\\rho_{\\text{eff}} \\mathbf{u})^\\star})\n\\]\nRésolution de la physique : Insertion de \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) dans le terme inertiel de Navier-Stokes. Le système de type Stokes résout ensuite la vraie vitesse \\(\\mathbf{u}^{n+1}\\) et la pression \\(p^{n+1}\\) : \\[\n\\frac{\\rho_{\\text{eff}}^\\star \\mathbf{u}^{n+1} - (\\rho_{\\text{eff}}\\mathbf{u})^\\star}{\\Delta t} = - \\nabla p^{n+1} + \\nabla \\cdot [\\mu_{\\text{eff}}(\\nabla \\mathbf{u}^{n+1} + (\\nabla \\mathbf{u}^{n+1})^T)] + \\rho_{\\text{eff}}^\\star \\mathbf{g}\n\\] \\[\n\\nabla \\cdot \\mathbf{u}^{n+1} = 0\n\\]"
   },
   {
-    "objectID": "presentation.html#etude-de-convergence-de-maillage",
-    "href": "presentation.html#etude-de-convergence-de-maillage",
+    "objectID": "presentation.html#cylindre-2d-léger-en-ascension-dans-un-fluide",
+    "href": "presentation.html#cylindre-2d-léger-en-ascension-dans-un-fluide",
     "title": "Stage de Master 2",
-    "section": "Etude de convergence de maillage",
-    "text": "Etude de convergence de maillage\n\n\n\nTable 1: Caractéristiques des différents maillages testés\n\n\n\n\n\n\n\n\n\n\n\n\nMaillage\n\\(N_x\\)\n\\(N_y\\)\n\\(\\Delta x = \\Delta y\\)\nMailles / diamètre\n\n\n\n\n1\n48\n120\n0.167\n6\n\n\n2\n96\n240\n0.083\n12\n\n\n3\n192\n480\n0.042\n24"
+    "section": "Cylindre 2D léger en ascension dans un fluide",
+    "text": "Cylindre 2D léger en ascension dans un fluide\nOn étudie les travaux de Rahmani and Wachs (2014) en 2D\n\n\n\nNombres adimensionnels du problème :\n\n\\[\\color{black}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{fluide}}}=m}\n\\] \\[\\color{black}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{black}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\]\n\n\n\n\n\n\n\n\n    \n      \n    \n\n\nSimulation pour \\(m=0.8, G_a=16\\)\n\n\n\nParois solides avec condition d’adhérence (vitesse nulle), sauf pour paroi supérieure (condition de symétrie).\nEn fixant \\(m=0.8\\) et \\(G_a=16\\), on peut retrouver l’inconnu du problème : \\(\\mathbf{U=\\sqrt{Dg} \\; f(Fr)}\\).\n\\(\\mu_\\text{solide}\\) fixée à 1000. Loi de mélange arithmétique pour \\(\\mu_\\text{eff}\\)."
   },
   {
-    "objectID": "presentation.html#etude-du-cas-2-ajout-dune-interface-libre-plane",
-    "href": "presentation.html#etude-du-cas-2-ajout-dune-interface-libre-plane",
+    "objectID": "presentation.html#etude-de-convergence-en-maillage",
+    "href": "presentation.html#etude-de-convergence-en-maillage",
     "title": "Stage de Master 2",
-    "section": "Etude du cas 2 : ajout d’une interface libre plane",
-    "text": "Etude du cas 2 : ajout d’une interface libre plane\n\n\nCas 2 : Laché d’un cylindre ayant initialement une partie immergée dans de l’eau, en présence d’une interface libre plane.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n \n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m}\n\\] \\[\\color{red}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{red}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\] \\[\\color{blue}{\n\\Pi_4=\\frac{D}{h}}\n\\]\n\\[\nm=0.5 \\qquad h=1.22 \\text{ m }\n\\]\n\\[\n\\text{variable d'intérêt : } \\frac{z-d}{h1}\n\\]"
+    "section": "Etude de convergence en maillage",
+    "text": "Etude de convergence en maillage\nVariable d’étude : vitesse verticale finale du barycentre du cylindre. Extrapolation de Richardson pour obtenir la valeur de référence.\n\n\n\n\nTable 1: Caractéristiques des différents maillages testés\n\n\n\n\n\n\n\n\n\n\n\n\nMaillage\n\\(N_x\\)\n\\(N_y\\)\n\\(\\Delta x = \\Delta y\\)\nMailles / diamètre\n\n\n\n\n1\n48\n120\n0.167\n6\n\n\n2\n96\n240\n0.083\n12\n\n\n3\n192\n480\n0.042\n24"
+  },
+  {
+    "objectID": "presentation.html#expérience-de-laboratoire-de-référence-ito1977",
+    "href": "presentation.html#expérience-de-laboratoire-de-référence-ito1977",
+    "title": "Stage de Master 2",
+    "section": "Expérience de laboratoire de référence (Ito (1977))",
+    "text": "Expérience de laboratoire de référence (Ito (1977))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Caractéristiques du bassin de l’expérience\n\n\n\n\n\nParamètre\nValeur\n\n\n\n\nDiamètre du cylindre (D)\n0.1524 m\n\n\nLongueur du bassin\n27.432 m (180 D)\n\n\nLargeur du bassin\n2.5908 m (17 D)\n\n\nHauteur du bassin\n1.22 m\n\n\nPosition initiale p/r à l’interface\n0.0254 m (0.16 D)"
+  },
+  {
+    "objectID": "presentation.html#référence-théorique-maskell_ursell_1970",
+    "href": "presentation.html#référence-théorique-maskell_ursell_1970",
+    "title": "Stage de Master 2",
+    "section": "Référence théorique (Maskell and Ursell (1970))",
+    "text": "Référence théorique (Maskell and Ursell (1970))\n\nSolution théorique en écoulement potentiel, incompressible, et ignore la tension de surface.\n\n\\[\n\\small\n\\text{Solution théorique complète:} \\quad\nh_2(\\tau) = -\\frac{1}{\\pi i} \\int_{-\\infty}^{\\infty} \\frac{u(1+A(u)) e^{-iu\\tau}}{1 - \\frac{1}{2}\\pi u^2(1+A(u))} du \\qquad \\text{avec} \\qquad \\tau = t\\sqrt{\\frac{2g}{D}}\n\\]\n\\[\n\\small\n\\text{Solution théorique approximée:} \\quad\nh_{2\\text{approx}}(\\tau) = 0.9664 \\text{exp}(-0.1309\\tau)\\times \\text{cos}\\left(0.9117\\tau - 0.4805\\right)\n\\]"
+  },
+  {
+    "objectID": "presentation.html#modélisation-numérique-soydan2025",
+    "href": "presentation.html#modélisation-numérique-soydan2025",
+    "title": "Stage de Master 2",
+    "section": "Modélisation Numérique (Soydan et al. (2025))",
+    "text": "Modélisation Numérique (Soydan et al. (2025))\n\n\n\n\n\n\n\n\nParois solides avec condition d’adhérence sauf pour paroi supérieure (condition de symétrie)\nOn trace l’oscillation du barycentre du cylindre adimensionné par le déplacement initial \\(h_1\\) :\n\n\\[\nh_2(t)=\\frac{y_G(t)-d}{h_1}\n\\]\n\n\n\n\n\n\n\nThéorie des ondes (validité des résultats) :\n\n\\[\nc=\\sqrt{gd} = 3.46 \\; \\text{m/s}\n\\] \\[\nt_{valide}=\\frac{L}{\\sqrt{gd}}=\\frac{32.80D}{\\sqrt{gd}} = 1.44 \\; s\n\\]"
   },
   {
     "objectID": "presentation.html#etude-paramétrique-du-problème",
     "href": "presentation.html#etude-paramétrique-du-problème",
     "title": "Stage de Master 2",
     "section": "Etude paramétrique du problème",
-    "text": "Etude paramétrique du problème\nEtude de l’influence de différents paramètres (longueur du domaine de calcul, résidu imposé à atteindre pour chaque itération, viscosité pénalisante \\(\\mu_{\\text{solide}}\\), maillage, pas de temps) sur la trajectoire du cylindre."
+    "text": "Etude paramétrique du problème\n4 paramètres à étudier :\n1- Loi de mélange de la viscosité effective : (arithmétique, harmonique, géométrique)\n2- Critère de convergence du solveur (résidu à atteindre)\n3- Valeur de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\n4 - Résolution du maillage (nombre de mailles par diamètre du cylindre)"
   },
   {
-    "objectID": "presentation.html#etude-paramétrique-du-problème-1",
-    "href": "presentation.html#etude-paramétrique-du-problème-1",
+    "objectID": "presentation.html#influence-de-la-loi-de-mélange-de-la-viscosité",
+    "href": "presentation.html#influence-de-la-loi-de-mélange-de-la-viscosité",
     "title": "Stage de Master 2",
-    "section": "Etude paramétrique du problème",
-    "text": "Etude paramétrique du problème\nEtude effectuée pour \\(\\mu_{\\text{solide}}=1000 kg.m^{-1}.s^{-1}\\), un résidu à atteindre = 10\\(^{-3}\\), une longueur du domaine de calcul de 5m."
+    "section": "Influence de la loi de mélange de la viscosité",
+    "text": "Influence de la loi de mélange de la viscosité\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\n{\\color{black}{\\mu_{\\text{arithmétique}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\n\\]\n\\[\n{\\color{black}{\\mu_{\\text{harmonique}}}} = \\frac{\\mu_{\\text{air}} \\mu_{\\text{eau}} \\mu_{solide}}{(1-C_1-C_2)\\mu_{\\text{eau}} \\mu_{\\text{solide}} + C_1 \\mu_{\\text{air}}\\mu_{\\text{solide}} + C_2 \\mu_{\\text{air}} \\mu_{\\text{eau}}}\n\\]\n\\[\n{\\color{black}{\\mu_{\\text{géométrique}}}} = \\mu_{\\text{air}}^{(1-C_1-C_2)} + \\mu_{\\text{eau}}^{C_1} + \\mu_{\\text{solide}}^{C_2}\n\\]"
+  },
+  {
+    "objectID": "presentation.html#influence-du-critère-de-convergence-du-solveur",
+    "href": "presentation.html#influence-du-critère-de-convergence-du-solveur",
+    "title": "Stage de Master 2",
+    "section": "Influence du critère de convergence du solveur",
+    "text": "Influence du critère de convergence du solveur\nSimulation pour N=30, \\(\\Delta t = 5 \\times 10^{-4}\\), \\(\\mu_{\\text{solide}} = 1000 \\; kg/m/s\\)"
+  },
+  {
+    "objectID": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
+    "href": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
+    "title": "Stage de Master 2",
+    "section": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\)",
+    "text": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\nSimulation pour N=30, \\(\\Delta t = 5 \\times 10^{-4}\\), résidu à atteindre : \\(10^{-7}\\)"
+  },
+  {
+    "objectID": "presentation.html#etude-de-convergence-en-maillage-1",
+    "href": "presentation.html#etude-de-convergence-en-maillage-1",
+    "title": "Stage de Master 2",
+    "section": "Etude de convergence en maillage",
+    "text": "Etude de convergence en maillage\nSimulation pour \\(\\mu_{\\text{solide}} = 1000 \\; kg/m/s\\), résidu à atteindre : \\(10^{-5}\\).\n\n\n\n\nMailles/diamètre\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\n\n\n\n\n30\n\\(5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n\n\n45\n\\(3,39 \\times 10^{-3}\\)\n\\(3 \\times 10^{-4}\\)\n\n\n60\n\\(2,5 \\times 10^{-3}\\)\n\\(2,5 \\times 10^{-4}\\)"
   },
   {
     "objectID": "presentation.html#etude-de-convergence-de-maillage-suite",
     "href": "presentation.html#etude-de-convergence-de-maillage-suite",
     "title": "Stage de Master 2",
     "section": "Etude de convergence de maillage (suite)",
-    "text": "Etude de convergence de maillage (suite)\nEtude effectuée avec comme solution de référence un résultat analytique simplifié (Maskell and Ursell (1970)).\nOn définit notre erreur comme : \\[\\alpha = \\vert\\frac{y_{\\text{ref}}-y_{\\text{num}}}{y_{\\text{ref}}}\\vert\\]\nEt la norme \\(L_p\\) de l’erreur \\(\\alpha\\) : \\[\\Vert \\alpha \\Vert_p = \\left( \\int_0^1 \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}}\\]"
+    "text": "Etude de convergence de maillage (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{approx}}-h_{2\\text{num}}\\vert \\qquad \\text{Norme } L_p \\text{ de l'erreur } \\alpha : \\Vert \\alpha \\Vert_p = \\left( \\int_0^{t_{\\text{valide}}} \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}} \\qquad \\text{Norme } L_\\infty \\text{ de l'erreur } : \\Vert \\alpha \\Vert_\\infty = \\text{sup}(\\alpha)\n\\]\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{ref}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{ref}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x \\; \\text{pour} \\; t \\in [0.02,t_{\\text{valide}}]\n\\]"
   },
   {
-    "objectID": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
-    "href": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
+    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-fenton1985",
+    "href": "presentation.html#initialisation-de-la-vague-de-stokes-fenton1985",
     "title": "Stage de Master 2",
-    "section": "Influence de la viscosité pénalisante \\(\\mu_{\\text{solide}}\\)",
-    "text": "Influence de la viscosité pénalisante \\(\\mu_{\\text{solide}}\\)\n\n  \n    \n      \n    \n    μsolide = 100\n  \n  \n    \n      \n    \n    μsolide = 200\n  \n  \n    \n      \n    \n    μsolide = 300"
-  },
-  {
-    "objectID": "presentation.html#etude-du-cas-3-ajout-dune-vague-de-stokes",
-    "href": "presentation.html#etude-du-cas-3-ajout-dune-vague-de-stokes",
-    "title": "Stage de Master 2",
-    "section": "Etude du cas 3 : ajout d’une vague de Stokes",
-    "text": "Etude du cas 3 : ajout d’une vague de Stokes\n\n\nCas 3 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une vague de Stokes à l’interface.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n\n\n\n\n\n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m \\\\\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r \\\\\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a} \\\\\n\\color{blue}{\\Pi_4=\\frac{D}{h}} \\color{green}{\\quad \\Pi_5=\\dfrac{D}{\\lambda}}\n\\] \\[\\color{green}{\n\\Pi_6=\\dfrac{c}{\\sqrt{Dg}} \\quad \\Pi_7=\\dfrac{D}{a}\n}\\]"
-  },
-  {
-    "objectID": "presentation.html#résultats-préliminaires",
-    "href": "presentation.html#résultats-préliminaires",
-    "title": "Stage de Master 2",
-    "section": "Résultats préliminaires",
-    "text": "Résultats préliminaires\n\n\n  \n    \n      \n    \n    μsolide = 100\n  \n\n  \n    \n      \n    \n    μsolide = 1000"
-  },
-  {
-    "objectID": "presentation.html#bilan-provisoire",
-    "href": "presentation.html#bilan-provisoire",
-    "title": "Stage de Master 2",
-    "section": "Bilan provisoire",
-    "text": "Bilan provisoire\n\nMouvement de corps rigide via la pénalisation tensorielle : simulation triphasique de la dynamique d’une particule.\nPossibilité de simuler la dynamique d’objets de formes complexes (STL).\nQuels sont les nombres adimensionnels pertinents pour la dynamique d’un plastique dans un océan ?\nEtude numérique à approfondir sur la valeur de \\(\\mu_{\\text{solide}}\\) à imposer (\\(\\mu_{\\text{solide}} \\to \\infty\\)).\nVague qui se brise alors que l’on s’attend à une vague de Stokes non brisée (transparent suivant)."
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes",
-    "text": "Initialisation de la vague de Stokes\n\nNous utilisons la formulation de la vague de Stokes du second ordre pour une profondeur \\(h\\) quelconque : \\[\n  \\eta(x,t) = a \\left\\{ \\cos \\theta + ka \\frac{3 - \\sigma^2}{4 \\sigma^3} \\cos 2\\theta \\right\\} + \\mathcal{O} \\left( (ka)^3 \\right)\n\\] \\[\n  \\Phi(x, z, t) = a \\frac{\\omega}{k} \\frac{1}{\\sinh kh} \\left\\{ \\cosh k(z + h) \\sin \\theta + ka \\frac{3 \\cosh 2k(z + h)}{8 \\sinh^3 kh} \\sin 2\\theta \\right\\} - (ka)^2 \\frac{1}{2 \\sinh 2kh} \\frac{gt}{k} + \\mathcal{O} \\left( (ka)^3 \\right)\n\\]\n\n\n\n\\[\n    c = \\frac{\\omega}{k} = \\sqrt{\\frac{g}{k} \\sigma} + \\mathcal{O} \\left( (ka)^2 \\right)\n\\] \\[\n    \\sigma = \\tanh kh\n\\] \\[\n    \\theta(x,t) = kx - \\omega t\n\\]\n\n\n\n\n\n\n\n((1997), By Kraaiennest - Own work, CC BY-SA 3.0, Link)"
+    "section": "Initialisation de la vague de Stokes (Fenton (1985))",
+    "text": "Initialisation de la vague de Stokes (Fenton (1985))\n\nNous utilisons la formulation de la vague de Stokes du troisième ordre pour une profondeur \\(h\\) quelconque :\n\n\n\n\\[\n\\small\n\\begin{aligned}\n\\eta(x,t)\n&=\na\\cos(\\theta)\n\\\\\n&+\n\\frac14\n\\alpha\n(3\\alpha^2-1)\na^2k\n\\cos(2\\theta)\n\\\\\n&-\n\\frac38\n(\\alpha^4-3\\alpha^2+3)\na^3k^2\n\\cos(\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\left(\n8\\alpha^6+(\\alpha^2-1)^2\n\\right)\na^3k^2\n\\cos(3\\theta)\n\\end{aligned}\n\\]\n\n\\[\n\\small\n\\alpha = \\coth(kh)\n\\]\n\\[\n\\small\n\\theta(x,t) = kx - \\omega t\n\\]\n\\[\n\\small\n\\omega^2\n=\ngk\\tanh(kh)\n\\left[\n1+(ka)^2\n\\left(\n\\alpha^2+\\frac{9}{8}(\\alpha^2-1)^2\n\\right)\n\\right]\n\\]\n\n\n\n\n\n\n( By Kraaiennest CC BY-SA 3.0, Link)"
   },
   {
     "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-suite",
@@ -137,34 +158,146 @@
     "href": "presentation.html#initialisation-de-la-vague-de-stokes-suite-1",
     "title": "Stage de Master 2",
     "section": "Initialisation de la vague de Stokes (suite)",
-    "text": "Initialisation de la vague de Stokes (suite)\n\n\n Espace de départ\n\n Première subdivision\n\n Deuxième subdivision\n\n Troisième subdivision\n\n\nEnfin, pour ces mailles, on initialise :\n\n\n\\[C_1 = \\frac{\\text{aire de la maille dans l'eau}}{\\text{aire totale de la maille}} = \\frac{\\alpha}{\\Delta x \\Delta z}\\]"
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-suite-2",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes-suite-2",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes (suite)",
-    "text": "Initialisation de la vague de Stokes (suite)\n\nInitialisation de la vague pour \\(h\\)=10m, \\(a\\)=0.25m, \\(\\lambda\\)=3.14 m"
+    "text": "Initialisation de la vague de Stokes (suite)\n\n\n Espace de départ\n\n Première subdivision\n\n Deuxième subdivision\n\n Troisième subdivision\n\n\nEnfin, pour la maille interfaciale, on initialise :\n\n\n\\[C_1 = \\frac{\\text{surface totale eau}}{\\text{aire totale de la maille}}=\\frac{\\text{somme des aires bleues d'eau}}{\\Delta x \\Delta y}\\]"
   },
   {
     "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-fin",
     "href": "presentation.html#initialisation-de-la-vague-de-stokes-fin",
     "title": "Stage de Master 2",
     "section": "Initialisation de la vague de Stokes (fin)",
-    "text": "Initialisation de la vague de Stokes (fin)\n\nPour que la vague puisse se propager dans le domaine de calcul, on doit aussi initialiser le champ de vitesse à partir de la fonction de potentiel \\(\\Phi\\) : \\[u = \\frac{\\partial\\Phi}{\\partial x} \\qquad v = \\frac{\\partial\\Phi}{\\partial z}\\]\nFaire attention à n’imposer la vitesse analytique de Stokes que dans l’eau, sinon cela peut créer des instabilités numériques dans l’air."
+    "text": "Initialisation de la vague de Stokes (fin)\n\nPour que la vague puisse se propager dans le domaine de calcul, on doit aussi initialiser le champ de vitesse (avec \\(A=\\frac{ag}{\\omega}\\)) (voir Fenton (1985)):\n\n\n\n\\[\n\\scriptsize\n\\begin{aligned}\nu_x(x,y,t)\n&=\nA\n\\frac{\\cosh(k(y+h))}{\\cosh(kh)}\nk\\cos(\\theta)\n\\\\\n&+\n\\frac34\n\\frac{a^2gk^2}{\\omega}\n\\frac{(\\alpha^2-1)^2}{\\alpha}\n\\frac{\\cosh(2k(y+h))}{\\cosh(2kh)}\n\\cos(2\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\frac{a^3gk^4}{\\omega}\n(\\alpha^2-1)\n(\\alpha^2+3)\n(9\\alpha^2-13)\n\\frac{\\cosh(3k(y+h))}{\\cosh(3kh)}\n\\cos(3\\theta)\n\\end{aligned}\n\\]\n\n\\[\n\\scriptsize\n\\begin{aligned}\nu_y(x,y,t)\n&=\nA\n\\frac{\\sinh(k(y+h))}{\\cosh(kh)}\nk\\sin(\\theta)\n\\\\\n&+\n\\frac34\n\\frac{a^2gk^2}{\\omega}\n\\frac{(\\alpha^2-1)^2}{\\alpha}\n\\frac{\\sinh(2k(y+h))}{\\cosh(2kh)}\n\\sin(2\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\frac{a^3gk^4}{\\omega}\n(\\alpha^2-1)\n(\\alpha^2+3)\n(9\\alpha^2-13)\n\\frac{\\sinh(3k(y+h))}{\\cosh(3kh)}\n\\sin(3\\theta)\n\\end{aligned}\n\\]\n\n\nExemple de vague simulée pour : \\(h\\)=1 m, \\(a\\)=0.04 m, \\(\\lambda\\)=1 m :"
   },
   {
-    "objectID": "presentation.html#résultats-préliminaires-1",
-    "href": "presentation.html#résultats-préliminaires-1",
+    "objectID": "presentation.html#validation-de-la-forme-de-la-vague",
+    "href": "presentation.html#validation-de-la-forme-de-la-vague",
     "title": "Stage de Master 2",
-    "section": "Résultats préliminaires",
-    "text": "Résultats préliminaires\n\n  \n    \n      \n    \n    μsolide = 100\n  \n  \n    \n      \n    \n    μsolide = 1000\n  \n  \n    \n      \n    \n    Ajout d'une vague de Stokes"
+    "section": "Validation de la forme de la vague",
+    "text": "Validation de la forme de la vague\n\nOn travaille avec : \\(a = 0.04 \\; \\text{m}\\), \\(h = 1 \\; \\text{m}\\), \\(\\lambda = 1 \\; \\text{m}\\) (\\(k = 2\\pi \\; m^{-1}\\)) pour s’assurer que la vague ne se brise pas (critère de Stokes : déferlement quand \\(ka \\geq 0.446\\), dans notre cas : \\(ka \\approx 0.25\\))\nValidation de la vague simulée par comparaison au profil théorique après T périodes de simulation, avec \\(T= \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{\\sqrt{gk\\tanh(kh)\\left[1+(ka)^2\\left(\\alpha^2+\\frac{9}{8}(\\alpha^2-1)^2\\right)\\right]}}\\)\n\n\n\n\n\nComparaison après T=3 périodes\n\n\n\n\nComparaison après T=10 périodes"
+  },
+  {
+    "objectID": "presentation.html#etude-de-convergence-en-maillage-après-3-périodes-de-vague",
+    "href": "presentation.html#etude-de-convergence-en-maillage-après-3-périodes-de-vague",
+    "title": "Stage de Master 2",
+    "section": "Etude de convergence en maillage après 3 périodes de vague",
+    "text": "Etude de convergence en maillage après 3 périodes de vague\n\nErreurs \\(L_{\\infty}\\) et \\(L_2\\) en fonction du maillage\n\n\n\n\n\n\n\n\n\n\nMailles/Hauteur de vague\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\nErreur relative \\(L_{1}\\)\nErreur relative \\(L_{2}\\)\nErreur relative \\(L_{\\infty}\\)\n\n\n\n\n8\n\\(1 \\times 10^{-2}\\)\n\\(2 \\times 10^{-3}\\)\n10.5%\n11%\n14%\n\n\n16\n\\(5 \\times 10^{-3}\\)\n\\(1 \\times 10^{-3}\\)\n4.6%\n4.8%\n6.5%\n\n\n32\n\\(2,5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n2.27%\n2.4%\n3.15%\n\n\n\n\n\n\n\nErreur \\(L_{1}\\)\n\n\n\n\nErreur \\(L_2\\)\n\n\n\n\nErreur \\(L_{\\infty}\\)"
+  },
+  {
+    "objectID": "presentation.html#bilan-et-perspectives",
+    "href": "presentation.html#bilan-et-perspectives",
+    "title": "Stage de Master 2",
+    "section": "Bilan et perspectives",
+    "text": "Bilan et perspectives\nPerspectives :\n\nFaire une validation après 50 / 100 périodes de vague pour vérifier la stabilité du solveur.\nValidation du profil de vitesse dans l’eau à la théorie.\n\nDans la suite :\n\nLoi géométrique pour la viscosité effective.\nMaillage retenu : 32 mailles/hauteur de vague, soit 60 mailles par diamètre du cylindre (\\(\\Delta x = 2.5 \\times 10^{-3}\\) m)."
+  },
+  {
+    "objectID": "presentation.html#première-simulation",
+    "href": "presentation.html#première-simulation",
+    "title": "Stage de Master 2",
+    "section": "Première simulation",
+    "text": "Première simulation\n\n  \n    \n  \n\nPerspectives d’étude\n\nComparaison des trajectoires à des résultats avec des particules sans masse.\nComparaison de la dérive de position horizontale à la littérature.\nEvaluation des forces exercées sur la particule par la vague."
   },
   {
     "objectID": "presentation.html#références",
     "href": "presentation.html#références",
     "title": "Stage de Master 2",
     "section": "Références",
-    "text": "Références\n\n\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nDingemans, M. W. 1997. Water Wave Propagation over Uneven Bottoms. Vol. 13. Advanced Series on Ocean Engineering. World Scientific.\n\n\nMaskell, S. J., and F. Ursell. 1970. “The Transient Motion of a Floating Body.” Journal of Fluid Mechanics 44 (2): 303–13. https://doi.org/10.1017/S0022112070001842.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nRahmani, Mona, and Anthony Wachs. 2014. “Free Falling and Rising of Spherical and Angular Particles.” Physics of Fluids 26 (August): 083301. https://doi.org/10.1063/1.4892840.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nVincent, S. 2007. “Local Penalty Methods for Flows Interacting with Moving Solids at High Reynolds Numbers.” Computers & Fluids, ahead of print. https://doi.org/10.1016/j.compfluid.2006.04.006."
+    "text": "Références\n\n\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nEl Ouafa, Simon, Syphax Fereka, Stéphane Vincent, Benoît Trouette, Eric Chénier, and Vincent Le Chenadec. 2026. “Algebraic Momentum-Preserving Scheme for Incompressible Two-Phase Flows at Large Density and Viscosity Ratios: Application to Droplet Impact Problems.” Computers & Fluids 314: 107083. https://doi.org/https://doi.org/10.1016/j.compfluid.2026.107083.\n\n\nFenton, John D. 1985. “A Fifth‐order Stokes Theory for Steady Waves.” Journal of Waterway, Port, Coastal, and Ocean Engineering 111 (2): 216–34. https://doi.org/10.1061/(ASCE)0733-950X(1985)111:2(216).\n\n\nIto, Soichi. 1977. “Study of the Transient Heave Oscillation of a Floating Cylinder.” https://api.semanticscholar.org/CorpusID:109878185.\n\n\nMaskell, S. J., and F. Ursell. 1970. “The Transient Motion of a Floating Body.” Journal of Fluid Mechanics 44 (2): 303–13. https://doi.org/10.1017/S0022112070001842.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nRahmani, Mona, and Anthony Wachs. 2014. “Free Falling and Rising of Spherical and Angular Particles.” Physics of Fluids 26 (August): 083301. https://doi.org/10.1063/1.4892840.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nSoydan, Ahmet, Widar W. Wang, and Hans Bihs. 2025. “An Improved Direct Forcing Immersed Boundary Method for Floating Body Simulations in Waves.” Applied Ocean Research 158: 104523. https://doi.org/https://doi.org/10.1016/j.apor.2025.104523.\n\n\nVincent, S. 2007. “Local Penalty Methods for Flows Interacting with Moving Solids at High Reynolds Numbers.” Computers & Fluids, ahead of print. https://doi.org/10.1016/j.compfluid.2006.04.006."
+  },
+  {
+    "objectID": "reserve.html#initialisation-de-la-vague-de-stokes",
+    "href": "reserve.html#initialisation-de-la-vague-de-stokes",
+    "title": "Présentation Stage",
+    "section": "Initialisation de la vague de Stokes",
+    "text": "Initialisation de la vague de Stokes\n\nNous utilisons la formulation de la vague de Stokes du second ordre pour une profondeur \\(h\\) quelconque : \\[\n  \\eta(x,t) = a \\left\\{ \\cos \\theta + ka \\frac{3 - \\sigma^2}{4 \\sigma^3} \\cos 2\\theta \\right\\} + \\mathcal{O} \\left( (ka)^3 \\right)\n\\] \\[\n  \\Phi(x, z, t) = a \\frac{\\omega}{k} \\frac{1}{\\sinh kh} \\left\\{ \\cosh k(z + h) \\sin \\theta + ka \\frac{3 \\cosh 2k(z + h)}{8 \\sinh^3 kh} \\sin 2\\theta \\right\\} - (ka)^2 \\frac{1}{2 \\sinh 2kh} \\frac{gt}{k} + \\mathcal{O} \\left( (ka)^3 \\right)\n\\]\n\n\n\n\\[\n    c = \\frac{\\omega}{k} = \\sqrt{\\frac{g}{k} \\sigma} + \\mathcal{O} \\left( (ka)^2 \\right)\n\\] \\[\n    \\sigma = \\tanh kh\n\\] \\[\n    \\theta(x,t) = kx - \\omega t\n\\]\n\n\n\n\n\n\n\n(@dingemans1997, By Kraaiennest - Own work, CC BY-SA 3.0, Link)"
+  },
+  {
+    "objectID": "reserve.html#etude-du-cas-2-ajout-dune-interface-libre-plane",
+    "href": "reserve.html#etude-du-cas-2-ajout-dune-interface-libre-plane",
+    "title": "Présentation Stage",
+    "section": "Etude du cas 2 : ajout d’une interface libre plane",
+    "text": "Etude du cas 2 : ajout d’une interface libre plane\n\n\nCas 2 : Laché d’un cylindre ayant initialement une partie immergée dans de l’eau, en présence d’une interface libre plane.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n \n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m}\n\\] \\[\\color{red}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{red}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\] \\[\\color{blue}{\n\\Pi_4=\\frac{D}{h}}\n\\]\n\\[\nm=0.5 \\qquad h=1.22 \\text{ m }\n\\]\n\\[\n\\text{variable d'intérêt : } \\frac{z-d}{h1}\n\\]\n\n\n\n \n\n\n\n\n\nParamètre\nValeur\n\n\n\n\nDiamètre du cylindre (D)\n\\(0.1524 \\; m\\)\n\n\nHauteur de l’interface (d)\n\\(1.22 \\; m\\)\n\n\nDéplacement initial (h1)\n\\(0.0254 \\; m\\)\n\n\n\\(\\rho_{cylindre}\\)\n\\(500 \\; kg/m^3\\)\n\n\n\\(\\rho_{eau}\\)\n\\(1000 \\; kg/m^3\\)\n\n\n\\(\\rho_{air}\\)\n\\(1.2 \\; kg/m^3\\)\n\n\n\\(\\mu_{eau}\\)\n\\(10^{-3} \\; kg.m^{-1}.s^{-1}\\)\n\n\n\\(\\mu_{air}\\)\n\\(1.8\\times 10^{-5} \\; kg.m^{-1}.s^{-1}\\)\n\n\n\\(g\\)\n\\(9.81 \\; m.s^{-2}\\)"
+  },
+  {
+    "objectID": "reserve.html#cas-détude",
+    "href": "reserve.html#cas-détude",
+    "title": "Présentation Stage",
+    "section": "Cas d’étude",
+    "text": "Cas d’étude\n\n\nCas 1 : Ascension d’un cylindre initialement immergé dans de l’eau.\n\nCas 2 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une interface libre plane.\n\nCas 3 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une vague de Stokes à l’interface.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes propriétés physiques sont alors définies comme des fonctions de ces variables de phase :\n\n\n\\[{\\color{red}{\\rho_{\\text{eff}}}} = (1-C_1-C_2)\\rho_{\\text{air}} + C_1 \\rho_{\\text{eau}} + C_2 \\rho_{\\text{solide}}\\] \\[{\\color{red}{\\mu_{\\text{eff}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\\]"
+  },
+  {
+    "objectID": "reserve.html#formulation-momentum-conserving",
+    "href": "reserve.html#formulation-momentum-conserving",
+    "title": "Présentation Stage",
+    "section": "Formulation Momentum Conserving",
+    "text": "Formulation Momentum Conserving\n(voir @Nangia2019)\nProblème : Découplage entre transport de la masse (\\(\\rho\\)) et le transport de la quantité de mouvement (\\(\\rho \\mathbf{u}\\)) pour les solveurs classiques.\nSolveur classique :\n\n\n\n\n\n\n\nTransport de la masse \\(\\rho\\)\nTransport de la quantité de mouvement \\(\\rho \\mathbf{u}\\)\n\n\n\n\nVOF\nTerme convectif de Navier-Stokes\n\n\nMéthode géométrique (déplacement de l’interface)\nMéthode algébrique (calcul aux différences finies)\n\n\n\nConséquence : Incohérence de flux (Déphasage)\n\nSolveur Momentum Conserving :\n\n\n\n\n\n\n\nTransport de la masse \\(\\rho\\)\nTransport de la quantité de mouvement \\(\\rho \\mathbf{u}\\)\n\n\n\n\nIntégration temporelle SSP-RK3\nIntégration temporelle SSP-RK3\n\n\n\n\nLe flux de masse algébrique calculé pour \\(\\rho\\) est réutilisé exactement à l’identique pour \\(\\rho \\mathbf{u}\\).\nLa VOF ne sert qu’à resynchroniser le champ de densité exacte au début de chaque pas de temps."
+  },
+  {
+    "objectID": "reserve.html#validation-du-solveur-fsi-multiphasique",
+    "href": "reserve.html#validation-du-solveur-fsi-multiphasique",
+    "title": "Présentation Stage",
+    "section": "Validation du solveur FSI multiphasique",
+    "text": "Validation du solveur FSI multiphasique\n\nCas étudié : pilonnement transitoire d’un cylindre flottant.\nUn cylindre mi-immergé écarté de sa position d’équilibre et relâché en chute libre\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigures de @Soydan2025\n\n\n\n\nParamètre\nValeur\n\n\n\n\nDiamètre du cylindre (D)\n\\(0.1524 \\; m\\)\n\n\nProfondeur d’eau (d)\n\\(1.22 \\; m\\)\n\n\nDéplacement initial (h1)\n\\(0.0254 \\; m\\)\n\n\n\\(\\rho_{cylindre}\\)\n\\(500 \\; kg/m^3\\)\n\n\n\\(\\rho_{eau}\\)\n\\(1000 \\; kg/m^3\\)\n\n\n\\(\\rho_{air}\\)\n\\(1.2 \\; kg/m^3\\)\n\n\n\\(\\mu_{eau}\\)\n\\(10^{-3} \\; kg.m^{-1}.s^{-1}\\)\n\n\n\\(\\mu_{air}\\)\n\\(1.8\\times 10^{-5} \\; kg.m^{-1}.s^{-1}\\)\n\n\n\\(g\\)\n\\(9.81 \\; m.s^{-2}\\)"
+  },
+  {
+    "objectID": "reserve.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
+    "href": "reserve.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
+    "title": "Présentation Stage",
+    "section": "Influence de la viscosité pénalisante \\(\\mu_{\\text{solide}}\\)",
+    "text": "Influence de la viscosité pénalisante \\(\\mu_{\\text{solide}}\\)\n\n  \n    \n      \n    \n    μsolide = 100\n  \n  \n    \n      \n    \n    μsolide = 200\n  \n  \n    \n      \n    \n    μsolide = 300"
+  },
+  {
+    "objectID": "reserve.html#etude-du-cas-3-ajout-dune-vague-de-stokes",
+    "href": "reserve.html#etude-du-cas-3-ajout-dune-vague-de-stokes",
+    "title": "Présentation Stage",
+    "section": "Etude du cas 3 : ajout d’une vague de Stokes",
+    "text": "Etude du cas 3 : ajout d’une vague de Stokes\n\n\nCas 3 : Ascension d’un cylindre initialement immergé dans de l’eau, en présence d’une vague de Stokes à l’interface.\n\n\nNombres adimensionnels du problème :\n\n\n\n\n\n\n\n\n\n\n\\[\\color{red}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{eau}}}=m \\\\\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r \\\\\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a} \\\\\n\\color{blue}{\\Pi_4=\\frac{D}{h}} \\color{green}{\\quad \\Pi_5=\\dfrac{D}{\\lambda}}\n\\] \\[\\color{green}{\n\\Pi_6=\\dfrac{c}{\\sqrt{Dg}} \\quad \\Pi_7=\\dfrac{D}{a}\n}\\]"
+  },
+  {
+    "objectID": "reserve.html#résultats-préliminaires",
+    "href": "reserve.html#résultats-préliminaires",
+    "title": "Présentation Stage",
+    "section": "Résultats préliminaires",
+    "text": "Résultats préliminaires\n\n\n  \n    \n      \n    \n    μsolide = 100\n  \n\n  \n    \n      \n    \n    μsolide = 1000"
+  },
+  {
+    "objectID": "reserve.html#bilan-provisoire",
+    "href": "reserve.html#bilan-provisoire",
+    "title": "Présentation Stage",
+    "section": "Bilan provisoire",
+    "text": "Bilan provisoire\n\nMouvement de corps rigide via la pénalisation tensorielle : simulation triphasique de la dynamique d’une particule.\nPossibilité de simuler la dynamique d’objets de formes complexes (STL).\nQuels sont les nombres adimensionnels pertinents pour la dynamique d’un plastique dans un océan ?\nEtude numérique à approfondir sur la valeur de \\(\\mu_{\\text{solide}}\\) à imposer (\\(\\mu_{\\text{solide}} \\to \\infty\\)).\nVague qui se brise alors que l’on s’attend à une vague de Stokes non brisée (transparent suivant)."
+  },
+  {
+    "objectID": "reserve.html#initialisation-de-la-vague-de-stokes-suite",
+    "href": "reserve.html#initialisation-de-la-vague-de-stokes-suite",
+    "title": "Présentation Stage",
+    "section": "Initialisation de la vague de Stokes (suite)",
+    "text": "Initialisation de la vague de Stokes (suite)\n\nInitialisation de la vague pour \\(h\\)=10m, \\(a\\)=0.25m, \\(\\lambda\\)=3.14 m\n\n\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\left( \\int_0^1 \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}}}{\\left( \\int_0^1 y_{\\text{ref}}(t)^p\\,dt \\right)^{\\frac{1}{p}}}, \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert y_{\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x\n\\]"
+  },
+  {
+    "objectID": "reserve.html#résultats-préliminaires-1",
+    "href": "reserve.html#résultats-préliminaires-1",
+    "title": "Présentation Stage",
+    "section": "Résultats préliminaires",
+    "text": "Résultats préliminaires\n\n  \n    \n      \n    \n    μsolide = 100\n  \n  \n    \n      \n    \n    μsolide = 1000\n  \n  \n    \n      \n    \n    Ajout d'une vague de Stokes"
+  },
+  {
+    "objectID": "reserve.html#résultats-préliminaires-2",
+    "href": "reserve.html#résultats-préliminaires-2",
+    "title": "Présentation Stage",
+    "section": "Résultats préliminaires",
+    "text": "Résultats préliminaires\n\n\n  \n    \n      \n    \n    μsolide = 100\n  \n\n  \n    \n      \n    \n    μsolide = 1000"
+  },
+  {
+    "objectID": "reserve.html#etude-de-convergence-en-maillage",
+    "href": "reserve.html#etude-de-convergence-en-maillage",
+    "title": "Présentation Stage",
+    "section": "Etude de convergence en maillage",
+    "text": "Etude de convergence en maillage\n\n\n\nTable 1: Caractéristiques des différents maillages testés\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaillage\n\\(N_x\\)\n\\(N_y\\)\n\\(\\Delta x = \\Delta y\\)\nMailles / diamètre\n\\(\\Delta t\\)\n\n\n\n\n1\n48\n120\n0.167\n6\n\\(2 \\times 10^{-2}\\)\n\n\n2\n96\n240\n0.083\n12\n\\(5 \\times 10^{-3}\\)\n\n\n3\n192\n480\n0.042\n24\n\\(10^{-3}\\)\n\n\n\n\n\n\n\nL’amortissement du cylindre est massivement dominé par la création de vagues en surface, et très peu par le frottement.\n\nEtude effectuée avec comme solution de référence un résultat analytique simplifié (@Maskell_Ursell_1970). : \\[\n\\scriptsize\nh_{2\\text{ref}}(\\tau) = 0.9664 \\text{exp}(-0.1309\\tau)*\\text{cos}\\left(0.9117\\tau - 0.4805\\right) \\qquad \\text{avec} \\qquad \\tau = t\\sqrt{\\frac{2g}{D}}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n    \n    Solide seul (Diphasique eau / solide)\n  \n  \n    \n      \n    \n    Ajout d'une interface plane air / eau / solide\n  \n  \n    \n      \n    \n    Ajout d'une vague de Stokes ( Diphasique eau / air )\n  \n  \n    \n      \n    \n    Ajout d'une particule sur la vague (Triphasique)"
+  },
+  {
+    "objectID": "reserve.html#annexe-1-extrapolation-de-richardson",
+    "href": "reserve.html#annexe-1-extrapolation-de-richardson",
+    "title": "Présentation Stage",
+    "section": "Annexe 1 : Extrapolation de Richardson",
+    "text": "Annexe 1 : Extrapolation de Richardson\n\\[\nf(h) = f(0) + h f'(0) + \\frac{h^2}{2} f''(0) + \\frac{h^3}{6} f'''(0) + \\mathcal{O}(h^4)\n\\]\n\\[\nf\\left(\\frac{h}{2}\\right) = f(0) + \\frac{h}{2} f'(0) + \\frac{h^2}{8} f''(0) + \\frac{h^3}{48} f'''(0) + \\mathcal{O}(h^4)\n\\]\n\\[\nf(0) = \\frac{2 f\\left(\\frac{h}{2}\\right) - f(h)}{2 - 1} + \\frac{h^2}{4} f''(0) + \\mathcal{O}(h^3)\n\\]\n\\[\nf(0) \\approx \\frac{2 f\\left(\\frac{h}{4}\\right) - f\\left(\\frac{h}{2}\\right)}{2 - 1} + \\frac{h^2}{16} f''(0) +\\mathcal{O}(h^3)\n\\]"
   }
 ]
