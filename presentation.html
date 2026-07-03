@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Samnang Nou – Can Selçuk">
-  <meta name="dcterms.date" content="2026-07-02">
+  <meta name="dcterms.date" content="2026-07-03">
   <title>Présentation Stage – Stage de Master 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -166,7 +166,7 @@ Samnang Nou – Can Selçuk
     </div>
 </div>
 
-  <p class="date">2026-07-02</p>
+  <p class="date">2026-07-03</p>
 </section>
 <section id="contexte" class="slide level2">
 <h2>Contexte</h2>
@@ -257,7 +257,7 @@ Source : The Ocean Cleanup
 \]</span></p></li>
 <li><p>On transporte deux champs de fraction volumique : <span class="math inline">\(C_1\)</span> pour l’eau, et <span class="math inline">\(C_2\)</span> pour le solide.</p></li>
 </ul>
-<p><span class="math display">\[ \frac{\partial C_1}{\partial t} + \nabla \cdot (C_1 \mathbf{u}) = 0 \qquad \frac{\partial C_2}{\partial t} + \nabla \cdot (C_2 \mathbf{u}) = 0
+<p><span class="math display">\[ \frac{\partial C_1}{\partial t} + \mathbf{u} \cdot \nabla C_1 = 0 \qquad \frac{\partial C_2}{\partial t} + \mathbf{u} \cdot \nabla C_2 = 0
 \]</span></p>
 </section>
 <section id="modélisation-des-phases" class="slide level2">
@@ -321,7 +321,7 @@ C_2 =
 <p><strong>Loi harmonique :</strong> <span class="math display">\[
 {\color{red}{\mu_{\text{eff}}}} = \frac{\mu_{\text{air}} \mu_{\text{eau}} \mu_{solide}}{(1-C_1-C_2)\mu_{\text{eau}} \mu_{\text{solide}} + C_1 \mu_{\text{air}}\mu_{\text{solide}} + C_2 \mu_{\text{air}} \mu_{\text{eau}}}
 \]</span> <strong>Loi géométrique :</strong> <span class="math display">\[
-{\color{red}{\mu_{\text{eff}}}} = \mu_{\text{air}}^{(1-C_1-C_2)} + \mu_{\text{eau}}^{C_1} + \mu_{\text{solide}}^{C_2}
+{\color{red}{\mu_{\text{eff}}}} = \mu_{\text{air}}^{(1-C_1-C_2)}  \mu_{\text{eau}}^{C_1}  \mu_{\text{solide}}^{C_2}
 \]</span></p>
 </section>
 <section id="mouvement-de-corps-rigide-pénalisation-tensorielle" class="slide level2">
@@ -636,7 +636,7 @@ t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 {\color{black}{\mu_{\text{harmonique}}}} = \frac{\mu_{\text{air}} \mu_{\text{eau}} \mu_{solide}}{(1-C_1-C_2)\mu_{\text{eau}} \mu_{\text{solide}} + C_1 \mu_{\text{air}}\mu_{\text{solide}} + C_2 \mu_{\text{air}} \mu_{\text{eau}}}
 \]</span></p>
 <p><span class="math display">\[
-{\color{black}{\mu_{\text{géométrique}}}} = \mu_{\text{air}}^{(1-C_1-C_2)} + \mu_{\text{eau}}^{C_1} + \mu_{\text{solide}}^{C_2}
+{\color{black}{\mu_{\text{géométrique}}}} = \mu_{\text{air}}^{(1-C_1-C_2)}  \mu_{\text{eau}}^{C_1}  \mu_{\text{solide}}^{C_2}
 \]</span></p>
 </section>
 <section id="influence-du-critère-de-convergence-du-solveur" class="slide level2">
