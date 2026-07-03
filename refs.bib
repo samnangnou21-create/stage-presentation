@@ -74,3 +74,68 @@ author={Maskell, S. J. and Ursell, F.},
 year={1970}, 
 pages={303–313}
 }
+
+@article{Fenton1985,
+author = {John D. Fenton },
+title = {A Fifth‐Order Stokes Theory for Steady Waves},
+journal = {Journal of Waterway, Port, Coastal, and Ocean Engineering},
+volume = {111},
+number = {2},
+pages = {216-234},
+year = {1985},
+doi = {10.1061/(ASCE)0733-950X(1985)111:2(216)},
+
+URL = {https://ascelibrary.org/doi/abs/10.1061/%28ASCE%290733-950X%281985%29111%3A2%28216%29},
+eprint = {https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%290733-950X%281985%29111%3A2%28216%29}
+,
+    abstract = { An alternative Stokes theory for steady waves in water of constant depth is presented where the expansion parameter is the wave steepness itself. The first step in application requires the solution of one nonlinear equation, rather than two or three simultaneously as has been previously necessary. In addition to the usually specified design parameters of wave height, period and water depth, it is also necessary to specify the current or mass flux to apply any steady wave theory. The reason being that the waves almost always travel on some finite current and the apparent wave period is actually a Dopplershifted period. Most previous theories have ignored this, and their application has been indefinite, if not wrong, at first order. A numerical method for testing theoretical results is proposed, which shows that two existing theories are wrong at fifth order, while the present theory and that of Chappelear are correct. Comparisons with experiments and accurate numerical results show that the present theory is accurate for wavelengths shorter than ten times the water depth. }
+}
+
+@inproceedings{Ito1977,
+  title={Study of the transient heave oscillation of a floating cylinder.},
+  author={Soichi Ito},
+  year={1977},
+  url={https://api.semanticscholar.org/CorpusID:109878185}
+}
+
+@article{Soydan2025,
+title = {An improved direct forcing immersed boundary method for floating body simulations in waves},
+journal = {Applied Ocean Research},
+volume = {158},
+pages = {104523},
+year = {2025},
+issn = {0141-1187},
+doi = {https://doi.org/10.1016/j.apor.2025.104523},
+url = {https://www.sciencedirect.com/science/article/pii/S0141118725001117},
+author = {Ahmet Soydan and Widar W. Wang and Hans Bihs},
+keywords = {6DOF, Floating, Level set method, Immersed boundary},
+abstract = {This paper introduces a novel direct forcing immersed boundary method tailored to simulate nonlinear interactions between ocean waves and arbitrarily complex free-floating structures. Within an open-source hydrodynamic framework, we couple the fluid–structure interaction (FSI) algorithm with the two-phase flow solver through forcing at the fluid–solid interface. We substantially enhance this coupling process by altering the density interpolation method, significantly reducing the interface smearing region, which improves both the stability and accuracy of the fluid flow in the vicinity of the floating objects. The tracking of the fluid–solid interface in the Eulerian domain is based on a level set function, thus avoiding the need for dynamically moving or overset meshes and greatly simplifying the mesh generation process. Rigid body dynamics are implemented using Euler parameters and Hamiltonian mechanics, allowing for arbitrarily large motions of the floating body. The presented approach is tested and validated with several 2D and 3D problems, including a full-scale simulation of a floating semi-submersible offshore wind turbine in waves. All numerical results demonstrate the accuracy and robustness of the new method, highlighting its potential as an outstanding alternative to existing numerical approaches for realistic floating-body simulations in waves.}
+}
+
+@article{Nangia2019,
+title = {A robust incompressible Navier-Stokes solver for high density ratio multiphase flows},
+journal = {Journal of Computational Physics},
+volume = {390},
+pages = {548-594},
+year = {2019},
+issn = {0021-9991},
+doi = {https://doi.org/10.1016/j.jcp.2019.03.042},
+url = {https://www.sciencedirect.com/science/article/pii/S0021999119302256},
+author = {Nishant Nangia and Boyce E. Griffith and Neelesh A. Patankar and Amneet Pal Singh Bhalla},
+keywords = {Adaptive mesh refinement, Staggered Cartesian grid, Convective flux limiters, Projection method preconditioner, Monolithic Navier-Stokes solver, Level set method},
+abstract = {This paper presents a robust, adaptive numerical scheme for simulating high density ratio and high shear multiphase flows on locally refined staggered Cartesian grids that adapt to the evolving interfaces and track regions of high vorticity. The algorithm combines the interface capturing level set method with a variable-coefficient incompressible Navier-Stokes solver that is demonstrated to stably resolve material contrast ratios of up to six orders of magnitude. The discretization approach ensures second-order pointwise accuracy for both velocity and pressure with several physical boundary treatments, including velocity and traction boundary conditions. The paper includes several test cases that demonstrate the order of accuracy and algorithmic scalability of the flow solver. To ensure the stability of the numerical scheme in the presence of high density and viscosity ratios, we employ a consistent treatment of mass and momentum transport in the conservative form of discrete equations. This consistency is achieved by solving an additional mass balance equation, which we approximate via a strong stability preserving Runga-Kutta time integrator and by employing the same mass flux (obtained from the mass equation) in the discrete momentum equation. The scheme uses higher-order total variation diminishing (TVD) and convection-boundedness criterion (CBC) satisfying limiter to avoid numerical fluctuations in the transported density field. The high-order bounded convective transport is done on a dimension-by-dimension basis, which makes the scheme simple to implement. We also demonstrate through several test cases that the lack of consistent mass and momentum transport in non-conservative formulations, which are commonly used in practice, or the use of non-CBC satisfying limiters can yield very large numerical error and very poor accuracy for convection-dominant high density ratio flows. Our numerical scheme also uses well-balanced surface tension and gravity force discretizations. In the hydrostatic limit, we show that the well-balanced formulation mitigates spurious flow currents and achieves discrete force-balance between the pressure gradient and surface tension or gravity.}
+}
+
+@article{ELOUAFA2026,
+title = {Algebraic momentum-preserving scheme for incompressible two-phase flows at large density and viscosity ratios: Application to droplet impact problems},
+journal = {Computers & Fluids},
+volume = {314},
+pages = {107083},
+year = {2026},
+issn = {0045-7930},
+doi = {https://doi.org/10.1016/j.compfluid.2026.107083},
+url = {https://www.sciencedirect.com/science/article/pii/S0045793026001258},
+author = {Simon {El Ouafa} and Syphax Fereka and Stéphane Vincent and Benoît Trouette and Eric Chénier and Vincent {Le Chenadec}},
+keywords = {Momentum preserving, Algebraic scheme, Two-phase flows, Large density and viscosity ratios},
+abstract = {This article surveys the formulation and discretization of inertial terms for incompressible two-phase flows with large viscosity and density ratios. The covered topics include progress in the discretization of the momentum equation, with a particular focus on pressure–velocity coupling, together with an algebraic momentum-preserving scheme. The implementation and exploration of approximate momentum conservation based on the integration of auxiliary density equations on a staggered mesh are also discussed. The new algebraic scheme is applied to challenging interfacial flows, such as droplet impacts at high density and viscosity ratios, demonstrating accuracy and stability.}
+}

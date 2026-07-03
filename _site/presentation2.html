@@ -211,39 +211,30 @@ Source : The Ocean Cleanup
 <h2>Découpage du problème en 4 sous problèmes</h2>
 <p><br></p>
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/solide.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Solide seul (eau / solide)</p>
+    <p style="font-size: 0.9em;">Solide seul (Diphasique eau / solide)</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/cylindre_2.mp4" type="video/mp4">
     </video>
     <p style="font-size: 0.9em;">Ajout d'une interface plane air / eau / solide</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
       <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes (eau / air)</p>
+    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes ( Diphasique eau / air )</p>
   </div>
-  
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay="" loop="" muted="" playsinline="" width="62%">
-      <source src="videos/out3.mp4" type="video/mp4">
+    <video autoplay="" loop="" muted="" playsinline="" width="50%">
+      <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une particule sur la vague</p>
+    <p style="font-size: 0.9em;">Ajout d'une particule sur la vague (Triphasique)</p>
   </div>
-  
 </div>
 </section>
 <section id="equations-régissant-la-dynamique-du-problème-en-présence-de-particule" class="slide level2">
@@ -257,7 +248,7 @@ Source : The Ocean Cleanup
 \]</span></p></li>
 <li><p>On transporte deux champs de fraction volumique : <span class="math inline">\(C_1\)</span> pour l’eau, et <span class="math inline">\(C_2\)</span> pour le solide.</p></li>
 </ul>
-<p><span class="math display">\[ \frac{\partial C_1}{\partial t} + \mathbf{u} \cdot \nabla C_1 = 0 \qquad \frac{\partial C_2}{\partial t} + \mathbf{u} \cdot \nabla C_2 = 0
+<p><span class="math display">\[ \frac{\partial C_1}{\partial t} + \nabla \cdot (C_1 \mathbf{u}) = 0 \qquad \frac{\partial C_2}{\partial t} + \nabla \cdot (C_2 \mathbf{u}) = 0
 \]</span></p>
 </section>
 <section id="modélisation-des-phases" class="slide level2">
@@ -321,7 +312,7 @@ C_2 =
 <p><strong>Loi harmonique :</strong> <span class="math display">\[
 {\color{red}{\mu_{\text{eff}}}} = \frac{\mu_{\text{air}} \mu_{\text{eau}} \mu_{solide}}{(1-C_1-C_2)\mu_{\text{eau}} \mu_{\text{solide}} + C_1 \mu_{\text{air}}\mu_{\text{solide}} + C_2 \mu_{\text{air}} \mu_{\text{eau}}}
 \]</span> <strong>Loi géométrique :</strong> <span class="math display">\[
-{\color{red}{\mu_{\text{eff}}}} = \mu_{\text{air}}^{(1-C_1-C_2)}  \mu_{\text{eau}}^{C_1}  \mu_{\text{solide}}^{C_2}
+{\color{red}{\mu_{\text{eff}}}} = \mu_{\text{air}}^{(1-C_1-C_2)} + \mu_{\text{eau}}^{C_1} + \mu_{\text{solide}}^{C_2}
 \]</span></p>
 </section>
 <section id="mouvement-de-corps-rigide-pénalisation-tensorielle" class="slide level2">
@@ -415,8 +406,6 @@ C_2 =
 </section>
 <section id="etude-de-convergence-en-maillage" class="slide level2">
 <h2>Etude de convergence en maillage</h2>
-<p>Variable d’étude : <strong>vitesse verticale finale</strong> du barycentre du cylindre. Extrapolation de Richardson pour obtenir la valeur de référence.</p>
-<div style="font-size: 80%;">
 <div id="tbl-mesh_properties" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mesh_properties-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -466,7 +455,6 @@ Table&nbsp;1: Caractéristiques des différents maillages testés
 </table>
 </div>
 </figure>
-</div>
 </div>
 <div style="display: flex; justify-content: center; gap: 20px;">
   <img src="figures/convergence_vitesse.png" style="height: 600px; width: auto;">
@@ -636,7 +624,7 @@ t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 {\color{black}{\mu_{\text{harmonique}}}} = \frac{\mu_{\text{air}} \mu_{\text{eau}} \mu_{solide}}{(1-C_1-C_2)\mu_{\text{eau}} \mu_{\text{solide}} + C_1 \mu_{\text{air}}\mu_{\text{solide}} + C_2 \mu_{\text{air}} \mu_{\text{eau}}}
 \]</span></p>
 <p><span class="math display">\[
-{\color{black}{\mu_{\text{géométrique}}}} = \mu_{\text{air}}^{(1-C_1-C_2)}  \mu_{\text{eau}}^{C_1}  \mu_{\text{solide}}^{C_2}
+{\color{black}{\mu_{\text{géométrique}}}} = \mu_{\text{air}}^{(1-C_1-C_2)} + \mu_{\text{eau}}^{C_1} + \mu_{\text{solide}}^{C_2}
 \]</span></p>
 </section>
 <section id="influence-du-critère-de-convergence-du-solveur" class="slide level2">
@@ -1003,20 +991,6 @@ k\sin(\theta)
 
 </section>
 
-<section id="première-simulation" class="slide level2">
-<h2>Première simulation</h2>
-<div style="display: flex; justify-content: center;">
-  <video autoplay="" loop="" muted="" playsinline="" width="1800">
-    <source src="videos/out2.mp4" type="video/mp4">
-  </video>
-</div>
-<p><strong>Perspectives d’étude</strong></p>
-<ul>
-<li><p>Comparaison des trajectoires à des résultats avec des particules sans masse.</p></li>
-<li><p>Comparaison de la dérive de position horizontale à la littérature.</p></li>
-<li><p>Evaluation des forces exercées sur la particule par la vague.</p></li>
-</ul>
-</section>
 <section id="références" class="slide level2 smaller scrollable">
 <h2>Références</h2>
 
