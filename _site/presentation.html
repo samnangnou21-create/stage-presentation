@@ -9,8 +9,8 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Samnang Nou – Can Selçuk">
-  <meta name="dcterms.date" content="2026-07-03">
+  <meta name="author" content="Samnang Nou – Can Selçuk – Georges Halim Atallah">
+  <meta name="dcterms.date" content="2026-07-09">
   <title>Présentation Stage – Stage de Master 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -158,7 +158,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Samnang Nou – Can Selçuk 
+Samnang Nou – Can Selçuk – Georges Halim Atallah 
 </div>
         <p class="quarto-title-affiliation">
             Laboratoire Modélisation et Simulation Multi Echelle (MSME)
@@ -166,7 +166,7 @@ Samnang Nou – Can Selçuk
     </div>
 </div>
 
-  <p class="date">2026-07-03</p>
+  <p class="date">2026-07-09</p>
 </section>
 <section id="contexte" class="slide level2">
 <h2>Contexte</h2>
@@ -349,6 +349,30 @@ C_2 =
 <p><span class="math display">\[
 \mathbf{u} = \mathbf{U} + \boldsymbol{\omega} \times \mathbf{OM}
 \]</span></p>
+</section>
+<section id="code-utilisé-fugu" class="slide level2">
+<h2>Code utilisé : Fugu</h2>
+<div class="columns" style="display: flex; align-items: center;">
+<div class="column" style="width:60%;">
+<p>Développé par le <strong>laboratoire MSME</strong>, Fugu est un solveur basé sur la méthode des volumes finis.</p>
+<p><strong>Caractéristiques techniques :</strong></p>
+<ul>
+<li><strong>Architecture :</strong> Code écrit en <strong>Fortran</strong> et parallélisé avec <strong>MPI</strong> pour le calcul haute performance (HPC).</li>
+<li><strong>Résolution de l’écoulement :</strong> Résolution des équations de Navier-Stokes avec une flexibilité sur le traitement de la turbulence (LES, DNS).</li>
+<li><strong>Méthodes spécifiques :</strong>
+<ul>
+<li>Suivi d’interface pour les écoulements multiphasiques (<strong>VOF</strong> - Volume of Fluid).</li>
+<li>Modélisation des obstacles par la méthode de <strong>pénalisation tensorielle</strong> (corps solides).</li>
+</ul></li>
+<li><strong>Application cible :</strong> Étude des interactions houle-structure et de la dynamique des particules.</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/logo_fugu_site_web.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
 </section>
 <section id="algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t" class="slide level2">
 <h2>Algorithme de résolution au sein d’un pas de temps <span class="math inline">\(\Delta t\)</span>:</h2>
@@ -607,11 +631,17 @@ t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 </section>
 <section id="etude-paramétrique-du-problème" class="slide level2">
 <h2>Etude paramétrique du problème</h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+<div style="text-align: left;">
 <p><strong>4 paramètres à étudier :</strong></p>
-<p>1- <strong>Loi de mélange de la viscosité effective</strong> : (arithmétique, harmonique, géométrique)</p>
-<p>2- <strong>Critère de convergence du solveur (résidu à atteindre)</strong></p>
-<p>3- <strong>Valeur de la viscosité pénalisante <span class="math inline">\(\mu_\text{solide}\)</span></strong></p>
-<p>4 - <strong>Résolution du maillage</strong> (nombre de mailles par diamètre du cylindre)</p>
+<ol type="1">
+<li><strong>Loi de mélange de la viscosité effective</strong> : (arithmétique, harmonique, géométrique)</li>
+<li><strong>Critère de convergence du solveur (résidu à atteindre)</strong></li>
+<li><strong>Valeur de la viscosité pénalisante <span class="math inline">\(\mu_\text{solide}\)</span></strong></li>
+<li><strong>Résolution du maillage</strong> (nombre de mailles par diamètre du cylindre)</li>
+</ol>
+</div>
+</div>
 </section>
 <section id="influence-de-la-loi-de-mélange-de-la-viscosité" class="slide level2">
 <h2>Influence de la loi de mélange de la viscosité</h2>
@@ -684,7 +714,7 @@ t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/trajectoire_maillage.png" class="column-page quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/trajectoire_maillage2.png" class="column-page quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -699,7 +729,7 @@ t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 <h2>Etude de convergence de maillage (suite)</h2>
 <p><span class="math display">\[
 \scriptsize
-\text{Erreur : } \alpha = \vert h_{2\text{approx}}-h_{2\text{num}}\vert \qquad \text{Norme } L_p \text{ de l'erreur } \alpha : \Vert \alpha \Vert_p = \left( \int_0^{t_{\text{valide}}} \alpha (t)^p\,dt \right)^{\frac{1}{p}} \qquad \text{Norme } L_\infty \text{ de l'erreur } : \Vert \alpha \Vert_\infty = \text{sup}(\alpha)
+\text{Erreur : } \alpha = \vert h_{2\text{approx}}-h_{2\text{num}}\vert \qquad \text{Norme } L_p \text{ de l'erreur } \alpha : \Vert \alpha \Vert_p = \left( \frac{1}{t_{\text{valide}}}\int_0^{t_{\text{valide}}} \alpha (t)^p\,dt \right)^{\frac{1}{p}} \qquad \text{Norme } L_\infty \text{ de l'erreur } : \Vert \alpha \Vert_\infty = \text{sup}(\alpha)
 \]</span></p>
 <p><span class="math display">\[
 \scriptsize
@@ -921,7 +951,7 @@ k\sin(\theta)
 <section id="etude-de-convergence-en-maillage-après-3-périodes-de-vague" class="slide level2">
 <h2>Etude de convergence en maillage après 3 périodes de vague</h2>
 <table class="caption-top">
-<caption>Erreurs <span class="math inline">\(L_{\infty}\)</span> et <span class="math inline">\(L_2\)</span> en fonction du maillage</caption>
+<caption>Erreurs relatives en fonction du maillage</caption>
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">

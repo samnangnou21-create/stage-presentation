@@ -49,6 +49,13 @@
     "text": "Mouvement de corps rigide : pénalisation tensorielle\n\nIdée : imposer un mouvement de corps rigide dans la région occupée par le solide où \\({\\color{blue}{C_2=1}}\\) et \\({\\color{blue}{C_1=0}}\\).\n(Dans la région solide, \\({\\color{red}{\\rho_{\\text{eff}}}} = {\\color{blue}{\\rho_{\\text{solide}}}}\\) et \\({\\color{red}{\\mu_{\\text{eff}}}}={\\color{blue}{\\mu_{\\text{solide}}}}\\))\n\n\\[\n{\\color{blue}{\\rho_{\\text{solide}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\right] + {\\color{blue}{\\rho_{\\text{solide}}}} \\mathbf{g}\n\\]\n\nSi on fait tendre la viscosité du solide vers l’infini (\\(\\mu_{\\text{solide}} \\to \\infty\\)), cela revient à résoudre dans le solide :\n\n\\[\\nabla \\cdot [{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T)]=0\\]\n\nOn peut montrer que c’est équivalent à imposer ( Patankar et al. (2000), Sharma and Patankar (2005)) :\n\n\\[\n{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) = \\mathbf{0} \\quad \\text{lorsque} \\quad {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\cdot \\mathbf{n} = \\mathbf{0} \\quad \\forall x\\in \\partial \\Omega_p\n\\]\n\nCe qui est équivalent à imposer un mouvement de corps rigide (Caltagirone and Vincent (2001), Vincent (2007)) :\n\n\\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM}\n\\]"
   },
   {
+    "objectID": "presentation.html#code-utilisé-fugu",
+    "href": "presentation.html#code-utilisé-fugu",
+    "title": "Stage de Master 2",
+    "section": "Code utilisé : Fugu",
+    "text": "Code utilisé : Fugu\n\n\nDéveloppé par le laboratoire MSME, Fugu est un solveur basé sur la méthode des volumes finis.\nCaractéristiques techniques :\n\nArchitecture : Code écrit en Fortran et parallélisé avec MPI pour le calcul haute performance (HPC).\nRésolution de l’écoulement : Résolution des équations de Navier-Stokes avec une flexibilité sur le traitement de la turbulence (LES, DNS).\nMéthodes spécifiques :\n\nSuivi d’interface pour les écoulements multiphasiques (VOF - Volume of Fluid).\nModélisation des obstacles par la méthode de pénalisation tensorielle (corps solides).\n\nApplication cible : Étude des interactions houle-structure et de la dynamique des particules."
+  },
+  {
     "objectID": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
     "href": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
     "title": "Stage de Master 2",
@@ -102,7 +109,7 @@
     "href": "presentation.html#etude-paramétrique-du-problème",
     "title": "Stage de Master 2",
     "section": "Etude paramétrique du problème",
-    "text": "Etude paramétrique du problème\n4 paramètres à étudier :\n1- Loi de mélange de la viscosité effective : (arithmétique, harmonique, géométrique)\n2- Critère de convergence du solveur (résidu à atteindre)\n3- Valeur de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\n4 - Résolution du maillage (nombre de mailles par diamètre du cylindre)"
+    "text": "Etude paramétrique du problème\n\n\n4 paramètres à étudier :\n\nLoi de mélange de la viscosité effective : (arithmétique, harmonique, géométrique)\nCritère de convergence du solveur (résidu à atteindre)\nValeur de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\nRésolution du maillage (nombre de mailles par diamètre du cylindre)"
   },
   {
     "objectID": "presentation.html#influence-de-la-loi-de-mélange-de-la-viscosité",
@@ -137,7 +144,7 @@
     "href": "presentation.html#etude-de-convergence-de-maillage-suite",
     "title": "Stage de Master 2",
     "section": "Etude de convergence de maillage (suite)",
-    "text": "Etude de convergence de maillage (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{approx}}-h_{2\\text{num}}\\vert \\qquad \\text{Norme } L_p \\text{ de l'erreur } \\alpha : \\Vert \\alpha \\Vert_p = \\left( \\int_0^{t_{\\text{valide}}} \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}} \\qquad \\text{Norme } L_\\infty \\text{ de l'erreur } : \\Vert \\alpha \\Vert_\\infty = \\text{sup}(\\alpha)\n\\]\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{ref}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{ref}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x \\; \\text{pour} \\; t \\in [0.02,t_{\\text{valide}}]\n\\]"
+    "text": "Etude de convergence de maillage (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{approx}}-h_{2\\text{num}}\\vert \\qquad \\text{Norme } L_p \\text{ de l'erreur } \\alpha : \\Vert \\alpha \\Vert_p = \\left( \\frac{1}{t_{\\text{valide}}}\\int_0^{t_{\\text{valide}}} \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}} \\qquad \\text{Norme } L_\\infty \\text{ de l'erreur } : \\Vert \\alpha \\Vert_\\infty = \\text{sup}(\\alpha)\n\\]\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{ref}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{ref}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x \\; \\text{pour} \\; t \\in [0.02,t_{\\text{valide}}]\n\\]"
   },
   {
     "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-fenton1985",
@@ -179,7 +186,7 @@
     "href": "presentation.html#etude-de-convergence-en-maillage-après-3-périodes-de-vague",
     "title": "Stage de Master 2",
     "section": "Etude de convergence en maillage après 3 périodes de vague",
-    "text": "Etude de convergence en maillage après 3 périodes de vague\n\nErreurs \\(L_{\\infty}\\) et \\(L_2\\) en fonction du maillage\n\n\n\n\n\n\n\n\n\n\nMailles/Hauteur de vague\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\nErreur relative \\(L_{1}\\)\nErreur relative \\(L_{2}\\)\nErreur relative \\(L_{\\infty}\\)\n\n\n\n\n8\n\\(1 \\times 10^{-2}\\)\n\\(2 \\times 10^{-3}\\)\n10.5%\n11%\n14%\n\n\n16\n\\(5 \\times 10^{-3}\\)\n\\(1 \\times 10^{-3}\\)\n4.6%\n4.8%\n6.5%\n\n\n32\n\\(2,5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n2.27%\n2.4%\n3.15%\n\n\n\n\n\n\n\nErreur \\(L_{1}\\)\n\n\n\n\nErreur \\(L_2\\)\n\n\n\n\nErreur \\(L_{\\infty}\\)"
+    "text": "Etude de convergence en maillage après 3 périodes de vague\n\nErreurs relatives en fonction du maillage\n\n\n\n\n\n\n\n\n\n\nMailles/Hauteur de vague\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\nErreur relative \\(L_{1}\\)\nErreur relative \\(L_{2}\\)\nErreur relative \\(L_{\\infty}\\)\n\n\n\n\n8\n\\(1 \\times 10^{-2}\\)\n\\(2 \\times 10^{-3}\\)\n10.5%\n11%\n14%\n\n\n16\n\\(5 \\times 10^{-3}\\)\n\\(1 \\times 10^{-3}\\)\n4.6%\n4.8%\n6.5%\n\n\n32\n\\(2,5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n2.27%\n2.4%\n3.15%\n\n\n\n\n\n\n\nErreur \\(L_{1}\\)\n\n\n\n\nErreur \\(L_2\\)\n\n\n\n\nErreur \\(L_{\\infty}\\)"
   },
   {
     "objectID": "presentation.html#bilan-et-perspectives",
