@@ -1,0 +1,99 @@
+/* =========================================================
+   PAGE DE GARDE — QUARTO / REVEALJS
+   ========================================================= */
+
+/* ---------- TITRE ---------- */
+
+#title-slide .title {
+  font-size: 2.2em !important;
+  line-height: 1.15 !important;
+
+  background-color: #e3f2fd;
+  padding: 0.45em 0.7em;
+  border-radius: 12px;
+  border: 2px solid #90caf9;
+
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+
+  width: 95%;
+  margin: 0 auto;
+}
+
+
+/* ---------- SOUS-TITRE ---------- */
+
+#title-slide .subtitle {
+  font-size: 2em !important;
+  margin-top: 0.9em !important;
+}
+
+
+/* ---------- NOM DU STAGIAIRE ---------- */
+
+/* ---------- NOM DU STAGIAIRE ---------- */
+
+#title-slide .quarto-title-author-name {
+  display: inline-block;
+
+  font-size: 1.5em !important;
+  font-weight: 600 !important;
+
+  background-color: #f5f5f5;
+  padding: 0.25em 0.8em;
+  border-radius: 8px;
+
+  margin-top: 0.5em;
+}
+
+
+/* ---------- UNIVERSITÉ ---------- */
+
+#title-slide .universite {
+  font-size: 0.9em !important;
+  line-height: 1.4 !important;
+  margin-top: 0.5em;
+}
+
+
+/* ---------- ENCADRANTS ---------- */
+
+#title-slide .encadrants {
+  font-size: 0.85em !important;
+  margin-top: 1em !important;
+  line-height: 1.4 !important;
+}
+
+
+/* ---------- LABORATOIRE ---------- */
+
+#title-slide .laboratoire {
+  font-size: 0.85em !important;
+  margin-top: 1em !important;
+  line-height: 1.4 !important;
+}
+
+
+/* ---------- DATE ---------- */
+
+#title-slide .date {
+  font-size: 0.85em !important;
+  margin-top: 0.7em !important;
+}
+
+.spacer-small {
+  height: 0.4em;
+}
+
+.spacer-medium {
+  height: 0.8em;
+}
+
+.spacer-large {
+  height: 1.2em;
+}
+
+<style>
+.small table {
+  font-size: 0.3em;
+}
+</style>

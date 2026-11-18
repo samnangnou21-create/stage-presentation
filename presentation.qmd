@@ -1,13 +1,28 @@
 ---
-title: "Stage de Master 2"
-subtitle: "Simulation numérique directe de la dynamique des plastiques en intéraction avec la vague de Stokes"
-author: "Samnang Nou -- Can Selçuk -- Georges Halim Atallah"
-institute: "Laboratoire Modélisation et Simulation Multi Echelle (MSME)"
-date: today
+title: "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes"
+
+subtitle: "Soutenance de stage de Master 2"
+
+author: "Samnang Nou"
+
+institute: |
+
+  <div class="encadrants">
+    <br>
+    <strong>Encadrants :</strong><br>
+    Can Selçuk &nbsp; · &nbsp; Georges Halim Atallah
+  </div>
+
+  <div class="laboratoire">
+    Laboratoire Modélisation et Simulation Multi Echelle (MSME)<br>
+  </div>
+
+date: "17 septembre 2026"
 
 format:
   revealjs:
-    theme: default # Options: simple, dark, moon, serif, solarized...
+    theme: simple # Options: simple, dark, moon, serif, solarized...
+    css: custom.css
     slide-number: true
     transition: fade # Options: fade, slide, convex, concave, zoom
     chalkboard: true # Permet de dessiner sur les slides pendant la présentation
@@ -18,7 +33,7 @@ format:
     bibliography: refs.bib
 
     # Apparence
-    footer: "Laboratoire Modélisation et Simulation Multi Echelle (MSME) — 2026"
+    #footer: "Laboratoire Modélisation et Simulation Multi Echelle (MSME) — 2026"
   
     # Navigation
     controls: true
@@ -27,83 +42,419 @@ format:
 execute:
   echo: false
 ---
-## Contexte
 
-- Production accrue de plastiques depuis les années 1950
-- Pollution marine majeure : 4-12 millions de tonnes de plastique/an   
-- Danger pour la faune et les écosystèmes marins
+## Contexte : une pollution plastique croissante
 
-::: {layout-ncol=2}
-![](figures/ocean.jpg)
+<div style="height: 1.7em;"></div>
 
-![](figures/ocean_2.jpg)
+::: columns
+
+::: {.column width="50%"}
+
+![](figures/plastique.jpg){width=100%}
+
+<div style="text-align: center; font-size: 0.8em;">
+Déchets plastiques collectés par The Ocean Cleanup lors d’une extraction.
+</div>
+
 :::
-```{=html}
-<div style="text-align: center; font-size: 0.7em;">
-Source : The Ocean Cleanup
+
+::: {.column width="50%"}
+
+<div style="height: 2em;"></div>
+
+<div style="
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 10px 22px;
+  border-radius: 10px;
+">
+
+Depuis les années 1950, la production mondiale de plastique ne cesse d'augmenter.
+
+<div style="height: 1em;"></div>
+
+<div style="font-size: 1em; font-weight: bold;">
+4–12 millions de tonnes de déchets plastiques atteignent les océans chaque année.
 </div>
-```
 
----
+<div style="height: 1em;"></div>
 
-## Objectifs
+Cette pollution menace la **faune** et les **écosystèmes marins**.
 
-<!-- Objectif final --> 
-- Prédire le mouvement et la dispersion des plastiques dans les océans
-<!-- Pour atteindre cet objectif on a besoin de ... --> 
-- Modéliser la dynamique des plastiques à l'aide de simulations numériques
-- Comprendre la dynamique des plastiques en interaction avec les vagues (Dérive de Stokes)
-
-![](videos/Deep_water_wave.gif){fig-align="center" width="800px" height="450px" style="object-fit: cover; border-radius: 10px;"}
-
-<div style="text-align: center; font-size: 0.7em;">
-By <a href="//commons.wikimedia.org/wiki/User:Kraaiennest" title="User:Kraaiennest">Kraaiennest</a> - <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=3374567">Link</a>
+<div style="height: 0.5em;"></div>
 </div>
 
-## Découpage du problème en 4 sous problèmes
+:::
 
+:::
+
+
+<div style="
+  width: 75%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+
+<strong>→ Comprendre et limiter le transport des déchets plastiques est un enjeu majeur.</strong>
+
+</div>
+
+<div style="height: 0.5em;"></div>
+
+<div style="font-size: 0.75em;">
+
+Sources : @WALKER2023116984, @Lebreton, @BARBOZA2018336
+
+</div> 
+
+## Des solutions de collecte à grande échelle
+
+L'ONG **The Ocean Cleanup** développe des dispositifs permettant de collecter les déchets plastiques.
+
+::: columns
+
+::: {.column width="50%"}
+
+![](figures/ocean_3.jpg){width=100%}
+
+<div style="text-align: center; font-size: 0.8em;">
+Barrière flottante en forme de U, déployée en océan
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+![](figures/ocean_4.jpg){width=100%}
+
+<div style="text-align: center; font-size: 0.8em;">
+Zone de rétention des plastiques
+</div>
+
+:::
+
+:::
+
+
+<div style="height: 0.5em;"></div>
+
+<div style="
+  width: 88%;
+  margin: 0 auto;
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+">
+Performance maximale rapportée : <strong>75kg/h</strong> en 2023 ----- Plastique extrait en 2024 : <strong>143 993 kg</strong>
+</div>
+
+<div style="height: 1em;"></div>
+
+<div style="
+  width: 70%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+
+<strong>→ Des solutions permettent de collecter les plastiques à grande échelle.</strong>
+
+</div>
+
+<div style="font-size: 0.75em;">
+
+Sources : The Ocean Cleanup
+
+</div> 
+
+## Prédire le transport des plastiques : un défi
+
+<div style="height: 1.2em;"></div>
+
+<div style="text-align: center; font-size: 1.05em;">
+
+Les déchets flottants sont soumis simultanément à plusieurs
 <br>
+phénomènes environnementaux :
+
+<div style="height: 1em;"></div>
+
+<div style="display: flex; justify-content: center; gap: 18px;">
+
+<div style="
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+">
+Courants marins
+</div>
+
+<div style="
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+">
+Vent
+</div>
+
+<div style="
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+">
+Marées
+</div>
+
+<div style="
+  background-color: #fff3e0;
+  border: 2px solid #ff9800;
+  color: #e65100;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+">
+Vagues
+</div>
+
+</div>
+
+<div style="height: 1.2em;"></div>
+
+<div style="
+  display: inline-block;
+  background-color: #f5f5f5;
+  border-left: 5px solid #f5f5f5;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 1.05em;
+">
+
+→ <strong>Prédiction des trajectoires très complexe</strong>
+
+
+</div>
+
+<div style="height: 1.8em;"></div>
+
+<div style="
+  width: 95%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 18px 22px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+
+<strong>→ Pour améliorer la collecte, il est nécessaire de mieux comprendre le transport des plastiques.</strong>
+
+<strong>→ On s'intéresse à l'influence des vagues sur ce transport.</strong>
+
+
+</div>
+
+</div>
+
+## Cadre général : Théorie des ondes : dérive de Stokes
+
+::: columns
+
+::: {.column width="55%"}
+
+<div style="height: 2em;"></div>
+
+<div style="
+  width: 88%;
+  margin: 0 auto;
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 10px 22px;
+  border-radius: 10px;
+">
+
+Une vague progressive génère un **mouvement orbital** des particules
+fluides.
+
+<div style="height: 0.6em;"></div>
+
+Une vague de Stokes est **non linéaire**, le mouvement orbital est **asymétrique**. La trajectoire n'est **pas parfaitement fermée** 
+
+</div>
+<div style="height: 0.6em;"></div>
+<div style="
+  width: 88%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 18px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+→ La particule présente un déplacement net dans la direction
+de propagation de la vague.
+
+
+</div>
+
+:::
+
+::: {.column width="45%"}
+
+![](videos/Deep_water_wave.gif){width=100%}
+
+<div style="text-align: center; font-size: 0.75em;">
+Déplacement net de particules dans une vague de Stokes
+</div>
+
+:::
+
+:::
+
+<div style="height: 0.6em;"></div>
+
+<div style="
+  width: 50%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 18px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+<strong>→ Ce déplacement net est appelé <em>dérive de Stokes</em>.</strong>
+
+</div>
+
+<div style="height: 2em;"></div>
+
+<div style=" font-size: 0.7em;">
+Sources : @thual2005ondes, @guyon2012hydrodynamique
+</div>
+<div style=" font-size: 0.7em;">
+Vidéo prise de : @enwiki:1372664558
+</div>
+
+## Fil conducteur du stage : stratégie en 4 étapes 
+
+<div style="height: 0.3em;"></div>
+
+<div style="
+  width: 95%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 18px 30px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.6;
+">
+<strong>Objectif : étudier et quantifier la dérive de Stokes d'un objet flottant (taille finie) en interaction avec une vague de Stokes.</strong>
+
+</div>
+
+<div style="height: 0.7em;"></div>
 
 ```{=html}
 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-  
+
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay loop muted playsinline width="62%">
+
+    <p style="margin-bottom: 5px;">
+      <strong>1. Étude préliminaire : prise en main du code de calcul</strong>
+    </p>
+
+    <video autoplay loop muted playsinline width="50%">
       <source src="videos/solide.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Solide seul (eau / solide)</p>
+
+    <p style="font-size: 0.9em;">
+      Diphasique (eau / solide)
+    </p>
+
   </div>
-  
+
+
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay loop muted playsinline width="62%">
+
+    <p style="margin-bottom: 5px;">
+      <strong>2. Paramétrage et validation du solveur</strong>
+    </p>
+
+    <div style="height: 1.3em;"></div>
+
+    <video autoplay loop muted playsinline width="50%">
       <source src="videos/cylindre_2.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une interface plane air / eau / solide</p>
+
+    <p style="font-size: 0.9em;">
+      Triphasique (air / eau / solide)
+    </p>
+
   </div>
-  
+
+
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Diphasique</strong></p>
-    <video autoplay loop muted playsinline width="62%">
+
+    <p style="margin-bottom: 5px;">
+      <strong>3. Implémentation et validation d'une vague de Stokes</strong>
+    </p>
+
+    <video autoplay loop muted playsinline width="50%">
       <source src="videos/vague3emeordre.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une vague de Stokes (eau / air)</p>
+
+    <p style="font-size: 0.9em;">
+      Diphasique (eau / air)
+    </p>
+
   </div>
-  
+
+
   <div style="flex: 1; text-align: center;">
-    <p style="margin-bottom: 5px;"><strong>Triphasique</strong></p>
-    <video autoplay loop muted playsinline width="62%">
+
+    <p style="margin-bottom: 5px;">
+      <strong>4. Quantification de la dérive de Stokes de l'objet</strong>
+    </p>
+
+    <video autoplay loop muted playsinline width="50%">
       <source src="videos/out3.mp4" type="video/mp4">
     </video>
-    <p style="font-size: 0.9em;">Ajout d'une particule sur la vague</p>
+
+    <p style="font-size: 0.9em;">
+      Triphasique (air / eau / solide)
+    </p>
+
   </div>
-  
+
 </div>
 ```
 
 ## Equations régissant la dynamique du problème en présence de particule
-- Dans le domaine $\Omega_{\text{tot}}= \Omega_f \cup \Omega_p$, on résout les équations de Navier-Stokes incompressible, tout en imposant un mouvement de **corps rigide** dans la **région occupée par le solide** $\Omega_p$.
+
 $$
 \nabla\cdot \mathbf{u} =0 \quad \forall \mathbf{x} \in \Omega_{\text{tot}}$$
 $$
@@ -113,33 +464,40 @@ $$
 \mathbf{u} = \mathbf{U} + \boldsymbol{\omega} \times \mathbf{OM} \quad \forall \mathbf{x} \in \Omega_p
 $$
 
-- On transporte deux champs de fraction volumique : $C_1$ pour l'eau, et $C_2$ pour le solide. 
+![](figures/omega.png){fig-align="center"}
 
-$$ \frac{\partial C_1}{\partial t} + \mathbf{u} \cdot \nabla C_1 = 0 \qquad \frac{\partial C_2}{\partial t} + \mathbf{u} \cdot \nabla C_2 = 0
-$$
+<div style="text-align: center;">
 
+Représentation de $\Omega_{\text{tot}}$
 
-## Modélisation des phases 
+</div>
 
-- On utilise une formulation dite **1 fluide** pour modéliser les différentes phases.
+## Modélisation et transport des phases 
 
-- On introduit deux fonctions de couleur $C_1$ et $C_2$ :
+- On introduit deux champs de fraction volumique $C_1$ et $C_2$ :
 
 ::: {.text-center}
 $$
 C_1 = 
   \begin{cases}
  1 & \text{dans l'eau} \\
+ 0<C_1<1 & \text{à l'interface} \\
  0 & \text{ailleurs}
   \end{cases} 
 \qquad \text{et}\qquad
 C_2 = 
   \begin{cases}
  1 & \text{dans le solide} \\
+ 0<C_2<1 & \text{à l'interface} \\
  0 & \text{ailleurs}
  \end{cases}
 $$
 :::
+
+- On transporte deux champs de fraction volumique :
+
+$$ \frac{\partial C_1}{\partial t} + \mathbf{u} \cdot \nabla C_1 = 0 \qquad \frac{\partial C_2}{\partial t} + \mathbf{u} \cdot \nabla C_2 = 0
+$$
 
 :::: {.columns}
 
@@ -154,17 +512,16 @@ $$
 :::
 
 ::: {.column width="25%"}
-![](figures/C1_064.png){height=350px fig-align="center"}
-
-:::
-
-::: {.column width="25%"}
 ![](figures/dessin10.png){height=350px fig-align="center"}
 
 :::
 
-::::
+::: {.column width="25%"}
+![](figures/C1_064.png){height=350px fig-align="center"}
 
+:::
+
+::::
 
 ## Lois de mélange des propriétés physiques
 
@@ -194,162 +551,70 @@ $$
 
 ## Mouvement de corps rigide : pénalisation tensorielle
 
-- **Idée** : imposer un mouvement de **corps rigide** dans la région occupée par le solide où ${\color{blue}{C_2=1}}$ et ${\color{blue}{C_1=0}}$.  
-  (Dans la région solide, ${\color{red}{\rho_{\text{eff}}}} = {\color{blue}{\rho_{\text{solide}}}}$ et ${\color{red}{\mu_{\text{eff}}}}={\color{blue}{\mu_{\text{solide}}}}$)
+Dans la région solide on résout :
 
 $$
 {\color{blue}{\rho_{\text{solide}}}} \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = -\nabla p + \nabla \cdot \left[ {\color{blue}{\mu_{\text{solide}}}} (\nabla \mathbf{u} + (\nabla \mathbf{u})^T) \right] + {\color{blue}{\rho_{\text{solide}}}} \mathbf{g}
 $$
 
-- Si on fait tendre la viscosité du solide vers l'infini ($\mu_{\text{solide}} \to \infty$), cela revient à résoudre dans le solide :
+- Si on fait tendre $\mu_{\text{solide}} \to \infty$, on résout :
 
-$$\nabla \cdot [{\color{blue}{\mu_{\text{solide}}}} (\nabla \mathbf{u} + \left(\nabla \mathbf{u}\right)^T)]=0$$
+$$\nabla \cdot [\underline{\underline{\mathbf{D}}}(u)]=0$$
 
-- On peut montrer que c'est équivalent à imposer ( @patankar2000, @sharma2005) : 
+- C'est équivalent à résoudre : 
 
 $$
-{\color{blue}{\mu_{\text{solide}}}} (\nabla \mathbf{u} + (\nabla \mathbf{u})^T) = \mathbf{0} \quad \text{lorsque} \quad {\color{blue}{\mu_{\text{solide}}}} (\nabla \mathbf{u} + (\nabla \mathbf{u})^T) \cdot \mathbf{n} = \mathbf{0} \quad \forall x\in \partial \Omega_p
+\underline{\underline{\mathbf{D}}}(u)=0
 $$
 
-- Ce qui est équivalent à imposer un mouvement de corps rigide (@CALTAGIRONE2001607, @vincent2007) :
+- C'est équivalent à imposer un mouvement de corps rigide :
 
 $$
 \mathbf{u} = \mathbf{U} + \boldsymbol{\omega} \times \mathbf{OM} 
 $$
 
-## Code utilisé : Fugu
+<div style=" font-size: 0.7em;">
+Sources : @patankar2000, @sharma2005, @CALTAGIRONE2001607
+</div>
+
+
+## Le code de calcul : Fugu
 
 ::: {.columns style="display: flex; align-items: center;"}
 
 ::: {.column width="60%"}
-Développé par le **laboratoire MSME**, Fugu est un solveur basé sur la méthode des volumes finis.
 
-**Caractéristiques techniques :**
+<div style="height: 5em;"></div>
 
-* **Architecture :** Code écrit en **Fortran** et parallélisé avec **MPI** pour le calcul haute performance (HPC).
-* **Résolution de l'écoulement :** Résolution des équations de Navier-Stokes avec une flexibilité sur le traitement de la turbulence (LES, DNS).
-* **Méthodes spécifiques :** 
-  * Suivi d'interface pour les écoulements multiphasiques (**VOF** - Volume of Fluid).
-  * Modélisation des obstacles par la méthode de **pénalisation tensorielle** (corps solides).
-* **Application cible :** Étude des interactions houle-structure et de la dynamique des particules.
+- Développé par l'équipe **TCM** du laboratoire MSME
+
+- Basé sur la méthode des **volumes finis** et sur la résolution des équations de Navier-Stokes
+
+- Ecrit en **Fortran 90** 
+
+- Parallélisé avec **MPI** pour le calcul haute performance (HPC)
 :::
 
 ::: {.column width="40%"}
-![](figures/logo_fugu_site_web.svg){width="70%" fig-align="center"}
+<div style="height: 5em;"></div>
+
+![](figures/logo_fugu_site_web.svg){width="60%" fig-align="center"}
 :::
 
 :::
 
-## Algorithme de résolution au sein d'un pas de temps $\Delta t$:
+<div style="height: 5em;"></div>
 
-![](figures/Algorithmefinal.drawio.svg){fig-align="center"}
+<div style=" font-size: 0.7em;">
 
+Articles de référence : @VINCENT2014582, @VINCENT2008898, @fluids6010023
 
-## Formulation Momentum Conserving (@ELOUAFA2026)
-
-1. **Interpolation** : La densité $\rho_{\text{eff}}$ (obtenue par la VOF) est interpolée vers les faces des cellules. On obtient la densité exacte sur la grille décalée, notée $\rho_{\text{eff}}^n$.
-2. **Synchronisation initiale** : Calcul de la quantité de mouvement aux faces $(\rho_{\text{eff}} \mathbf{u})^n$.
-3. **Transport prédictif** : Transport de la masse et de la quantité de mouvement pour obtenir les champs prédictifs $\rho_{\text{eff}} ^\star$ et $(\rho_{\text{eff}} \textbf{u})^\star$ (via un intégrateur temporel très stable de type SSP-RK3) : 
-$$
-\frac{\partial \rho_{\text{eff}} ^\star}{\partial t} + \nabla \cdot (\rho_{\text{eff}} ^\star \mathbf{u}) =0 \qquad (\text{On résout pour} \; \mathbf{\rho_{\text{eff}} ^\star})
-$$
-$$
-\frac{\partial (\rho_{\text{eff}} \mathbf{u})^\star}{\partial t} + \nabla \cdot ((\rho_{\text{eff}} \mathbf{u})^\star \otimes \mathbf{u}) = \mathbf{0} \qquad (\text{On résout pour} \; \mathbf{(\rho_{\text{eff}} \mathbf{u})^\star})
-$$
-
-4. **Résolution de la physique** : Insertion de $\rho_{\text{eff}} ^\star$ et $(\rho_{\text{eff}} \textbf{u})^\star$ dans le terme inertiel de Navier-Stokes. Le système de type Stokes résout ensuite la vraie vitesse $\mathbf{u}^{n+1}$ et la pression $p^{n+1}$ :
-$$
-\frac{\rho_{\text{eff}}^\star \mathbf{u}^{n+1} - (\rho_{\text{eff}}\mathbf{u})^\star}{\Delta t} = - \nabla p^{n+1} + \nabla \cdot [\mu_{\text{eff}}(\nabla \mathbf{u}^{n+1} + (\nabla \mathbf{u}^{n+1})^T)] + \rho_{\text{eff}}^\star \mathbf{g}
-$$
-$$
-\nabla \cdot \mathbf{u}^{n+1} = 0
-$$ 
+</div>
 
 
 <div style="text-align:center; margin-top:2vh;">
 
-# Etude de l'ascension d'un cylindre 2D
-
-</div>
-
-
-## Cylindre 2D léger en ascension dans un fluide
-
-On étudie les travaux de @article en 2D
-
-:::: {.columns}
-::: {.column width="33%"}
-
-<div style="text-align: center;">
-**Nombres adimensionnels du problème** :
-</div>
-
-$$\color{black}{
-\Pi_1 = \frac{\rho_{\text{solide}}}{\rho_{\text{fluide}}}=m}
-$$
-$$\color{black}{
-\Pi_2=\frac{U}{\sqrt{Dg}}=F_r}
-$$
-$$\color{black}{
-\Pi_3=\frac{\sqrt{(1-m)gD^3}}{\nu_f}=G_a}
-$$
-
-:::
-
-::: {.column width="33%"}
-![](figures/image.png){fig-align="center" height="600px"}
-:::
-
-::: {.column width="33%"}
-```{=html}
-<div style="flex: 1; text-align: center;">
-    <video autoplay loop muted playsinline style="width: 100%; max-width: 225px;">
-      <source src="videos/solide.mp4" type="video/mp4">
-    </video>
-</div>
-```
-<div style="text-align: center; font-size: 0.9em;">
-**Simulation pour $m=0.8, G_a=16$**
-</div>
-
-:::
-
-::::
-
-- Parois solides avec **condition d'adhérence** (vitesse nulle), sauf pour paroi supérieure (**condition de symétrie**).
-
-- En fixant $m=0.8$ et $G_a=16$, on peut retrouver l'inconnu du problème : 
-$\mathbf{U=\sqrt{Dg} \; f(Fr)}$.
-
-- $\mu_\text{solide}$ fixée à 1000. Loi de mélange arithmétique pour $\mu_\text{eff}$.
-
-## Etude de convergence en maillage
-
-Variable d'étude : **vitesse verticale finale** du barycentre du cylindre. Extrapolation de Richardson pour obtenir la valeur de référence.
-
-::: {style="font-size: 80%;"}
-
-| Maillage | $N_x$ | $N_y$ | $\Delta x = \Delta y$ | Mailles / diamètre | 
-|:---:|:---:|:---:|:---:|:---:|
-| 1 | 48  | 120  | 0.167   | 6 | 
-| 2 | 96 | 240  | 0.083   | 12 | 
-| 3 | 192 | 480  | 0.042  | 24 | 
-
-: Caractéristiques des différents maillages testés {#tbl-mesh_properties}
-
-:::
-
-```{=html}
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="figures/convergence_vitesse.png" style="height: 600px; width: auto;" />
-  <img src="figures/convergence_maillage_test.png" style="height: 600px; width: auto;" />
-</div>
-```
-
-
-<div style="text-align:center; margin-top:2vh;">
-
-# Validation du solveur FSI multiphasique : Etude du mouvement transitoire d'un cylindre flottant 
+# Paramétrage et Validation du solveur multiphasique
 
 </div>
 
@@ -360,46 +625,27 @@ Variable d'étude : **vitesse verticale finale** du barycentre du cylindre. Extr
 ![](figures/experience1.png){fig-align="center" height="500px"}
 :::
 ::: {.column width="50%"}
-![](figures/experience2.png){fig-align="center" height="500px"}
-:::
-::::
-
-:::: {.columns}
-::: {.column width="50%"}
 | Paramètre | Valeur |
 |:---------|:------:|
 | Diamètre du cylindre (D)| 0.1524 m |
 | **Longueur** du bassin| 27.432 m **(180 D)** |
-| **Largeur** du bassin | 2.5908 m **(17 D)** |
+| **Longueur** du cylindre | 2.5908 m **(17 D)** |
 | Hauteur du bassin | 1.22 m |
-| Position initiale p/r à l'interface | 0.0254 m **(0.16 D)**  |
+| Déplacement initial $h_1$ | 0.0254 m **(0.16 D)**  |
 
 : Caractéristiques du bassin de l'expérience {#tbl-tank_properties}
 :::
-::: {.column width="50%"}
-![](figures/result_exp.png){fig-align="center" height="450px"}
-:::
 ::::
 
-## Référence théorique (@Maskell_Ursell_1970)
+![](figures/result_exp.png){fig-align="center" height="450px"}
 
-- Solution théorique en écoulement **potentiel**, incompressible, et ignore la tension de surface.
 
-$$
-\small
-\text{Solution théorique complète:} \quad
-h_2(\tau) = -\frac{1}{\pi i} \int_{-\infty}^{\infty} \frac{u(1+A(u)) e^{-iu\tau}}{1 - \frac{1}{2}\pi u^2(1+A(u))} du \qquad \text{avec} \qquad \tau = t\sqrt{\frac{2g}{D}}
-$$
-
-$$
-\small
-\text{Solution théorique approximée:} \quad
-h_{2\text{approx}}(\tau) = 0.9664 \text{exp}(-0.1309\tau)\times \text{cos}\left(0.9117\tau - 0.4805\right)
-$$
+## Modélisation Numérique
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/Oscillation.png){fig-align="center" width=800px}
+![](figures/domaine_interface.png){fig-align="center"}
+
 :::
 ::: {.column width="50%"}
 
@@ -410,29 +656,13 @@ $$
     </video>
 </div>
 ```
+
 :::
 ::::
 
-## Modélisation Numérique (@Soydan2025)
+<div style="height: 1.0em;"></div>
 
-:::: {.columns}
-::: {.column width="50%"}
-![](figures/domaine_interface.png){fig-align="center"}
-
-
-- Parois solides avec **condition d'adhérence** sauf pour paroi supérieure (**condition de symétrie**)
-
-- On trace l'oscillation du barycentre du cylindre adimensionné par le déplacement initial $h_1$ :
-
-$$
-h_2(t)=\frac{y_G(t)-d}{h_1}
-$$
-
-:::
-::: {.column width="50%"}
-![](figures/schema1.png){fig-align="center" height="600px"}
-
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
+<div style="flex: 1; text-align: center;">
 **Théorie des ondes (validité des résultats)** :
 </div>
 
@@ -443,103 +673,110 @@ $$
 t_{valide}=\frac{L}{\sqrt{gd}}=\frac{32.80D}{\sqrt{gd}} = 1.44 \; s
 $$
 
-:::
-::::
-
 ## Etude paramétrique du problème 
 
-::: {style="display: flex; justify-content: center; align-items: center; height: 100%;"}
-::: {style="text-align: left;"}
-**4 paramètres à étudier :**
+
+```{=html}
+<div style="flex: 1; text-align: center;">
+    <video autoplay loop muted playsinline style="width: 100%; max-width: 800px;">
+      <source src="videos/oscillation.mp4" type="video/mp4">
+    </video>
+</div>
+```
+
+
+::: {style="text-align: center;"}
+**3 paramètres à étudier :**
 
 1. **Loi de mélange de la viscosité effective** : (arithmétique, harmonique, géométrique)
-2. **Critère de convergence du solveur (résidu à atteindre)**
-3. **Valeur de la viscosité pénalisante $\mu_\text{solide}$**
-4. **Résolution du maillage** (nombre de mailles par diamètre du cylindre)
+2. **Valeur de la viscosité pénalisante $\mu_\text{solide}$**
+3. **Résolution du maillage** (On note $N=\frac{D}{\Delta x}$ le nombre de mailles par diamètre du cylindre)
 :::
-:::
+
 
 
 ## Influence de la loi de mélange de la viscosité 
 
-:::: {.columns}
-::: {.column width="50%"}
-![](figures/trajectoire_loi.png){fig-align="center" height="600px"}
-:::
-::: {.column width="50%"}
-![](figures/Lois_de_mélange_SOLIDE_AIR_log_C2.png){fig-align="center" height="600px"}
-:::
-::::
+<div style="height: 3em;"></div>
 
-
-$$
-{\color{black}{\mu_{\text{arithmétique}}}} = (1-C_1-C_2)\mu_{\text{air}} + C_1 \mu_{\text{eau}} + C_2 \mu_{\text{solide}}
-$$
-
-
-$$
-{\color{black}{\mu_{\text{harmonique}}}} = \frac{\mu_{\text{air}} \mu_{\text{eau}} \mu_{solide}}{(1-C_1-C_2)\mu_{\text{eau}} \mu_{\text{solide}} + C_1 \mu_{\text{air}}\mu_{\text{solide}} + C_2 \mu_{\text{air}} \mu_{\text{eau}}}
-$$
-
-$$
-{\color{black}{\mu_{\text{géométrique}}}} = \mu_{\text{air}}^{(1-C_1-C_2)}  \mu_{\text{eau}}^{C_1}  \mu_{\text{solide}}^{C_2}
-$$
-
-
-## Influence du critère de convergence du solveur 
-
-Simulation pour N=30, $\Delta t = 5 \times 10^{-4}$, $\mu_{\text{solide}} = 1000 \; kg/m/s$
-
-![](figures/trajectoire_residu.png){fig-align="center"}
+```{=html}
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="figures/trajectoire_loi.png" style="height: 625px; width: auto;" />
+  <img src="figures/loiC2.png" style="height: 625px; width: auto;" />
+</div>
+```
 
 
 ## Influence de la viscosité pénalisante $\mu_\text{solide}$
 
-Simulation pour N=30, $\Delta t = 5 \times 10^{-4}$, résidu à atteindre : $10^{-7}$
-
 ![](figures/trajectoire_mu.png){fig-align="center"}
+
+
+## Influence de la viscosité pénalisante $\mu_\text{solide}$ (suite)
+
+$$
+\scriptsize
+\text{Erreur : } \alpha = \vert h_{2\text{ref}}-h_{2\text{num}}\vert \qquad \text{Norme } L_p \text{ de l'erreur } \alpha : \Vert \alpha \Vert_p = \left( \frac{1}{t_{\text{valide}}}\int_0^{t_{\text{valide}}} \alpha (t)^p\,dt \right)^{\frac{1}{p}} \qquad \text{Norme } L_\infty \text{ de l'erreur } : \Vert \alpha \Vert_\infty = \text{sup}(\alpha)
+$$
+
+$$
+\scriptsize
+\text{On trace :} \frac{\Vert \alpha \Vert_1}{\Vert h_{2\text{ref}} \Vert_1}, \; \frac{\Vert \alpha \Vert_2}{\Vert h_{2\text{ref}} \Vert_2}   \; \text{et} \; \frac{\Vert \alpha \Vert_\infty}{\Vert h_{2\text{ref}} \Vert_\infty} \text{ en fonction de } \mu_{\text{solide}} \; \text{pour} \; t \in [0,t_{\text{valide}}]
+$$
+
+:::: {.columns}
+::: {.column width="50%"}
+![](figures/convergence_mu_solide.png){fig-align="center" width="100%"}
+:::
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+| $\mu_\text{solide}$ | Erreur relative $L_1$ (%) | Erreur relative $L_2$ (%) | Erreur relative $L_\infty$ (%) |
+|:-------------------:|:--------------------------:|:--------------------------:|:--------------------------------:|
+| 1000  | 13,6 | 11,3 | 9,1 |
+| 5000  | 9,0  | 7,7  | 6,8 |
+| 10000 | 7,1  | 6,2  | 5,7 |
+| 25000 | 4,1  | 3,6  | 3,5 |
+| 50000 | 2,0  | 1,7  | 1,6 |
+
+: Erreurs relatives en fonction de $\mu_\text{solide}$ vis-à-vis de $h_{2\text{ref}}$ {#tbl-erreurs-mu-solide}
+:::
+:::
+::::
 
 
 ## Etude de convergence en maillage
 
-Simulation pour $\mu_{\text{solide}} = 1000 \; kg/m/s$, résidu à atteindre : $10^{-5}$.
-
-::: {style="font-size: 80%;"}
-
-| Mailles/diamètre | $\Delta x = \Delta y$ | $\Delta t$ |
-|:---------:|:---------:|:------:|
-| 30 | $5 \times 10^{-3}$ | $5 \times 10^{-4}$ | 
-| 45 | $3,39 \times 10^{-3}$ | $3 \times 10^{-4}$ |
-| 60 | $2,5 \times 10^{-3}$ | $2,5 \times 10^{-4}$ | 
-
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-![](figures/trajectoire_maillage2.png){fig-align="center" width="100%" .column-page}
-:::
-::: {.column width="50%"}
-![](figures/Evolution_vitesse_verticale_final.png){fig-align="center" width="100%" .column-page}
-:::
-::::
+![](figures/trajectoire_maillage2.png){fig-align="center"}
 
 ## Etude de convergence de maillage (suite)
 $$
 \scriptsize
-\text{Erreur : } \alpha = \vert h_{2\text{approx}}-h_{2\text{num}}\vert \qquad \text{Norme } L_p \text{ de l'erreur } \alpha : \Vert \alpha \Vert_p = \left( \frac{1}{t_{\text{valide}}}\int_0^{t_{\text{valide}}} \alpha (t)^p\,dt \right)^{\frac{1}{p}} \qquad \text{Norme } L_\infty \text{ de l'erreur } : \Vert \alpha \Vert_\infty = \text{sup}(\alpha)
+\text{Erreur : } \alpha = \vert h_{2\text{Richardson}}-h_{2\text{num}}\vert \qquad \text{On trace :} \frac{\Vert \alpha \Vert_1}{\Vert h_{2\text{Richardson}} \Vert_1}, \; \frac{\Vert \alpha \Vert_2}{\Vert h_{2\text{Richardson}} \Vert_2}   \; \text{et} \; \frac{\Vert \alpha \Vert_\infty}{\Vert h_{2\text{Richardson}} \Vert_\infty} \text{ en fonction de } \Delta x \; \text{pour} \; t \in [0,t_{\text{valide}}]
 $$
 
-$$
-\scriptsize
-\text{On trace :} \frac{\Vert \alpha \Vert_1}{\Vert h_{2\text{ref}} \Vert_1}, \; \frac{\Vert \alpha \Vert_2}{\Vert h_{2\text{ref}} \Vert_2}   \; \text{et} \; \frac{\Vert \alpha \Vert_\infty}{\Vert h_{2\text{ref}} \Vert_\infty} \text{ en fonction de } \Delta x \; \text{pour} \; t \in [0.02,t_{\text{valide}}]
-$$
 
-![](figures/convergence_maillage_globale.png){fig-align="center" width="100%"}
+:::: {.columns}
+::: {.column width="60%"}
+![](figures/convergence_richardson_normes.png){fig-align="center" width="100%"}
+:::
+::: {.column width="40%"}
+::: {style="font-size: 80%;"}
+| Mailles / diamètre | Erreur relative $L_1$ (%) | Erreur relative $L_2$ (%) | Erreur relative $L_\infty$ (%) |
+|:------------------:|:-------------------------:|:-------------------------:|:-------------------------------:|
+| 30 | 17,45 | 15,66 | 12,39 |
+| 45 | 8,69  | 7,30  | 5,01 |
+| 60 | 4,10  | 3,68  | 2,42 |
+| 90 | 1,82  | 1,63  | 1,08 |
+
+: Erreurs relatives en fonction du maillage vis-à-vis de $h_{2\text{Richardson}}$ {#tbl-convergence-maillage}
+:::
+:::
+::::
 
 
 <div style="text-align:center; margin-top:2vh;">
 
-# Ajout d'une vague de Stokes
+# Implémentation et validation d'une vague de Stokes
 ```{=html}
 <div style="display: flex; justify-content: center;">
   <video autoplay loop muted playsinline width="1200">
@@ -550,303 +787,220 @@ $$
 
 </div>
 
-
-
-## Initialisation de la vague de Stokes (@Fenton1985)
-
-- Nous utilisons la formulation de la vague de Stokes du **troisième ordre** pour une **profondeur $h$** quelconque : 
-
-:::: {.columns}
-::: {.column width="50%"}
-$$
-\small
-\begin{aligned}
-\eta(x,t)
-&=
-a\cos(\theta)
-\\
-&+
-\frac14
-\alpha
-(3\alpha^2-1)
-a^2k
-\cos(2\theta)
-\\
-&-
-\frac38
-(\alpha^4-3\alpha^2+3)
-a^3k^2
-\cos(\theta)
-\\
-&+
-\frac{3}{64}
-\left(
-8\alpha^6+(\alpha^2-1)^2
-\right)
-a^3k^2
-\cos(3\theta)
-\end{aligned}
-$$
-
-:::
-::: {.column width="50%"}
-$$
-\small
-\alpha = \coth(kh)
-$$
-
-$$
-\small
-\theta(x,t) = kx - \omega t
-$$
-
-$$
-\small
-\omega^2
-=
-gk\tanh(kh)
-\left[
-1+(ka)^2
-\left(
-\alpha^2+\frac{9}{8}(\alpha^2-1)^2
-\right)
-\right]
-$$
-:::
-::::
-
-![](figures/vague_schema.png){fig-align="center" height="300px"}
-
-( By <a href="//commons.wikimedia.org/wiki/User:Kraaiennest" title="User:Kraaiennest">Kraaiennest</a> <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=18263067">Link</a>)
-
-## Initialisation de la vague de Stokes (suite)
-
-- On veut imposer au temps $t=0$ :
-$$
-C_1 = 
-  \begin{cases}
- 1 & \text{dans l'eau} \\
- 0 & \text{dans l'air}
-  \end{cases} 
-$$
-connaissant l'expression de la surface libre $\eta(x,t)$. 
-
-- On choisit de travailler avec $F(x,z) = z - \eta(x,t=0)$, qui est négatif dans l'eau et positif dans l'air.
-
-:::: {.columns}
-::: {.column width="50%"}
-$$
-F(x,z)=\begin{cases}
- < 0 & \text{dans l'eau} \\
- > 0 & \text{dans l'air} \\
- = 0 & \text{sur la surface libre}
- \end{cases}
-$$
-:::
-::: {.column width="50%"}
-![](figures/coordonnees_vague_2.png){fig-align="center" width="700px" height="300px" style="object-fit: cover; border-radius: 10px;"}
-:::
-::::
-
-## Initialisation de la vague de Stokes (suite)
-
-:::: {.columns}
-
-::: {.column width="25%"} 
-![](figures/image_3.png){fig-align="center" height="400px"}
-**Espace de départ**
-:::
-
-::: {.column width="25%"}
-![](figures/image_2.png){fig-align="center" height="400px"}
-**Première subdivision**
-:::
-
-::: {.column width="25%"}
-![](figures/dessin_4.png){fig-align="center" height="400px"}
-**Deuxième subdivision**
-:::
-
-::: {.column width="25%"}
-![](figures/dessin_5.png){fig-align="center" height="400px"}
-**Troisième subdivision**
-:::
-
-::::
-- Enfin, pour la maille interfaciale, on initialise : 
-
-::: {.text-center}
-$$C_1 = \frac{\text{surface totale eau}}{\text{aire totale de la maille}}=\frac{\text{somme des aires bleues d'eau}}{\Delta x \Delta y}$$
-:::
-
-
-## Initialisation de la vague de Stokes (fin)
-
-- Pour que la vague puisse se propager dans le domaine de calcul, on doit aussi initialiser le champ de vitesse (avec $A=\frac{ag}{\omega}$) (voir @Fenton1985): 
-
-:::: {.columns}
-::: {.column width="50%"}
-$$
-\scriptsize
-\begin{aligned}
-u_x(x,y,t)
-&=
-A
-\frac{\cosh(k(y+h))}{\cosh(kh)}
-k\cos(\theta)
-\\
-&+
-\frac34
-\frac{a^2gk^2}{\omega}
-\frac{(\alpha^2-1)^2}{\alpha}
-\frac{\cosh(2k(y+h))}{\cosh(2kh)}
-\cos(2\theta)
-\\
-&+
-\frac{3}{64}
-\frac{a^3gk^4}{\omega}
-(\alpha^2-1)
-(\alpha^2+3)
-(9\alpha^2-13)
-\frac{\cosh(3k(y+h))}{\cosh(3kh)}
-\cos(3\theta)
-\end{aligned}
-$$
-:::
-::: {.column width="50%"}
-$$
-\scriptsize
-\begin{aligned}
-u_y(x,y,t)
-&=
-A
-\frac{\sinh(k(y+h))}{\cosh(kh)}
-k\sin(\theta)
-\\
-&+
-\frac34
-\frac{a^2gk^2}{\omega}
-\frac{(\alpha^2-1)^2}{\alpha}
-\frac{\sinh(2k(y+h))}{\cosh(2kh)}
-\sin(2\theta)
-\\
-&+
-\frac{3}{64}
-\frac{a^3gk^4}{\omega}
-(\alpha^2-1)
-(\alpha^2+3)
-(9\alpha^2-13)
-\frac{\sinh(3k(y+h))}{\cosh(3kh)}
-\sin(3\theta)
-\end{aligned}
-$$
-:::
-::::
-
-- Exemple de vague simulée pour : $h$=1 m, $a$=0.04 m, $\lambda$=1 m : 
-
-```{=html}
-<div style="display: flex; justify-content: center;">
-  <video autoplay loop muted playsinline width="650">
-    <source src="videos/out.mp4" type="video/mp4">
-  </video>
-</div>
-``` 
----
-
 ## Validation de la forme de la vague
 
-- On travaille avec : $a = 0.04 \; \text{m}$, $h = 1 \; \text{m}$, $\lambda = 1 \; \text{m}$ ($k = 2\pi \; m^{-1}$) pour s'assurer que la vague ne se brise pas (critère de Stokes : déferlement quand $ka \geq 0.446$, dans notre cas : $ka \approx 0.25$)
+- Validation de la vague numérique vis à vis du  profil théorique après 3 périodes de simulation, avec 
 
-- Validation de la vague simulée par comparaison au profil théorique après T périodes de simulation, avec $T= \frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{gk\tanh(kh)\left[1+(ka)^2\left(\alpha^2+\frac{9}{8}(\alpha^2-1)^2\right)\right]}}$
+$$T= \frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{gk\left[1+(ka)^2\right]}}$$
 
-:::: {.columns}
-::: {.column width="50%"}
-![](figures/comparaison_eta_stokes_ordre3_brute_T_3.png){fig-align="center" width="100%"}
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
-Comparaison après T=3 périodes
-</div>
 
-:::
-::: {.column width="50%"}
-![](figures/comparaison_eta_stokes_ordre3_brute_T_10.png){fig-align="center" width="100%"}
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
-Comparaison après T=10 périodes
-</div>
-:::
-::::
+![](figures/comparaison_eta_stokes_ordre3_brute_T_3.png){fig-align="center"}
+
 
 ## Etude de convergence en maillage après 3 périodes de vague
 
-Mailles/Hauteur de vague| $\Delta x = \Delta y$ | $\Delta t$ | Erreur relative $L_{1}$| Erreur relative $L_{2}$| Erreur relative $L_{\infty}$ |
-|:---------:|:---------:|:------:|:------:|:------:|:------:|
-|8 |  $1 \times 10^{-2}$ | $2 \times 10^{-3}$  | 10.5% |11% |14% |
-| 16 | $5 \times 10^{-3}$ | $1 \times 10^{-3}$| 4.6%|4.8% | 6.5% |
-| 32 | $2,5 \times 10^{-3}$ | $5 \times 10^{-4}$ | 2.27%  | 2.4% | 3.15% |
-
-: Erreurs relatives en fonction du maillage 
-
 :::: {.columns}
-::: {.column width="33%"}
-![](figures/convergence_maillage_vague_L1.png){fig-align="center"}
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
-Erreur $L_{1}$
-</div>
+::: {.column width="35%"}
 
-:::
+$$Re_\lambda=\frac{\lambda \sqrt{g\lambda}}{\nu_f} \sim 3 \times 10^6$$
 
-::: {.column width="33%"}
-![](figures/convergence_maillage_vague_L2.png){fig-align="center"}
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
-Erreur $L_2$
-</div>
+::: {style="font-size: 80%;"}
 
-:::
-::: {.column width="33%"}
-![](figures/convergence_maillage_vague_Linf.png){fig-align="center"}
-<div style="height:100%; display:flex; align-items:center; justify-content:center;">
-Erreur $L_{\infty}$
-</div>
-:::
-::::
-
-## Bilan et perspectives
-
-**Perspectives :**
-
-- Faire une validation après 50 / 100 périodes de vague pour vérifier la stabilité du solveur.
-
-- Validation du profil de vitesse dans l'eau à la théorie.
-
-
-**Dans la suite :** 
-
-- Loi géométrique pour la viscosité effective.
-
-- Maillage retenu : 32 mailles/hauteur de vague, soit 60 mailles par diamètre du cylindre ($\Delta x = 2.5 \times 10^{-3}$ m).
 
 <div style="text-align:center; margin-top:2vh;">
 
-# Ajout d'une particule solide sur la vague de Stokes
+| Mailles / Hauteur de vague | Erreur relative $L_1$ (%) | Erreur relative $L_2$ (%) | Erreur relative $L_\infty$ (%) |
+|---|---|---|---|---|---|
+| 8 |  10,5 | 11 | 14 |
+| 16 |  4,6 | 4,8 | 6,5 |
+| 24 |  2,21 | 2,37 | 3,69 |
+| 32 |  2,27 | 2,4 | 3,15 |
+| 40 |  1,77 | 2,0 | 2,98 |
+| 48 | 1,8 | 1,95 | 2,66 |
+| 64 | 1,69 | 1,85 | 2,44 |
+</div>
+
+:::
+
+:::
+::: {.column width="65%"}
+![](figures/convergence_maillage_vague_globale.png){fig-align="center"}
+
+:::
+::::
+
+
+<div style="text-align:center; margin-top:2vh;">
+
+# Quantification de la dérive de Stokes d'une particule flottante
 
 </div>
 
-## Première simulation 
+## Quantification de la dérive de Stokes
 
-```{=html}
-<div style="display: flex; justify-content: center;">
-  <video autoplay loop muted playsinline width="1800">
-    <source src="videos/out2.mp4" type="video/mp4">
+:::: {.columns}
+
+::: {.column width="50%"}
+<div style="text-align: center;">
+**1. Théorie : particule fluide (sans masse)**
+</div>
+
+::: {style="background-color: #e3f2fd; padding: 20px; border-radius: 15px; margin-top: 15px; text-align: center; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"}
+**Dérive de Stokes théorique**
+
+$$ U_{S, \text{theo}} = a^2 k \omega \frac{\cosh[2 k(z_0+h)]}{2 \sinh^2(k h)} $$
+
+<span style="font-size: 0.75em; color: #555;">Limite en eau profonde : $U_{S, \text{theo}} = a^2 k \omega \exp(2 k z_0)$</span>
+:::
+
+![](videos/Deep_water_wave.gif){width=85% fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+<div style="text-align: center;">
+**2. Pratique : objet flottant (masse et taille finie)**
+</div>
+
+::: {style="background-color: #ffebee; padding: 20px; border-radius: 15px; margin-top: 15px; text-align: center; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"}
+**Dérive de Stokes de l'objet**
+
+$$ U_{S,O} = \overline{U_{L,O}} - \overline{U_E} $$
+
+<span style="font-size: 0.75em; color: #555;">$\overline{U_{L,O}}$ : vitesse lagrangienne moyenne de l'objet</span>
+<br>
+<span style="font-size: 0.75em; color: #555;">$\overline{U_E}$ : vitesse eulérienne moyenne du courant de fond</span>
+
+:::
+
+<div style="height: 3em;"></div>
+
+<div style="text-align: center;">
+  <video autoplay loop muted playsinline width="100%" height="auto" style="border-radius: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+    <source src="videos/simulation.mp4" type="video/mp4">
   </video>
 </div>
-``` 
-**Perspectives d'étude** 
 
-- Comparaison des trajectoires à des résultats avec des particules sans masse.
+:::
 
-- Comparaison de la dérive de position horizontale à la littérature.
+::::
 
-- Evaluation des forces exercées sur la particule par la vague.
+## Quantification de la vitesse lagrangienne moyenne ($\overline{U_{L,O}}$)
+
+```{=html}
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="figures/Trajectoire_horizontale_barycentre_stokes.png" style="height: 615px; width: auto;" />
+  <img src="figures/Synthese_derive_cylindre.png" style="height: 615px; width: auto;" />
+</div>
+```
+
+<div style="height: 1em;"></div>
+
+::: {style="display: flex; justify-content: space-around; align-items: center; background-color: #ffebee; padding: 15px; border-radius: 10px; font-size: 0.9em; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); width: 90%; margin: 0 auto;"}
+<div><strong>1.</strong> Extraction du barycentre</div>
+<div>➔</div>
+<div><strong>2.</strong> Filtre passe-bas <br><span style="font-size: 0.75em; color: #555;">(suppression des oscillations)</span></div>
+<div>➔</div>
+<div><strong>3.</strong> Régression linéaire <br><span style="font-size: 0.75em; color: #555;">(pente = $\overline{\color{red}{U_{L,O}}}$)</span></div>
+:::
+
+## Quantification de la vitesse eulérienne ($\overline{U_E}$)
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column width="40%"}
+
+<div style="text-align: center;">
+  <video autoplay loop muted playsinline width="100%" height="auto" style="border-radius: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+    <source src="videos/out.mp4" type="video/mp4">
+  </video>
+</div>
+
+:::
+
+::: {.column width="60%"}
+<br>
+
+![](figures/vitesse_eulerienne_detection_T.png){fig-align="center" width="100%"}
+:::
+
+::::
+
+
+::: {style="display: flex; justify-content: space-around; align-items: center; background-color: #e3f2fd; padding: 15px; border-radius: 10px; font-size: 0.9em; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); width: 95%; margin: 0 auto;"}
+<div>**1.** Extraction du signal</div>
+<div>➔</div>
+<div>**2.** Détection des crêtes <br>[*(calcul de la période $T$)*]{style="font-size: 0.75em; color: #555;"}</div>
+<div>➔</div>
+<div>**3.** Intégration sur $N$ périodes <br>[*(Moyenne = $\overline{\color{blue}{U_E}}$)*]{style="font-size: 0.75em; color: #555;"}</div>
+:::
+
+## Influence du diamètre du cylindre sur le facteur d'amplification $\chi$
+
+::: {style="text-align: center; border: 1px solid #ccc; padding: 5px 10px; border-radius: 6px; width: 50%; margin: 0 auto; background-color: #fafafa; font-size: 0.85em;"}
+
+**Comparaison : facteur d'amplification $\chi$**
+
+$$ \chi = \frac{\color{red}{U_{S,O}}}{\color{blue}{U_{S, \text{theo}}}} $$
+
+<span style="font-size: 0.7em; color: #666;">
+Quantifie l'écart entre le cylindre et la théorie classique.
+</span>
+
+:::
+
+```{=html}
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="figures/Trajectoire_horizontale_barycentre_final.png" style="height: 620px; width: auto;" />
+  <img src="figures/Facteur_Chi_vs_Diametre.png" style="height: 620px; width: auto;" />
+</div>
+```
+
+
+## Conclusion et perspectives
+
+
+<div style="height: 1em;"></div>
+
+### Bilan : 
+
+<div style="
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  padding: 10px 22px;
+  border-radius: 10px;
+">
+- Paramétrage du solveur : Loi de mélange, viscosité pénalisante et maillage convergés
+
+- Implémentation et validation d'une vague de Stokes
+
+- Calcul de la dérive d'un objet flottant de taille finie
+</div>
+
+<div style="height: 2em;"></div>
+
+
+### Perspectives :
+
+<div style="
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  padding: 10px 22px;
+  border-radius: 10px;
+">
+- Valider la dérive par des expériences en canal ou des simulations CFD de référence
+
+- Étudier l’influence de la densité de l’objet sur la dérive
+
+- Étendre l’étude à des géométries plus réalistes (formes de déchets plastiques)
+
+- Étendre l’étude en 3D 
+</div>
+
 
 
 ## Références
