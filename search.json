@@ -1,212 +1,198 @@
 [
   {
-    "objectID": "presentation.html#contexte",
-    "href": "presentation.html#contexte",
-    "title": "Stage de Master 2",
-    "section": "Contexte",
-    "text": "Contexte\n\nProduction accrue de plastiques depuis les années 1950\nPollution marine majeure : 4-12 millions de tonnes de plastique/an\n\nDanger pour la faune et les écosystèmes marins\n\n\n\n\n\n\n\n\n\n\n\n\nSource : The Ocean Cleanup"
+    "objectID": "presentation.html#contexte-une-pollution-plastique-croissante",
+    "href": "presentation.html#contexte-une-pollution-plastique-croissante",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Contexte : une pollution plastique croissante",
+    "text": "Contexte : une pollution plastique croissante\n\n\n\n\n\n\n\nDéchets plastiques collectés par The Ocean Cleanup lors d’une extraction.\n\n\n\n\n\n\nDepuis les années 1950, la production mondiale de plastique ne cesse d’augmenter.\n\n\n\n\n4–12 millions de tonnes de déchets plastiques atteignent les océans chaque année.\n\n\n\n\nCette pollution menace la faune et les écosystèmes marins.\n\n\n\n\n\n\n→ Comprendre et limiter le transport des déchets plastiques est un enjeu majeur.\n\n\n\n\n\nSources : Walker and Fequet (2023), Lebreton et al. (2019), Barboza et al. (2018)"
   },
   {
-    "objectID": "presentation.html#objectifs",
-    "href": "presentation.html#objectifs",
-    "title": "Stage de Master 2",
-    "section": "Objectifs",
-    "text": "Objectifs\n\n\nPrédire le mouvement et la dispersion des plastiques dans les océans \nModéliser la dynamique des plastiques à l’aide de simulations numériques\nComprendre la dynamique des plastiques en interaction avec les vagues (Dérive de Stokes)\n\n\n\n\n\n\n\nBy Kraaiennest - CC BY-SA 4.0, Link"
+    "objectID": "presentation.html#des-solutions-de-collecte-à-grande-échelle",
+    "href": "presentation.html#des-solutions-de-collecte-à-grande-échelle",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Des solutions de collecte à grande échelle",
+    "text": "Des solutions de collecte à grande échelle\nL’ONG The Ocean Cleanup développe des dispositifs permettant de collecter les déchets plastiques.\n\n\n\n\nBarrière flottante en forme de U, déployée en océan\n\n\n\n\nZone de rétention des plastiques\n\n\n\n\n\n\nPerformance maximale rapportée : 75kg/h en 2023 —– Plastique extrait en 2024 : 143 993 kg\n\n\n\n\n\n→ Des solutions permettent de collecter les plastiques à grande échelle.\n\n\nSources : The Ocean Cleanup"
   },
   {
-    "objectID": "presentation.html#découpage-du-problème-en-4-sous-problèmes",
-    "href": "presentation.html#découpage-du-problème-en-4-sous-problèmes",
-    "title": "Stage de Master 2",
-    "section": "Découpage du problème en 4 sous problèmes",
-    "text": "Découpage du problème en 4 sous problèmes\n\n\n  \n  \n    Diphasique\n    \n      \n    \n    Solide seul (eau / solide)\n  \n  \n  \n    Triphasique\n    \n      \n    \n    Ajout d'une interface plane air / eau / solide\n  \n  \n  \n    Diphasique\n    \n      \n    \n    Ajout d'une vague de Stokes (eau / air)\n  \n  \n  \n    Triphasique\n    \n      \n    \n    Ajout d'une particule sur la vague"
+    "objectID": "presentation.html#prédire-le-transport-des-plastiques-un-défi",
+    "href": "presentation.html#prédire-le-transport-des-plastiques-un-défi",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Prédire le transport des plastiques : un défi",
+    "text": "Prédire le transport des plastiques : un défi\n\n\n\n\nLes déchets flottants sont soumis simultanément à plusieurs  phénomènes environnementaux :\n\n\n\n\n\nCourants marins\n\n\nVent\n\n\nMarées\n\n\nVagues\n\n\n\n\n\n\n→ Prédiction des trajectoires très complexe\n\n\n\n\n\n→ Pour améliorer la collecte, il est nécessaire de mieux comprendre le transport des plastiques.\n→ On s’intéresse à l’influence des vagues sur ce transport."
+  },
+  {
+    "objectID": "presentation.html#cadre-général-théorie-des-ondes-dérive-de-stokes",
+    "href": "presentation.html#cadre-général-théorie-des-ondes-dérive-de-stokes",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Cadre général : Théorie des ondes : dérive de Stokes",
+    "text": "Cadre général : Théorie des ondes : dérive de Stokes\n\n\n\n\n\n\nUne vague progressive génère un mouvement orbital des particules fluides.\n\n\n\nUne vague de Stokes est non linéaire, le mouvement orbital est asymétrique. La trajectoire n’est pas parfaitement fermée\n\n\n\n\n\n→ La particule présente un déplacement net dans la direction de propagation de la vague.\n\n\n\n\nDéplacement net de particules dans une vague de Stokes\n\n\n\n\n\n\n→ Ce déplacement net est appelé dérive de Stokes.\n\n\n\n\n\nSources : Thual (2005), Guyon et al. (2012)\n\n\nVidéo prise de : Wikipedia contributors (2026)"
+  },
+  {
+    "objectID": "presentation.html#fil-conducteur-du-stage-stratégie-en-4-étapes",
+    "href": "presentation.html#fil-conducteur-du-stage-stratégie-en-4-étapes",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Fil conducteur du stage : stratégie en 4 étapes",
+    "text": "Fil conducteur du stage : stratégie en 4 étapes\n\n\n\n\nObjectif : étudier et quantifier la dérive de Stokes d’un objet flottant (taille finie) en interaction avec une vague de Stokes.\n\n\n\n\n\n\n  \n\n    \n      1. Étude préliminaire : prise en main du code de calcul\n    \n\n    \n      \n    \n\n    \n      Diphasique (eau / solide)\n    \n\n  \n\n\n  \n\n    \n      2. Paramétrage et validation du solveur\n    \n\n    \n\n    \n      \n    \n\n    \n      Triphasique (air / eau / solide)\n    \n\n  \n\n\n  \n\n    \n      3. Implémentation et validation d'une vague de Stokes\n    \n\n    \n      \n    \n\n    \n      Diphasique (eau / air)\n    \n\n  \n\n\n  \n\n    \n      4. Quantification de la dérive de Stokes de l'objet\n    \n\n    \n      \n    \n\n    \n      Triphasique (air / eau / solide)"
   },
   {
     "objectID": "presentation.html#equations-régissant-la-dynamique-du-problème-en-présence-de-particule",
     "href": "presentation.html#equations-régissant-la-dynamique-du-problème-en-présence-de-particule",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Equations régissant la dynamique du problème en présence de particule",
-    "text": "Equations régissant la dynamique du problème en présence de particule\n\nDans le domaine \\(\\Omega_{\\text{tot}}= \\Omega_f \\cup \\Omega_p\\), on résout les équations de Navier-Stokes incompressible, tout en imposant un mouvement de corps rigide dans la région occupée par le solide \\(\\Omega_p\\). \\[\n\\nabla\\cdot \\mathbf{u} =0 \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\\] \\[\n{\\color{red}{\\rho_{\\text{eff}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{red}{\\mu_{\\text{eff}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T) \\right] + {\\color{red}{\\rho_{\\text{eff}}}} \\mathbf{g} \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\n\\] \\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM} \\quad \\forall \\mathbf{x} \\in \\Omega_p\n\\]\nOn transporte deux champs de fraction volumique : \\(C_1\\) pour l’eau, et \\(C_2\\) pour le solide.\n\n\\[ \\frac{\\partial C_1}{\\partial t} + \\mathbf{u} \\cdot \\nabla C_1 = 0 \\qquad \\frac{\\partial C_2}{\\partial t} + \\mathbf{u} \\cdot \\nabla C_2 = 0\n\\]"
+    "text": "Equations régissant la dynamique du problème en présence de particule\n\\[\n\\nabla\\cdot \\mathbf{u} =0 \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\\] \\[\n{\\color{red}{\\rho_{\\text{eff}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{red}{\\mu_{\\text{eff}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T) \\right] + {\\color{red}{\\rho_{\\text{eff}}}} \\mathbf{g} \\quad \\forall \\mathbf{x} \\in \\Omega_{\\text{tot}}\n\\] \\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM} \\quad \\forall \\mathbf{x} \\in \\Omega_p\n\\]\n\n\nReprésentation de \\(\\Omega_{\\text{tot}}\\)"
   },
   {
-    "objectID": "presentation.html#modélisation-des-phases",
-    "href": "presentation.html#modélisation-des-phases",
-    "title": "Stage de Master 2",
-    "section": "Modélisation des phases",
-    "text": "Modélisation des phases\n\nOn utilise une formulation dite 1 fluide pour modéliser les différentes phases.\nOn introduit deux fonctions de couleur \\(C_1\\) et \\(C_2\\) :\n\n\n\\[\nC_1 =\n  \\begin{cases}\n1 & \\text{dans l'eau} \\\\\n0 & \\text{ailleurs}\n  \\end{cases}\n\\qquad \\text{et}\\qquad\nC_2 =\n  \\begin{cases}\n1 & \\text{dans le solide} \\\\\n0 & \\text{ailleurs}\n\\end{cases}\n\\]"
+    "objectID": "presentation.html#modélisation-et-transport-des-phases",
+    "href": "presentation.html#modélisation-et-transport-des-phases",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Modélisation et transport des phases",
+    "text": "Modélisation et transport des phases\n\nOn introduit deux champs de fraction volumique \\(C_1\\) et \\(C_2\\) :\n\n\n\\[\nC_1 =\n  \\begin{cases}\n1 & \\text{dans l'eau} \\\\\n0&lt;C_1&lt;1 & \\text{à l'interface} \\\\\n0 & \\text{ailleurs}\n  \\end{cases}\n\\qquad \\text{et}\\qquad\nC_2 =\n  \\begin{cases}\n1 & \\text{dans le solide} \\\\\n0&lt;C_2&lt;1 & \\text{à l'interface} \\\\\n0 & \\text{ailleurs}\n\\end{cases}\n\\]\n\n\nOn transporte deux champs de fraction volumique :\n\n\\[ \\frac{\\partial C_1}{\\partial t} + \\mathbf{u} \\cdot \\nabla C_1 = 0 \\qquad \\frac{\\partial C_2}{\\partial t} + \\mathbf{u} \\cdot \\nabla C_2 = 0\n\\]"
   },
   {
     "objectID": "presentation.html#lois-de-mélange-des-propriétés-physiques",
     "href": "presentation.html#lois-de-mélange-des-propriétés-physiques",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Lois de mélange des propriétés physiques",
     "text": "Lois de mélange des propriétés physiques\nLoi arithmétique pour la densité effective : \\[\n{\\color{red}{\\rho_{\\text{eff}}}} = (1-C_1-C_2)\\rho_{\\text{air}} + C_1 \\rho_{\\text{eau}} + C_2 \\rho_{\\text{solide}}\n\\]\nPlusieurs lois de mélange testés pour la viscosité effective : \n\nLoi arithmétique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\n\\]\nLoi harmonique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = \\frac{\\mu_{\\text{air}} \\mu_{\\text{eau}} \\mu_{solide}}{(1-C_1-C_2)\\mu_{\\text{eau}} \\mu_{\\text{solide}} + C_1 \\mu_{\\text{air}}\\mu_{\\text{solide}} + C_2 \\mu_{\\text{air}} \\mu_{\\text{eau}}}\n\\] Loi géométrique : \\[\n{\\color{red}{\\mu_{\\text{eff}}}} = \\mu_{\\text{air}}^{(1-C_1-C_2)}  \\mu_{\\text{eau}}^{C_1}  \\mu_{\\text{solide}}^{C_2}\n\\]"
   },
   {
     "objectID": "presentation.html#mouvement-de-corps-rigide-pénalisation-tensorielle",
     "href": "presentation.html#mouvement-de-corps-rigide-pénalisation-tensorielle",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Mouvement de corps rigide : pénalisation tensorielle",
-    "text": "Mouvement de corps rigide : pénalisation tensorielle\n\nIdée : imposer un mouvement de corps rigide dans la région occupée par le solide où \\({\\color{blue}{C_2=1}}\\) et \\({\\color{blue}{C_1=0}}\\).\n(Dans la région solide, \\({\\color{red}{\\rho_{\\text{eff}}}} = {\\color{blue}{\\rho_{\\text{solide}}}}\\) et \\({\\color{red}{\\mu_{\\text{eff}}}}={\\color{blue}{\\mu_{\\text{solide}}}}\\))\n\n\\[\n{\\color{blue}{\\rho_{\\text{solide}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\right] + {\\color{blue}{\\rho_{\\text{solide}}}} \\mathbf{g}\n\\]\n\nSi on fait tendre la viscosité du solide vers l’infini (\\(\\mu_{\\text{solide}} \\to \\infty\\)), cela revient à résoudre dans le solide :\n\n\\[\\nabla \\cdot [{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + \\left(\\nabla \\mathbf{u}\\right)^T)]=0\\]\n\nOn peut montrer que c’est équivalent à imposer ( Patankar et al. (2000), Sharma and Patankar (2005)) :\n\n\\[\n{\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) = \\mathbf{0} \\quad \\text{lorsque} \\quad {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\cdot \\mathbf{n} = \\mathbf{0} \\quad \\forall x\\in \\partial \\Omega_p\n\\]\n\nCe qui est équivalent à imposer un mouvement de corps rigide (Caltagirone and Vincent (2001), Vincent (2007)) :\n\n\\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM}\n\\]"
+    "text": "Mouvement de corps rigide : pénalisation tensorielle\nDans la région solide on résout :\n\\[\n{\\color{blue}{\\rho_{\\text{solide}}}} \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + \\mathbf{u} \\cdot \\nabla \\mathbf{u} \\right) = -\\nabla p + \\nabla \\cdot \\left[ {\\color{blue}{\\mu_{\\text{solide}}}} (\\nabla \\mathbf{u} + (\\nabla \\mathbf{u})^T) \\right] + {\\color{blue}{\\rho_{\\text{solide}}}} \\mathbf{g}\n\\]\n\nSi on fait tendre \\(\\mu_{\\text{solide}} \\to \\infty\\), on résout :\n\n\\[\\nabla \\cdot [\\underline{\\underline{\\mathbf{D}}}(u)]=0\\]\n\nC’est équivalent à résoudre :\n\n\\[\n\\underline{\\underline{\\mathbf{D}}}(u)=0\n\\]\n\nC’est équivalent à imposer un mouvement de corps rigide :\n\n\\[\n\\mathbf{u} = \\mathbf{U} + \\boldsymbol{\\omega} \\times \\mathbf{OM}\n\\]\n\nSources : Patankar et al. (2000), Sharma and Patankar (2005), Caltagirone and Vincent (2001)"
   },
   {
-    "objectID": "presentation.html#code-utilisé-fugu",
-    "href": "presentation.html#code-utilisé-fugu",
-    "title": "Stage de Master 2",
-    "section": "Code utilisé : Fugu",
-    "text": "Code utilisé : Fugu\n\n\nDéveloppé par le laboratoire MSME, Fugu est un solveur basé sur la méthode des volumes finis.\nCaractéristiques techniques :\n\nArchitecture : Code écrit en Fortran et parallélisé avec MPI pour le calcul haute performance (HPC).\nRésolution de l’écoulement : Résolution des équations de Navier-Stokes avec une flexibilité sur le traitement de la turbulence (LES, DNS).\nMéthodes spécifiques :\n\nSuivi d’interface pour les écoulements multiphasiques (VOF - Volume of Fluid).\nModélisation des obstacles par la méthode de pénalisation tensorielle (corps solides).\n\nApplication cible : Étude des interactions houle-structure et de la dynamique des particules."
-  },
-  {
-    "objectID": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
-    "href": "presentation.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
-    "title": "Stage de Master 2",
-    "section": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):",
-    "text": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):"
-  },
-  {
-    "objectID": "presentation.html#formulation-momentum-conserving-elouafa2026",
-    "href": "presentation.html#formulation-momentum-conserving-elouafa2026",
-    "title": "Stage de Master 2",
-    "section": "Formulation Momentum Conserving (El Ouafa et al. (2026))",
-    "text": "Formulation Momentum Conserving (El Ouafa et al. (2026))\n\nInterpolation : La densité \\(\\rho_{\\text{eff}}\\) (obtenue par la VOF) est interpolée vers les faces des cellules. On obtient la densité exacte sur la grille décalée, notée \\(\\rho_{\\text{eff}}^n\\).\nSynchronisation initiale : Calcul de la quantité de mouvement aux faces \\((\\rho_{\\text{eff}} \\mathbf{u})^n\\).\nTransport prédictif : Transport de la masse et de la quantité de mouvement pour obtenir les champs prédictifs \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) (via un intégrateur temporel très stable de type SSP-RK3) : \\[\n\\frac{\\partial \\rho_{\\text{eff}} ^\\star}{\\partial t} + \\nabla \\cdot (\\rho_{\\text{eff}} ^\\star \\mathbf{u}) =0 \\qquad (\\text{On résout pour} \\; \\mathbf{\\rho_{\\text{eff}} ^\\star})\n\\] \\[\n\\frac{\\partial (\\rho_{\\text{eff}} \\mathbf{u})^\\star}{\\partial t} + \\nabla \\cdot ((\\rho_{\\text{eff}} \\mathbf{u})^\\star \\otimes \\mathbf{u}) = \\mathbf{0} \\qquad (\\text{On résout pour} \\; \\mathbf{(\\rho_{\\text{eff}} \\mathbf{u})^\\star})\n\\]\nRésolution de la physique : Insertion de \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) dans le terme inertiel de Navier-Stokes. Le système de type Stokes résout ensuite la vraie vitesse \\(\\mathbf{u}^{n+1}\\) et la pression \\(p^{n+1}\\) : \\[\n\\frac{\\rho_{\\text{eff}}^\\star \\mathbf{u}^{n+1} - (\\rho_{\\text{eff}}\\mathbf{u})^\\star}{\\Delta t} = - \\nabla p^{n+1} + \\nabla \\cdot [\\mu_{\\text{eff}}(\\nabla \\mathbf{u}^{n+1} + (\\nabla \\mathbf{u}^{n+1})^T)] + \\rho_{\\text{eff}}^\\star \\mathbf{g}\n\\] \\[\n\\nabla \\cdot \\mathbf{u}^{n+1} = 0\n\\]"
-  },
-  {
-    "objectID": "presentation.html#cylindre-2d-léger-en-ascension-dans-un-fluide",
-    "href": "presentation.html#cylindre-2d-léger-en-ascension-dans-un-fluide",
-    "title": "Stage de Master 2",
-    "section": "Cylindre 2D léger en ascension dans un fluide",
-    "text": "Cylindre 2D léger en ascension dans un fluide\nOn étudie les travaux de Rahmani and Wachs (2014) en 2D\n\n\n\nNombres adimensionnels du problème :\n\n\\[\\color{black}{\n\\Pi_1 = \\frac{\\rho_{\\text{solide}}}{\\rho_{\\text{fluide}}}=m}\n\\] \\[\\color{black}{\n\\Pi_2=\\frac{U}{\\sqrt{Dg}}=F_r}\n\\] \\[\\color{black}{\n\\Pi_3=\\frac{\\sqrt{(1-m)gD^3}}{\\nu_f}=G_a}\n\\]\n\n\n\n\n\n\n\n\n    \n      \n    \n\n\nSimulation pour \\(m=0.8, G_a=16\\)\n\n\n\nParois solides avec condition d’adhérence (vitesse nulle), sauf pour paroi supérieure (condition de symétrie).\nEn fixant \\(m=0.8\\) et \\(G_a=16\\), on peut retrouver l’inconnu du problème : \\(\\mathbf{U=\\sqrt{Dg} \\; f(Fr)}\\).\n\\(\\mu_\\text{solide}\\) fixée à 1000. Loi de mélange arithmétique pour \\(\\mu_\\text{eff}\\)."
-  },
-  {
-    "objectID": "presentation.html#etude-de-convergence-en-maillage",
-    "href": "presentation.html#etude-de-convergence-en-maillage",
-    "title": "Stage de Master 2",
-    "section": "Etude de convergence en maillage",
-    "text": "Etude de convergence en maillage\nVariable d’étude : vitesse verticale finale du barycentre du cylindre. Extrapolation de Richardson pour obtenir la valeur de référence.\n\n\n\n\nTable 1: Caractéristiques des différents maillages testés\n\n\n\n\n\n\n\n\n\n\n\n\nMaillage\n\\(N_x\\)\n\\(N_y\\)\n\\(\\Delta x = \\Delta y\\)\nMailles / diamètre\n\n\n\n\n1\n48\n120\n0.167\n6\n\n\n2\n96\n240\n0.083\n12\n\n\n3\n192\n480\n0.042\n24"
+    "objectID": "presentation.html#le-code-de-calcul-fugu",
+    "href": "presentation.html#le-code-de-calcul-fugu",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Le code de calcul : Fugu",
+    "text": "Le code de calcul : Fugu\n\n\n\n\n\n\nDéveloppé par l’équipe TCM du laboratoire MSME\nBasé sur la méthode des volumes finis et sur la résolution des équations de Navier-Stokes\nEcrit en Fortran 90\nParallélisé avec MPI pour le calcul haute performance (HPC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArticles de référence : Vincent et al. (2014), Vincent et al. (2008), El Ouafa et al. (2021)"
   },
   {
     "objectID": "presentation.html#expérience-de-laboratoire-de-référence-ito1977",
     "href": "presentation.html#expérience-de-laboratoire-de-référence-ito1977",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Expérience de laboratoire de référence (Ito (1977))",
-    "text": "Expérience de laboratoire de référence (Ito (1977))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Caractéristiques du bassin de l’expérience\n\n\n\n\n\nParamètre\nValeur\n\n\n\n\nDiamètre du cylindre (D)\n0.1524 m\n\n\nLongueur du bassin\n27.432 m (180 D)\n\n\nLargeur du bassin\n2.5908 m (17 D)\n\n\nHauteur du bassin\n1.22 m\n\n\nPosition initiale p/r à l’interface\n0.0254 m (0.16 D)"
+    "text": "Expérience de laboratoire de référence (Ito (1977))\n\n\n\n\n\n\n\n\n\n\n\nTable 1: Caractéristiques du bassin de l’expérience\n\n\n\n\n\nParamètre\nValeur\n\n\n\n\nDiamètre du cylindre (D)\n0.1524 m\n\n\nLongueur du bassin\n27.432 m (180 D)\n\n\nLongueur du cylindre\n2.5908 m (17 D)\n\n\nHauteur du bassin\n1.22 m\n\n\nDéplacement initial \\(h_1\\)\n0.0254 m (0.16 D)"
   },
   {
-    "objectID": "presentation.html#référence-théorique-maskell_ursell_1970",
-    "href": "presentation.html#référence-théorique-maskell_ursell_1970",
-    "title": "Stage de Master 2",
-    "section": "Référence théorique (Maskell and Ursell (1970))",
-    "text": "Référence théorique (Maskell and Ursell (1970))\n\nSolution théorique en écoulement potentiel, incompressible, et ignore la tension de surface.\n\n\\[\n\\small\n\\text{Solution théorique complète:} \\quad\nh_2(\\tau) = -\\frac{1}{\\pi i} \\int_{-\\infty}^{\\infty} \\frac{u(1+A(u)) e^{-iu\\tau}}{1 - \\frac{1}{2}\\pi u^2(1+A(u))} du \\qquad \\text{avec} \\qquad \\tau = t\\sqrt{\\frac{2g}{D}}\n\\]\n\\[\n\\small\n\\text{Solution théorique approximée:} \\quad\nh_{2\\text{approx}}(\\tau) = 0.9664 \\text{exp}(-0.1309\\tau)\\times \\text{cos}\\left(0.9117\\tau - 0.4805\\right)\n\\]"
-  },
-  {
-    "objectID": "presentation.html#modélisation-numérique-soydan2025",
-    "href": "presentation.html#modélisation-numérique-soydan2025",
-    "title": "Stage de Master 2",
-    "section": "Modélisation Numérique (Soydan et al. (2025))",
-    "text": "Modélisation Numérique (Soydan et al. (2025))\n\n\n\n\n\n\n\n\nParois solides avec condition d’adhérence sauf pour paroi supérieure (condition de symétrie)\nOn trace l’oscillation du barycentre du cylindre adimensionné par le déplacement initial \\(h_1\\) :\n\n\\[\nh_2(t)=\\frac{y_G(t)-d}{h_1}\n\\]\n\n\n\n\n\n\n\nThéorie des ondes (validité des résultats) :\n\n\\[\nc=\\sqrt{gd} = 3.46 \\; \\text{m/s}\n\\] \\[\nt_{valide}=\\frac{L}{\\sqrt{gd}}=\\frac{32.80D}{\\sqrt{gd}} = 1.44 \\; s\n\\]"
+    "objectID": "presentation.html#modélisation-numérique",
+    "href": "presentation.html#modélisation-numérique",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Modélisation Numérique",
+    "text": "Modélisation Numérique\n\n\n\n\n\n\n\n\n\n    \n      \n    \n\n\n\n\n\n\nThéorie des ondes (validité des résultats) :\n\n\\[\nc=\\sqrt{gd} = 3.46 \\; \\text{m/s}\n\\] \\[\nt_{valide}=\\frac{L}{\\sqrt{gd}}=\\frac{32.80D}{\\sqrt{gd}} = 1.44 \\; s\n\\]"
   },
   {
     "objectID": "presentation.html#etude-paramétrique-du-problème",
     "href": "presentation.html#etude-paramétrique-du-problème",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Etude paramétrique du problème",
-    "text": "Etude paramétrique du problème\n\n\n4 paramètres à étudier :\n\nLoi de mélange de la viscosité effective : (arithmétique, harmonique, géométrique)\nCritère de convergence du solveur (résidu à atteindre)\nValeur de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\nRésolution du maillage (nombre de mailles par diamètre du cylindre)"
+    "text": "Etude paramétrique du problème\n\n    \n      \n    \n\n\n3 paramètres à étudier :\n\nLoi de mélange de la viscosité effective : (arithmétique, harmonique, géométrique)\nValeur de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\nRésolution du maillage (On note \\(N=\\frac{D}{\\Delta x}\\) le nombre de mailles par diamètre du cylindre)"
   },
   {
     "objectID": "presentation.html#influence-de-la-loi-de-mélange-de-la-viscosité",
     "href": "presentation.html#influence-de-la-loi-de-mélange-de-la-viscosité",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Influence de la loi de mélange de la viscosité",
-    "text": "Influence de la loi de mélange de la viscosité\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\n{\\color{black}{\\mu_{\\text{arithmétique}}}} = (1-C_1-C_2)\\mu_{\\text{air}} + C_1 \\mu_{\\text{eau}} + C_2 \\mu_{\\text{solide}}\n\\]\n\\[\n{\\color{black}{\\mu_{\\text{harmonique}}}} = \\frac{\\mu_{\\text{air}} \\mu_{\\text{eau}} \\mu_{solide}}{(1-C_1-C_2)\\mu_{\\text{eau}} \\mu_{\\text{solide}} + C_1 \\mu_{\\text{air}}\\mu_{\\text{solide}} + C_2 \\mu_{\\text{air}} \\mu_{\\text{eau}}}\n\\]\n\\[\n{\\color{black}{\\mu_{\\text{géométrique}}}} = \\mu_{\\text{air}}^{(1-C_1-C_2)}  \\mu_{\\text{eau}}^{C_1}  \\mu_{\\text{solide}}^{C_2}\n\\]"
-  },
-  {
-    "objectID": "presentation.html#influence-du-critère-de-convergence-du-solveur",
-    "href": "presentation.html#influence-du-critère-de-convergence-du-solveur",
-    "title": "Stage de Master 2",
-    "section": "Influence du critère de convergence du solveur",
-    "text": "Influence du critère de convergence du solveur\nSimulation pour N=30, \\(\\Delta t = 5 \\times 10^{-4}\\), \\(\\mu_{\\text{solide}} = 1000 \\; kg/m/s\\)"
+    "text": "Influence de la loi de mélange de la viscosité"
   },
   {
     "objectID": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
     "href": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\)",
-    "text": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\)\nSimulation pour N=30, \\(\\Delta t = 5 \\times 10^{-4}\\), résidu à atteindre : \\(10^{-7}\\)"
+    "text": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\)"
   },
   {
-    "objectID": "presentation.html#etude-de-convergence-en-maillage-1",
-    "href": "presentation.html#etude-de-convergence-en-maillage-1",
-    "title": "Stage de Master 2",
+    "objectID": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide-suite",
+    "href": "presentation.html#influence-de-la-viscosité-pénalisante-mu_textsolide-suite",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\) (suite)",
+    "text": "Influence de la viscosité pénalisante \\(\\mu_\\text{solide}\\) (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{ref}}-h_{2\\text{num}}\\vert \\qquad \\text{Norme } L_p \\text{ de l'erreur } \\alpha : \\Vert \\alpha \\Vert_p = \\left( \\frac{1}{t_{\\text{valide}}}\\int_0^{t_{\\text{valide}}} \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}} \\qquad \\text{Norme } L_\\infty \\text{ de l'erreur } : \\Vert \\alpha \\Vert_\\infty = \\text{sup}(\\alpha)\n\\]\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{ref}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{ref}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\mu_{\\text{solide}} \\; \\text{pour} \\; t \\in [0,t_{\\text{valide}}]\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Erreurs relatives en fonction de \\(\\mu_\\text{solide}\\) vis-à-vis de \\(h_{2\\text{ref}}\\)\n\n\n\n\n\n\n\n\n\n\n\n\\(\\mu_\\text{solide}\\)\nErreur relative \\(L_1\\) (%)\nErreur relative \\(L_2\\) (%)\nErreur relative \\(L_\\infty\\) (%)\n\n\n\n\n1000\n13,6\n11,3\n9,1\n\n\n5000\n9,0\n7,7\n6,8\n\n\n10000\n7,1\n6,2\n5,7\n\n\n25000\n4,1\n3,6\n3,5\n\n\n50000\n2,0\n1,7\n1,6"
+  },
+  {
+    "objectID": "presentation.html#etude-de-convergence-en-maillage",
+    "href": "presentation.html#etude-de-convergence-en-maillage",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Etude de convergence en maillage",
-    "text": "Etude de convergence en maillage\nSimulation pour \\(\\mu_{\\text{solide}} = 1000 \\; kg/m/s\\), résidu à atteindre : \\(10^{-5}\\).\n\n\n\n\nMailles/diamètre\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\n\n\n\n\n30\n\\(5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n\n\n45\n\\(3,39 \\times 10^{-3}\\)\n\\(3 \\times 10^{-4}\\)\n\n\n60\n\\(2,5 \\times 10^{-3}\\)\n\\(2,5 \\times 10^{-4}\\)"
+    "text": "Etude de convergence en maillage"
   },
   {
     "objectID": "presentation.html#etude-de-convergence-de-maillage-suite",
     "href": "presentation.html#etude-de-convergence-de-maillage-suite",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Etude de convergence de maillage (suite)",
-    "text": "Etude de convergence de maillage (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{approx}}-h_{2\\text{num}}\\vert \\qquad \\text{Norme } L_p \\text{ de l'erreur } \\alpha : \\Vert \\alpha \\Vert_p = \\left( \\frac{1}{t_{\\text{valide}}}\\int_0^{t_{\\text{valide}}} \\alpha (t)^p\\,dt \\right)^{\\frac{1}{p}} \\qquad \\text{Norme } L_\\infty \\text{ de l'erreur } : \\Vert \\alpha \\Vert_\\infty = \\text{sup}(\\alpha)\n\\]\n\\[\n\\scriptsize\n\\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{ref}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{ref}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{ref}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x \\; \\text{pour} \\; t \\in [0.02,t_{\\text{valide}}]\n\\]"
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-fenton1985",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes-fenton1985",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes (Fenton (1985))",
-    "text": "Initialisation de la vague de Stokes (Fenton (1985))\n\nNous utilisons la formulation de la vague de Stokes du troisième ordre pour une profondeur \\(h\\) quelconque :\n\n\n\n\\[\n\\small\n\\begin{aligned}\n\\eta(x,t)\n&=\na\\cos(\\theta)\n\\\\\n&+\n\\frac14\n\\alpha\n(3\\alpha^2-1)\na^2k\n\\cos(2\\theta)\n\\\\\n&-\n\\frac38\n(\\alpha^4-3\\alpha^2+3)\na^3k^2\n\\cos(\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\left(\n8\\alpha^6+(\\alpha^2-1)^2\n\\right)\na^3k^2\n\\cos(3\\theta)\n\\end{aligned}\n\\]\n\n\\[\n\\small\n\\alpha = \\coth(kh)\n\\]\n\\[\n\\small\n\\theta(x,t) = kx - \\omega t\n\\]\n\\[\n\\small\n\\omega^2\n=\ngk\\tanh(kh)\n\\left[\n1+(ka)^2\n\\left(\n\\alpha^2+\\frac{9}{8}(\\alpha^2-1)^2\n\\right)\n\\right]\n\\]\n\n\n\n\n\n\n( By Kraaiennest CC BY-SA 3.0, Link)"
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-suite",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes-suite",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes (suite)",
-    "text": "Initialisation de la vague de Stokes (suite)\n\nOn veut imposer au temps \\(t=0\\) : \\[\nC_1 =\n\\begin{cases}\n1 & \\text{dans l'eau} \\\\\n0 & \\text{dans l'air}\n\\end{cases}\n\\] connaissant l’expression de la surface libre \\(\\eta(x,t)\\).\nOn choisit de travailler avec \\(F(x,z) = z - \\eta(x,t=0)\\), qui est négatif dans l’eau et positif dans l’air.\n\n\n\n\\[\nF(x,z)=\\begin{cases}\n&lt; 0 & \\text{dans l'eau} \\\\\n&gt; 0 & \\text{dans l'air} \\\\\n= 0 & \\text{sur la surface libre}\n\\end{cases}\n\\]"
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-suite-1",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes-suite-1",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes (suite)",
-    "text": "Initialisation de la vague de Stokes (suite)\n\n\n Espace de départ\n\n Première subdivision\n\n Deuxième subdivision\n\n Troisième subdivision\n\n\nEnfin, pour la maille interfaciale, on initialise :\n\n\n\\[C_1 = \\frac{\\text{surface totale eau}}{\\text{aire totale de la maille}}=\\frac{\\text{somme des aires bleues d'eau}}{\\Delta x \\Delta y}\\]"
-  },
-  {
-    "objectID": "presentation.html#initialisation-de-la-vague-de-stokes-fin",
-    "href": "presentation.html#initialisation-de-la-vague-de-stokes-fin",
-    "title": "Stage de Master 2",
-    "section": "Initialisation de la vague de Stokes (fin)",
-    "text": "Initialisation de la vague de Stokes (fin)\n\nPour que la vague puisse se propager dans le domaine de calcul, on doit aussi initialiser le champ de vitesse (avec \\(A=\\frac{ag}{\\omega}\\)) (voir Fenton (1985)):\n\n\n\n\\[\n\\scriptsize\n\\begin{aligned}\nu_x(x,y,t)\n&=\nA\n\\frac{\\cosh(k(y+h))}{\\cosh(kh)}\nk\\cos(\\theta)\n\\\\\n&+\n\\frac34\n\\frac{a^2gk^2}{\\omega}\n\\frac{(\\alpha^2-1)^2}{\\alpha}\n\\frac{\\cosh(2k(y+h))}{\\cosh(2kh)}\n\\cos(2\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\frac{a^3gk^4}{\\omega}\n(\\alpha^2-1)\n(\\alpha^2+3)\n(9\\alpha^2-13)\n\\frac{\\cosh(3k(y+h))}{\\cosh(3kh)}\n\\cos(3\\theta)\n\\end{aligned}\n\\]\n\n\\[\n\\scriptsize\n\\begin{aligned}\nu_y(x,y,t)\n&=\nA\n\\frac{\\sinh(k(y+h))}{\\cosh(kh)}\nk\\sin(\\theta)\n\\\\\n&+\n\\frac34\n\\frac{a^2gk^2}{\\omega}\n\\frac{(\\alpha^2-1)^2}{\\alpha}\n\\frac{\\sinh(2k(y+h))}{\\cosh(2kh)}\n\\sin(2\\theta)\n\\\\\n&+\n\\frac{3}{64}\n\\frac{a^3gk^4}{\\omega}\n(\\alpha^2-1)\n(\\alpha^2+3)\n(9\\alpha^2-13)\n\\frac{\\sinh(3k(y+h))}{\\cosh(3kh)}\n\\sin(3\\theta)\n\\end{aligned}\n\\]\n\n\nExemple de vague simulée pour : \\(h\\)=1 m, \\(a\\)=0.04 m, \\(\\lambda\\)=1 m :"
+    "text": "Etude de convergence de maillage (suite)\n\\[\n\\scriptsize\n\\text{Erreur : } \\alpha = \\vert h_{2\\text{Richardson}}-h_{2\\text{num}}\\vert \\qquad \\text{On trace :} \\frac{\\Vert \\alpha \\Vert_1}{\\Vert h_{2\\text{Richardson}} \\Vert_1}, \\; \\frac{\\Vert \\alpha \\Vert_2}{\\Vert h_{2\\text{Richardson}} \\Vert_2}   \\; \\text{et} \\; \\frac{\\Vert \\alpha \\Vert_\\infty}{\\Vert h_{2\\text{Richardson}} \\Vert_\\infty} \\text{ en fonction de } \\Delta x \\; \\text{pour} \\; t \\in [0,t_{\\text{valide}}]\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\nTable 3: Erreurs relatives en fonction du maillage vis-à-vis de \\(h_{2\\text{Richardson}}\\)\n\n\n\n\n\n\n\n\n\n\n\nMailles / diamètre\nErreur relative \\(L_1\\) (%)\nErreur relative \\(L_2\\) (%)\nErreur relative \\(L_\\infty\\) (%)\n\n\n\n\n30\n17,45\n15,66\n12,39\n\n\n45\n8,69\n7,30\n5,01\n\n\n60\n4,10\n3,68\n2,42\n\n\n90\n1,82\n1,63\n1,08"
   },
   {
     "objectID": "presentation.html#validation-de-la-forme-de-la-vague",
     "href": "presentation.html#validation-de-la-forme-de-la-vague",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Validation de la forme de la vague",
-    "text": "Validation de la forme de la vague\n\nOn travaille avec : \\(a = 0.04 \\; \\text{m}\\), \\(h = 1 \\; \\text{m}\\), \\(\\lambda = 1 \\; \\text{m}\\) (\\(k = 2\\pi \\; m^{-1}\\)) pour s’assurer que la vague ne se brise pas (critère de Stokes : déferlement quand \\(ka \\geq 0.446\\), dans notre cas : \\(ka \\approx 0.25\\))\nValidation de la vague simulée par comparaison au profil théorique après T périodes de simulation, avec \\(T= \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{\\sqrt{gk\\tanh(kh)\\left[1+(ka)^2\\left(\\alpha^2+\\frac{9}{8}(\\alpha^2-1)^2\\right)\\right]}}\\)\n\n\n\n\n\nComparaison après T=3 périodes\n\n\n\n\nComparaison après T=10 périodes"
+    "text": "Validation de la forme de la vague\n\nValidation de la vague numérique vis à vis du profil théorique après 3 périodes de simulation, avec\n\n\\[T= \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{\\sqrt{gk\\left[1+(ka)^2\\right]}}\\]"
   },
   {
     "objectID": "presentation.html#etude-de-convergence-en-maillage-après-3-périodes-de-vague",
     "href": "presentation.html#etude-de-convergence-en-maillage-après-3-périodes-de-vague",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Etude de convergence en maillage après 3 périodes de vague",
-    "text": "Etude de convergence en maillage après 3 périodes de vague\n\nErreurs relatives en fonction du maillage\n\n\n\n\n\n\n\n\n\n\nMailles/Hauteur de vague\n\\(\\Delta x = \\Delta y\\)\n\\(\\Delta t\\)\nErreur relative \\(L_{1}\\)\nErreur relative \\(L_{2}\\)\nErreur relative \\(L_{\\infty}\\)\n\n\n\n\n8\n\\(1 \\times 10^{-2}\\)\n\\(2 \\times 10^{-3}\\)\n10.5%\n11%\n14%\n\n\n16\n\\(5 \\times 10^{-3}\\)\n\\(1 \\times 10^{-3}\\)\n4.6%\n4.8%\n6.5%\n\n\n32\n\\(2,5 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n2.27%\n2.4%\n3.15%\n\n\n\n\n\n\n\nErreur \\(L_{1}\\)\n\n\n\n\nErreur \\(L_2\\)\n\n\n\n\nErreur \\(L_{\\infty}\\)"
+    "text": "Etude de convergence en maillage après 3 périodes de vague\n\n\n\\[Re_\\lambda=\\frac{\\lambda \\sqrt{g\\lambda}}{\\nu_f} \\sim 3 \\times 10^6\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nMailles / Hauteur de vague\nErreur relative \\(L_1\\) (%)\nErreur relative \\(L_2\\) (%)\nErreur relative \\(L_\\infty\\) (%)\n\n\n\n\n\n\n8\n10,5\n11\n14\n\n\n\n\n16\n4,6\n4,8\n6,5\n\n\n\n\n24\n2,21\n2,37\n3,69\n\n\n\n\n32\n2,27\n2,4\n3,15\n\n\n\n\n40\n1,77\n2,0\n2,98\n\n\n\n\n48\n1,8\n1,95\n2,66\n\n\n\n\n64\n1,69\n1,85\n2,44"
   },
   {
-    "objectID": "presentation.html#bilan-et-perspectives",
-    "href": "presentation.html#bilan-et-perspectives",
-    "title": "Stage de Master 2",
-    "section": "Bilan et perspectives",
-    "text": "Bilan et perspectives\nPerspectives :\n\nFaire une validation après 50 / 100 périodes de vague pour vérifier la stabilité du solveur.\nValidation du profil de vitesse dans l’eau à la théorie.\n\nDans la suite :\n\nLoi géométrique pour la viscosité effective.\nMaillage retenu : 32 mailles/hauteur de vague, soit 60 mailles par diamètre du cylindre (\\(\\Delta x = 2.5 \\times 10^{-3}\\) m)."
+    "objectID": "presentation.html#quantification-de-la-dérive-de-stokes",
+    "href": "presentation.html#quantification-de-la-dérive-de-stokes",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Quantification de la dérive de Stokes",
+    "text": "Quantification de la dérive de Stokes\n\n\n\n1. Théorie : particule fluide (sans masse)\n\n\nDérive de Stokes théorique\n\\[ U_{S, \\text{theo}} = a^2 k \\omega \\frac{\\cosh[2 k(z_0+h)]}{2 \\sinh^2(k h)} \\]\nLimite en eau profonde : \\(U_{S, \\text{theo}} = a^2 k \\omega \\exp(2 k z_0)\\)\n\n\n\n\n\n\n\n\n2. Pratique : objet flottant (masse et taille finie)\n\n\nDérive de Stokes de l’objet\n\\[ U_{S,O} = \\overline{U_{L,O}} - \\overline{U_E} \\]\n\\(\\overline{U_{L,O}}\\) : vitesse lagrangienne moyenne de l’objet  \\(\\overline{U_E}\\) : vitesse eulérienne moyenne du courant de fond"
   },
   {
-    "objectID": "presentation.html#première-simulation",
-    "href": "presentation.html#première-simulation",
-    "title": "Stage de Master 2",
-    "section": "Première simulation",
-    "text": "Première simulation\n\n  \n    \n  \n\nPerspectives d’étude\n\nComparaison des trajectoires à des résultats avec des particules sans masse.\nComparaison de la dérive de position horizontale à la littérature.\nEvaluation des forces exercées sur la particule par la vague."
+    "objectID": "presentation.html#quantification-de-la-vitesse-lagrangienne-moyenne-overlineu_lo",
+    "href": "presentation.html#quantification-de-la-vitesse-lagrangienne-moyenne-overlineu_lo",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Quantification de la vitesse lagrangienne moyenne (\\(\\overline{U_{L,O}}\\))",
+    "text": "Quantification de la vitesse lagrangienne moyenne (\\(\\overline{U_{L,O}}\\))\n\n  \n  \n\n\n\n\n\n\n1. Extraction du barycentre\n\n\n➔\n\n\n2. Filtre passe-bas (suppression des oscillations)\n\n\n➔\n\n\n3. Régression linéaire (pente = \\(\\overline{\\color{red}{U_{L,O}}}\\))"
+  },
+  {
+    "objectID": "presentation.html#quantification-de-la-vitesse-eulérienne-overlineu_e",
+    "href": "presentation.html#quantification-de-la-vitesse-eulérienne-overlineu_e",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Quantification de la vitesse eulérienne (\\(\\overline{U_E}\\))",
+    "text": "Quantification de la vitesse eulérienne (\\(\\overline{U_E}\\))\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n1. Extraction du signal\n\n\n➔\n\n\n2. Détection des crêtes (calcul de la période \\(T\\))\n\n\n➔\n\n\n3. Intégration sur \\(N\\) périodes (Moyenne = \\(\\overline{\\color{blue}{U_E}}\\))"
+  },
+  {
+    "objectID": "presentation.html#influence-du-diamètre-du-cylindre-sur-le-facteur-damplification-chi",
+    "href": "presentation.html#influence-du-diamètre-du-cylindre-sur-le-facteur-damplification-chi",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Influence du diamètre du cylindre sur le facteur d’amplification \\(\\chi\\)",
+    "text": "Influence du diamètre du cylindre sur le facteur d’amplification \\(\\chi\\)\n\nComparaison : facteur d’amplification \\(\\chi\\)\n\\[ \\chi = \\frac{\\color{red}{U_{S,O}}}{\\color{blue}{U_{S, \\text{theo}}}} \\]\n Quantifie l’écart entre le cylindre et la théorie classique."
+  },
+  {
+    "objectID": "presentation.html#conclusion-et-perspectives",
+    "href": "presentation.html#conclusion-et-perspectives",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Conclusion et perspectives",
+    "text": "Conclusion et perspectives\n\n\n\nBilan :\n\n\nParamétrage du solveur : Loi de mélange, viscosité pénalisante et maillage convergés\nImplémentation et validation d’une vague de Stokes\nCalcul de la dérive d’un objet flottant de taille finie\n\n\n\n\n\nPerspectives :\n\n\nValider la dérive par des expériences en canal ou des simulations CFD de référence\nÉtudier l’influence de la densité de l’objet sur la dérive\nÉtendre l’étude à des géométries plus réalistes (formes de déchets plastiques)\nÉtendre l’étude en 3D"
   },
   {
     "objectID": "presentation.html#références",
     "href": "presentation.html#références",
-    "title": "Stage de Master 2",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
     "section": "Références",
-    "text": "Références\n\n\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nEl Ouafa, Simon, Syphax Fereka, Stéphane Vincent, Benoît Trouette, Eric Chénier, and Vincent Le Chenadec. 2026. “Algebraic Momentum-Preserving Scheme for Incompressible Two-Phase Flows at Large Density and Viscosity Ratios: Application to Droplet Impact Problems.” Computers & Fluids 314: 107083. https://doi.org/https://doi.org/10.1016/j.compfluid.2026.107083.\n\n\nFenton, John D. 1985. “A Fifth‐order Stokes Theory for Steady Waves.” Journal of Waterway, Port, Coastal, and Ocean Engineering 111 (2): 216–34. https://doi.org/10.1061/(ASCE)0733-950X(1985)111:2(216).\n\n\nIto, Soichi. 1977. “Study of the Transient Heave Oscillation of a Floating Cylinder.” https://api.semanticscholar.org/CorpusID:109878185.\n\n\nMaskell, S. J., and F. Ursell. 1970. “The Transient Motion of a Floating Body.” Journal of Fluid Mechanics 44 (2): 303–13. https://doi.org/10.1017/S0022112070001842.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nRahmani, Mona, and Anthony Wachs. 2014. “Free Falling and Rising of Spherical and Angular Particles.” Physics of Fluids 26 (August): 083301. https://doi.org/10.1063/1.4892840.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nSoydan, Ahmet, Widar W. Wang, and Hans Bihs. 2025. “An Improved Direct Forcing Immersed Boundary Method for Floating Body Simulations in Waves.” Applied Ocean Research 158: 104523. https://doi.org/https://doi.org/10.1016/j.apor.2025.104523.\n\n\nVincent, S. 2007. “Local Penalty Methods for Flows Interacting with Moving Solids at High Reynolds Numbers.” Computers & Fluids, ahead of print. https://doi.org/10.1016/j.compfluid.2006.04.006."
+    "text": "Références\n\n\n\n\nBarboza, Luís Gabriel Antão, A. Dick Vethaak, Beatriz R. B. O. Lavorante, Anne-Katrine Lundebye, and Lúcia Guilhermino. 2018. “Marine Microplastic Debris: An Emerging Issue for Food Security, Food Safety and Human Health.” Marine Pollution Bulletin 133: 336–48. https://doi.org/https://doi.org/10.1016/j.marpolbul.2018.05.047.\n\n\nCaltagirone, Jean-Paul, and Stéphane Vincent. 2001. “Sur Une Méthode de Pénalisation Tensorielle Pour La Résolution Des Équations de Navier–Stokes.” Comptes Rendus de l’Académie Des Sciences - Series IIB - Mechanics 329 (8): 607–13. https://doi.org/https://doi.org/10.1016/S1620-7742(01)01374-5.\n\n\nEl Ouafa, Mohamed, Stephane Vincent, and Vincent Le Chenadec. 2021. “Monolithic Solvers for Incompressible Two-Phase Flows at Large Density and Viscosity Ratios.” Fluids 6 (1). https://doi.org/10.3390/fluids6010023.\n\n\nGuyon, Étienne, Jean-Pierre Hulin, and Luc Petit. 2012. Hydrodynamique Physique. 3e ed. EDP Sciences.\n\n\nIto, Soichi. 1977. “Study of the Transient Heave Oscillation of a Floating Cylinder.” https://api.semanticscholar.org/CorpusID:109878185.\n\n\nLebreton, Laurent, Matthias Egger, and Boyan Slat. 2019. “A Global Mass Budget for Positively Buoyant Macroplastic Debris in the Ocean.” Scientific Reports 9 (September). https://doi.org/10.1038/s41598-019-49413-5.\n\n\nPatankar, N. A., P. Singh, D. D. Joseph, R. Glowinski, and T.-W. Pan. 2000. “A New Formulation of the Distributed Lagrange Multiplier/Fictitious Domain Method for Particulate Flows.” International Journal of Multiphase Flow 26 (9): 1509–24.\n\n\nSharma, N., and N. A. Patankar. 2005. “A Fast Computation Technique for the Direct Numerical Simulation of Rigid Particulate Flows.” Journal of Computational Physics 205 (2): 439–57.\n\n\nThual, Olivier. 2005. Des Ondes Et Des Fluides : Articles pédagogiques Multimédia. Cépaduès-Éditions.\n\n\nVincent, S., J. Larocque, D. Lacanette, A. Toutant, P. Lubin, and P. Sagaut. 2008. “Numerical Simulation of Phase Separation and a Priori Two-Phase LES Filtering.” Computers & Fluids 37 (7): 898–906. https://doi.org/https://doi.org/10.1016/j.compfluid.2007.02.017.\n\n\nVincent, Stéphane, Jorge César Brändle de Motta, Arthur Sarthou, Jean-Luc Estivalezes, Olivier Simonin, and Eric Climent. 2014. “A Lagrangian VOF Tensorial Penalty Method for the DNS of Resolved Particle-Laden Flows.” Journal of Computational Physics 256: 582–614. https://doi.org/https://doi.org/10.1016/j.jcp.2013.08.023.\n\n\nWalker, Tony R., and Lexi Fequet. 2023. “Current Trends of Unsustainable Plastic Production and Micro(nano)plastic Pollution.” TrAC Trends in Analytical Chemistry 160: 116984. https://doi.org/https://doi.org/10.1016/j.trac.2023.116984.\n\n\nWikipedia contributors. 2026. Stokes Drift — Wikipedia, the Free Encyclopedia. https://en.wikipedia.org/w/index.php?title=Stokes_drift&oldid=1372664558."
+  },
+  {
+    "objectID": "annexe.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
+    "href": "annexe.html#algorithme-de-résolution-au-sein-dun-pas-de-temps-delta-t",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):",
+    "text": "Algorithme de résolution au sein d’un pas de temps \\(\\Delta t\\):"
+  },
+  {
+    "objectID": "annexe.html#formulation-momentum-conserving-elouafa2026",
+    "href": "annexe.html#formulation-momentum-conserving-elouafa2026",
+    "title": "Simulation numérique directe de la dynamique des plastiques en interaction avec une vague de Stokes",
+    "section": "Formulation Momentum Conserving (El Ouafa et al. (2026))",
+    "text": "Formulation Momentum Conserving (El Ouafa et al. (2026))\n\nInterpolation : La densité \\(\\rho_{\\text{eff}}\\) (obtenue par la VOF) est interpolée vers les faces des cellules. On obtient la densité exacte sur la grille décalée, notée \\(\\rho_{\\text{eff}}^n\\).\nSynchronisation initiale : Calcul de la quantité de mouvement aux faces \\((\\rho_{\\text{eff}} \\mathbf{u})^n\\).\nTransport prédictif : Transport de la masse et de la quantité de mouvement pour obtenir les champs prédictifs \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) (via un intégrateur temporel très stable de type SSP-RK3) : \\[\n\\frac{\\partial \\rho_{\\text{eff}} ^\\star}{\\partial t} + \\nabla \\cdot (\\rho_{\\text{eff}} ^\\star \\mathbf{u}) =0 \\qquad (\\text{On résout pour} \\; \\mathbf{\\rho_{\\text{eff}} ^\\star})\n\\] \\[\n\\frac{\\partial (\\rho_{\\text{eff}} \\mathbf{u})^\\star}{\\partial t} + \\nabla \\cdot ((\\rho_{\\text{eff}} \\mathbf{u})^\\star \\otimes \\mathbf{u}) = \\mathbf{0} \\qquad (\\text{On résout pour} \\; \\mathbf{(\\rho_{\\text{eff}} \\mathbf{u})^\\star})\n\\]\nRésolution de la physique : Insertion de \\(\\rho_{\\text{eff}} ^\\star\\) et \\((\\rho_{\\text{eff}} \\textbf{u})^\\star\\) dans le terme inertiel de Navier-Stokes. Le système de type Stokes résout ensuite la vraie vitesse \\(\\mathbf{u}^{n+1}\\) et la pression \\(p^{n+1}\\) : \\[\n\\frac{\\rho_{\\text{eff}}^\\star \\mathbf{u}^{n+1} - (\\rho_{\\text{eff}}\\mathbf{u})^\\star}{\\Delta t} = - \\nabla p^{n+1} + \\nabla \\cdot [\\mu_{\\text{eff}}(\\nabla \\mathbf{u}^{n+1} + (\\nabla \\mathbf{u}^{n+1})^T)] + \\rho_{\\text{eff}}^\\star \\mathbf{g}\n\\] \\[\n\\nabla \\cdot \\mathbf{u}^{n+1} = 0\n\\]\n\n\n\n\n\nEl Ouafa, Simon, Syphax Fereka, Stéphane Vincent, Benoît Trouette, Eric Chénier, and Vincent Le Chenadec. 2026. “Algebraic Momentum-Preserving Scheme for Incompressible Two-Phase Flows at Large Density and Viscosity Ratios: Application to Droplet Impact Problems.” Computers & Fluids 314: 107083. https://doi.org/https://doi.org/10.1016/j.compfluid.2026.107083."
   }
 ]
